@@ -8,10 +8,10 @@ large-format printer to print the GeoPDFs provided on the [NSW Spatial
 Collaboration
 Portal](https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=06e3c2e0de1e4efda863854048c613c6).
 
-Before:
-![original](before.png)
-
-After:
+## Quick example
+```
+python -m nsw_topo_split katoomba 2022
+```
 ![example](example.png)
 
 Maps shown above are © *State of New South Wales (Spatial Services, a business
