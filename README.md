@@ -43,7 +43,7 @@ options:
   -o, --out OUT  Output directory (default: file.parent)
 ```
 
-If the input file was, say, `8930-1S+KATOOMBA.pdf`, then `nsw_topo_maps`
+If the input file was, say, `8930-1S+KATOOMBA.pdf`, then `nsw_topo_split`
 will produce two new PDFs:
 - `8930-1S+KATOOMBA_cover.pdf`: A portrait A3 page with the map cover page
     and legend side-by-side
