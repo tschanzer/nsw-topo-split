@@ -5,7 +5,12 @@ import pathlib
 
 import pypdf
 
-from nsw_topo_split import make_cover_page, make_map_pages
+from nsw_topo_split import (
+    download_map,
+    make_cover_page,
+    make_map_pages,
+    map_filename
+)
 
 
 def main():
@@ -13,34 +18,31 @@ def main():
 
     parser = argparse.ArgumentParser(
         description='Split a NSW topographic map into A3 pages')
-    parser.add_argument(
-        'file', type=pathlib.Path, help='Map file (PDF)')
+    parser.add_argument('name', help='Lowercase map name, e.g. kanangra')
+    parser.add_argument('year', help='Year of publication')
     parser.add_argument(
         '-o',
         '--out',
         type=pathlib.Path,
-        help='Output directory (default: file.parent)',
+        default=pathlib.Path.cwd(),
+        help='Output directory (default: current working directory)',
     )
     args = parser.parse_args()
-    if args.out is not None:
-        if not args.out.is_dir():
-            raise ValueError('out must be a directory')
-        out_dir = args.out
-    else:
-        out_dir = args.file.parent
 
+    out = (args.out/map_filename(args.name)).with_suffix('.pdf')
+    download_map(args.name, args.year, out)
 
-    reader = pypdf.PdfReader(args.file)
+    reader = pypdf.PdfReader(out)
     writer = pypdf.PdfWriter()
     writer.add_page(make_cover_page(reader.pages[0]))
-    out = (out_dir/(args.file.stem + '_cover')).with_suffix(args.file.suffix)
+    out = (args.out/(map_filename(args.name) + '_cover')).with_suffix('.pdf')
     with open(out, 'wb') as f:
         writer.write(f)
 
     writer = pypdf.PdfWriter()
     for page in make_map_pages(reader.pages[0]):
         writer.add_page(page)
-    out = (out_dir/(args.file.stem + '_split')).with_suffix(args.file.suffix)
+    out = (args.out/(map_filename(args.name) + '_split')).with_suffix('.pdf')
     with open(out, 'wb') as f:
         writer.write(f)
 

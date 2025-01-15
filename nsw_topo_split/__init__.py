@@ -1,9 +1,19 @@
 """A package for splitting NSW topographic maps into A3 pages"""
 
 import copy
+import http.client
+import importlib.resources
+import json
+import pathlib
+import urllib.request
 from typing import Iterator
 
 import pypdf
+
+URL_PREFIX = (
+    'https://portal.spatial.nsw.gov.au/download/NSWTopographicMaps/'
+    'DTDB_GeoReferenced_Raster_CollarOn_161070'
+)
 
 MM_PER_PT = 25.4/72
 COVER_WIDTH_PT = 326
@@ -12,6 +22,33 @@ N_PAGES_X = 3
 N_PAGES_Y = 2
 PAGE_HEIGHT_PT = pypdf.PaperSize.A3.width
 PAGE_WIDTH_PT = pypdf.PaperSize.A3.height
+
+name_dict = json.load(
+        importlib.resources.open_text('nsw_topo_split', 'names_25k.json'))
+
+
+def map_filename(name: str) -> str:
+    """
+    Convert a map name to its filename, e.g. 'katoomba' -> '8930-1S+KATOOMBA'.
+    """
+
+    return name_dict[name]
+
+
+def download_map(name: str, year: str, out: str) -> None:
+    """
+    Downloads a 1:25k NSW topo map.
+
+    Args:
+        name: The lowercase name of the map, e.g. 'kanangra'.
+        year: The publication year of the map, e.g. '2017' or '2022'.
+        out: Path for saving the downloaded file.
+    """
+
+    url = URL_PREFIX + '/' + year + '/25k/' + map_filename(name) + '.pdf'
+    with urllib.request.urlopen(url) as stream:
+        with open(out, 'wb') as f:
+            f.write(stream.read())
 
 
 def _mm_to_pt(x_mm: float) -> float:
