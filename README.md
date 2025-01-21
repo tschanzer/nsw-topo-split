@@ -12,7 +12,7 @@ Portal](https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id
 python -m nsw_topo_split cover katoomba 2022
 python -m nsw_topo_split map katoomba 2022
 ```
-![example](example.png)
+![example](example/example.png)
 
 Maps shown above are © *State of New South Wales (Spatial Services, a business
 unit of the Department of Customer Service NSW)*,  reproduced under the terms of
