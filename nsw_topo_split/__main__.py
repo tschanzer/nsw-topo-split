@@ -24,7 +24,13 @@ def main() -> None:
         choices=['map', 'cover'],
         help="'map' to make the map pages, 'cover' to make the cover pages",
     )
-    parser.add_argument('name', help='lowercase map name, e.g. kanangra')
+    parser.add_argument(
+        'name',
+        help=(
+            'lowercase map name with spaces replaced by underscores, '
+            'e.g., mount_wilson'
+        ),
+    )
     parser.add_argument('year', help='year of publication')
     parser.add_argument(
         '-o',

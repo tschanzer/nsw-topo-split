@@ -37,7 +37,8 @@ split a NSW topographic map across smaller pages
 positional arguments:
   {map,cover}           'map' to make the map pages, 'cover' to make the cover
                         pages
-  name                  lowercase map name, e.g. kanangra
+  name                  lowercase map name with spaces replaced by underscores,
+                        e.g., mount_wilson
   year                  year of publication
 
 options:
