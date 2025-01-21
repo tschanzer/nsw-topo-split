@@ -14,3 +14,7 @@ packages = ["nsw_topo_split"]
 
 [tool.isort]
 multi_line_output = 3
+
+[tool.mypy]
+strict = true
+exclude = ['^build/.*']

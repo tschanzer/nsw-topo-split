@@ -1,0 +1,4546 @@
+{
+    "aberbaldie": {
+        "full_name": "9135-1N+ABERBALDIE",
+        "scale": "25k"
+    },
+    "abercrombie": {
+        "full_name": "8730-S+ABERCROMBIE",
+        "scale": "50k"
+    },
+    "aberdeen": {
+        "full_name": "9033-1S+ABERDEEN",
+        "scale": "25k"
+    },
+    "abington": {
+        "full_name": "9137-3N+ABINGTON",
+        "scale": "25k"
+    },
+    "adjungbilly": {
+        "full_name": "8527-1N+ADJUNGBILLY",
+        "scale": "25k"
+    },
+    "afterlee": {
+        "full_name": "9440-1N+AFTERLEE",
+        "scale": "25k"
+    },
+    "albion_park": {
+        "full_name": "9028-1N+ALBION+PARK",
+        "scale": "25k"
+    },
+    "albury": {
+        "full_name": "8225-N+ALBURY",
+        "scale": "50k"
+    },
+    "alectown": {
+        "full_name": "8532-S+ALECTOWN",
+        "scale": "50k"
+    },
+    "allynbrook": {
+        "full_name": "9233-3N+ALLYNBROOK",
+        "scale": "25k"
+    },
+    "annuello": {
+        "full_name": "7428-S+ANNUELLO",
+        "scale": "50k"
+    },
+    "appin": {
+        "full_name": "9029-1S+APPIN",
+        "scale": "25k"
+    },
+    "apsley": {
+        "full_name": "9235-1N+APSLEY",
+        "scale": "25k"
+    },
+    "araluen": {
+        "full_name": "8826-1S+ARALUEN",
+        "scale": "25k"
+    },
+    "ardlethan": {
+        "full_name": "8229-2N+ARDLETHAN",
+        "scale": "25k"
+    },
+    "ariah": {
+        "full_name": "8229-4N+ARIAH",
+        "scale": "25k"
+    },
+    "ariah_park": {
+        "full_name": "8329-S+ARIAH+PARK",
+        "scale": "50k"
+    },
+    "arkstone": {
+        "full_name": "8829-4N+ARKSTONE",
+        "scale": "25k"
+    },
+    "armidale": {
+        "full_name": "9236-4N+ARMIDALE",
+        "scale": "25k"
+    },
+    "arumpo": {
+        "full_name": "7430+ARUMPO",
+        "scale": "100k"
+    },
+    "ashford": {
+        "full_name": "9139-S+ASHFORD",
+        "scale": "50k"
+    },
+    "attunga": {
+        "full_name": "9036-2S+ATTUNGA",
+        "scale": "25k"
+    },
+    "auburn": {
+        "full_name": "9031-1S+AUBURN",
+        "scale": "25k"
+    },
+    "avon_river": {
+        "full_name": "9029-3S+AVON+RIVER",
+        "scale": "25k"
+    },
+    "baan_baa": {
+        "full_name": "8836-N+BAAN+BAA",
+        "scale": "50k"
+    },
+    "backwater": {
+        "full_name": "9237-1N+BACKWATER",
+        "scale": "25k"
+    },
+    "baden_park": {
+        "full_name": "7733+BADEN+PARK",
+        "scale": "100k"
+    },
+    "badja": {
+        "full_name": "8825-4N+BADJA",
+        "scale": "25k"
+    },
+    "balala": {
+        "full_name": "9136-1N+BALALA",
+        "scale": "25k"
+    },
+    "bald_blair": {
+        "full_name": "9237-1S+BALD+BLAIR",
+        "scale": "25k"
+    },
+    "baldersleigh": {
+        "full_name": "9137-2N+BALDERSLEIGH",
+        "scale": "25k"
+    },
+    "baldwin": {
+        "full_name": "9036-3N+BALDWIN",
+        "scale": "25k"
+    },
+    "balladoran": {
+        "full_name": "8634-S+BALLADORAN",
+        "scale": "50k"
+    },
+    "ballengarra": {
+        "full_name": "9435-3N+BALLENGARRA",
+        "scale": "25k"
+    },
+    "ballina": {
+        "full_name": "9640-3N+BALLINA",
+        "scale": "25k"
+    },
+    "balranald": {
+        "full_name": "7628-N+BALRANALD",
+        "scale": "50k"
+    },
+    "bancannia": {
+        "full_name": "7236+BANCANNIA",
+        "scale": "100k"
+    },
+    "banda_banda": {
+        "full_name": "9335-1S+BANDA+BANDA",
+        "scale": "25k"
+    },
+    "banyabba": {
+        "full_name": "9539-3N+BANYABBA",
+        "scale": "25k"
+    },
+    "baradine": {
+        "full_name": "8736-S+BARADINE",
+        "scale": "50k"
+    },
+    "bare_point": {
+        "full_name": "9538-2N+BARE+POINT",
+        "scale": "25k"
+    },
+    "barellan": {
+        "full_name": "8229-3N+BARELLAN",
+        "scale": "25k"
+    },
+    "bargo": {
+        "full_name": "9029-3N+BARGO",
+        "scale": "25k"
+    },
+    "barham": {
+        "full_name": "7726-N+BARHAM",
+        "scale": "50k"
+    },
+    "barmedman": {
+        "full_name": "8329-N+BARMEDMAN",
+        "scale": "50k"
+    },
+    "barnato": {
+        "full_name": "7834+BARNATO",
+        "scale": "100k"
+    },
+    "barraba": {
+        "full_name": "9037-3S+BARRABA",
+        "scale": "25k"
+    },
+    "barrallier": {
+        "full_name": "8929-3N+BARRALLIER",
+        "scale": "25k"
+    },
+    "barrington_tops": {
+        "full_name": "9133-1N+BARRINGTON+TOPS",
+        "scale": "25k"
+    },
+    "barry": {
+        "full_name": "9134-1N+BARRY",
+        "scale": "25k"
+    },
+    "baryulgil": {
+        "full_name": "9439-4S+BARYULGIL",
+        "scale": "25k"
+    },
+    "bathurst": {
+        "full_name": "8831-3S+BATHURST",
+        "scale": "25k"
+    },
+    "batlow": {
+        "full_name": "8526-4N+BATLOW",
+        "scale": "25k"
+    },
+    "bedulluck": {
+        "full_name": "8727-4N+BEDULLUCK",
+        "scale": "25k"
+    },
+    "bega": {
+        "full_name": "8824-1S+BEGA",
+        "scale": "25k"
+    },
+    "bellata": {
+        "full_name": "8838-S+BELLATA",
+        "scale": "50k"
+    },
+    "bellbrook": {
+        "full_name": "9436-3N+BELLBROOK",
+        "scale": "25k"
+    },
+    "bellingen": {
+        "full_name": "9437-2S+BELLINGEN",
+        "scale": "25k"
+    },
+    "belowra": {
+        "full_name": "8825-4S+BELOWRA",
+        "scale": "25k"
+    },
+    "bemboka": {
+        "full_name": "8824-4S+BEMBOKA",
+        "scale": "25k"
+    },
+    "ben_bullen": {
+        "full_name": "8931-4S+BEN+BULLEN",
+        "scale": "25k"
+    },
+    "ben_lomond": {
+        "full_name": "9237-4N+BEN+LOMOND",
+        "scale": "25k"
+    },
+    "bendemeer": {
+        "full_name": "9136-3S+BENDEMEER",
+        "scale": "25k"
+    },
+    "bendethera": {
+        "full_name": "8826-2S+BENDETHERA",
+        "scale": "25k"
+    },
+    "bendick_murrell": {
+        "full_name": "8529-N+BENDICK+MURRELL",
+        "scale": "50k"
+    },
+    "bendoura": {
+        "full_name": "8826-4N+BENDOURA",
+        "scale": "25k"
+    },
+    "benerembah": {
+        "full_name": "8029-S+BENEREMBAH",
+        "scale": "50k"
+    },
+    "berawinnia_downs": {
+        "full_name": "7639+BERAWINNIA+DOWNS",
+        "scale": "100k"
+    },
+    "berembed_weir": {
+        "full_name": "8228-S+BEREMBED+WEIR",
+        "scale": "50k"
+    },
+    "berenderry": {
+        "full_name": "8934-3S+BERENDERRY",
+        "scale": "25k"
+    },
+    "beresfield": {
+        "full_name": "9232-3N+BERESFIELD",
+        "scale": "25k"
+    },
+    "bermagui": {
+        "full_name": "8925-3S+BERMAGUI",
+        "scale": "25k"
+    },
+    "berrigan": {
+        "full_name": "8026-N+BERRIGAN",
+        "scale": "50k"
+    },
+    "berrioye": {
+        "full_name": "8936-1N+BERRIOYE",
+        "scale": "25k"
+    },
+    "berry": {
+        "full_name": "9028-3N+BERRY",
+        "scale": "25k"
+    },
+    "bevendale": {
+        "full_name": "8728-4N+BEVENDALE",
+        "scale": "25k"
+    },
+    "bidura": {
+        "full_name": "7529+BIDURA",
+        "scale": "100k"
+    },
+    "big_hill": {
+        "full_name": "9336-4S+BIG+HILL",
+        "scale": "25k"
+    },
+    "big_springs": {
+        "full_name": "8327-2N+BIG+SPRINGS",
+        "scale": "25k"
+    },
+    "bigga": {
+        "full_name": "8729-N+BIGGA",
+        "scale": "50k"
+    },
+    "bilambil": {
+        "full_name": "9541-1S+BILAMBIL",
+        "scale": "25k"
+    },
+    "billybingbone": {
+        "full_name": "8337-S+BILLYBINGBONE",
+        "scale": "50k"
+    },
+    "billyena": {
+        "full_name": "8937-3S+BILLYENA",
+        "scale": "25k"
+    },
+    "bimlow": {
+        "full_name": "8930-2S+BIMLOW",
+        "scale": "25k"
+    },
+    "binalong": {
+        "full_name": "8628-4S+BINALONG",
+        "scale": "25k"
+    },
+    "bindook": {
+        "full_name": "8929-4S+BINDOOK",
+        "scale": "25k"
+    },
+    "bingara": {
+        "full_name": "9038-3N+BINGARA",
+        "scale": "25k"
+    },
+    "binnaway": {
+        "full_name": "8734-N+BINNAWAY",
+        "scale": "50k"
+    },
+    "binya": {
+        "full_name": "8129-1S+BINYA",
+        "scale": "25k"
+    },
+    "birdwood": {
+        "full_name": "9335-2N+BIRDWOOD",
+        "scale": "25k"
+    },
+    "black_mountain": {
+        "full_name": "9237-3N+BLACK+MOUNTAIN",
+        "scale": "25k"
+    },
+    "blackville": {
+        "full_name": "8934-4S+BLACKVILLE",
+        "scale": "25k"
+    },
+    "blaxlands_flat": {
+        "full_name": "9438-2S+BLAXLANDS+FLAT",
+        "scale": "25k"
+    },
+    "blighty": {
+        "full_name": "7926-N+BLIGHTY",
+        "scale": "50k"
+    },
+    "blowering": {
+        "full_name": "8527-2S+BLOWERING",
+        "scale": "25k"
+    },
+    "bobadah": {
+        "full_name": "8233+BOBADAH",
+        "scale": "100k"
+    },
+    "bobbiwaa": {
+        "full_name": "8837-1S+BOBBIWAA",
+        "scale": "25k"
+    },
+    "bobbys_plains": {
+        "full_name": "8627-3N+BOBBYS+PLAINS",
+        "scale": "25k"
+    },
+    "bobin": {
+        "full_name": "9334-1S+BOBIN",
+        "scale": "25k"
+    },
+    "bodalla": {
+        "full_name": "8925-4N+BODALLA",
+        "scale": "25k"
+    },
+    "bogan_gate": {
+        "full_name": "8431-N+BOGAN+GATE",
+        "scale": "50k"
+    },
+    "bogee": {
+        "full_name": "8932-3S+BOGEE",
+        "scale": "25k"
+    },
+    "boggabilla": {
+        "full_name": "8940-N+BOGGABILLA",
+        "scale": "50k"
+    },
+    "boggabri": {
+        "full_name": "8936-4S+BOGGABRI",
+        "scale": "25k"
+    },
+    "bogolong_hills": {
+        "full_name": "8228-N+BOGOLONG+HILLS",
+        "scale": "50k"
+    },
+    "bombah_point": {
+        "full_name": "9332-1N+BOMBAH+POINT",
+        "scale": "25k"
+    },
+    "bombala": {
+        "full_name": "8724-3S+BOMBALA",
+        "scale": "25k"
+    },
+    "bombay": {
+        "full_name": "8827-3S+BOMBAY",
+        "scale": "25k"
+    },
+    "bonalbo": {
+        "full_name": "9440-4S+BONALBO",
+        "scale": "25k"
+    },
+    "bondi": {
+        "full_name": "9130-2S+BONDI",
+        "scale": "25k"
+    },
+    "bono": {
+        "full_name": "7432+BONO",
+        "scale": "100k"
+    },
+    "bonshaw": {
+        "full_name": "9139-N+BONSHAW",
+        "scale": "50k"
+    },
+    "bookham": {
+        "full_name": "8628-3N+BOOKHAM",
+        "scale": "25k"
+    },
+    "bookookoorara": {
+        "full_name": "9340-3N+BOOKOOKOORARA",
+        "scale": "25k"
+    },
+    "boolaboolka": {
+        "full_name": "7532+BOOLABOOLKA",
+        "scale": "100k"
+    },
+    "booligal": {
+        "full_name": "7830-S+BOOLIGAL",
+        "scale": "50k"
+    },
+    "boomi": {
+        "full_name": "8840-N+BOOMI",
+        "scale": "50k"
+    },
+    "boona": {
+        "full_name": "8332-N+BOONA",
+        "scale": "50k"
+    },
+    "boonoo_boonoo": {
+        "full_name": "9340-3S+BOONOO+BOONOO",
+        "scale": "25k"
+    },
+    "booroondarra": {
+        "full_name": "7935+BOOROONDARRA",
+        "scale": "100k"
+    },
+    "booroorban": {
+        "full_name": "7828-S+BOOROORBAN",
+        "scale": "50k"
+    },
+    "boorowa": {
+        "full_name": "8629-S+BOOROWA",
+        "scale": "50k"
+    },
+    "booyamurna": {
+        "full_name": "8834-2N+BOOYAMURNA",
+        "scale": "25k"
+    },
+    "borah": {
+        "full_name": "8836-S+BORAH",
+        "scale": "50k"
+    },
+    "borambil": {
+        "full_name": "8933-4N+BORAMBIL",
+        "scale": "25k"
+    },
+    "boro": {
+        "full_name": "8827-4S+BORO",
+        "scale": "25k"
+    },
+    "botany_bay": {
+        "full_name": "9130-3S+BOTANY+BAY",
+        "scale": "25k"
+    },
+    "botobolar": {
+        "full_name": "8832-1N+BOTOBOLAR",
+        "scale": "25k"
+    },
+    "bourke": {
+        "full_name": "8037+BOURKE",
+        "scale": "100k"
+    },
+    "bowman": {
+        "full_name": "9234-2S+BOWMAN",
+        "scale": "25k"
+    },
+    "brackendale": {
+        "full_name": "9235-4S+BRACKENDALE",
+        "scale": "25k"
+    },
+    "braidwood": {
+        "full_name": "8827-2S+BRAIDWOOD",
+        "scale": "25k"
+    },
+    "branga_plains": {
+        "full_name": "9235-3N+BRANGA+PLAINS",
+        "scale": "25k"
+    },
+    "brays_creek": {
+        "full_name": "9541-3S+BRAYS+CREEK",
+        "scale": "25k"
+    },
+    "bredbo": {
+        "full_name": "8726-3S+BREDBO",
+        "scale": "25k"
+    },
+    "breeza": {
+        "full_name": "8935-2N+BREEZA",
+        "scale": "25k"
+    },
+    "brewarrina": {
+        "full_name": "8238+BREWARRINA",
+        "scale": "100k"
+    },
+    "brindabella": {
+        "full_name": "8627-3S+BRINDABELLA",
+        "scale": "25k"
+    },
+    "brindingabba": {
+        "full_name": "7839+BRINDINGABBA",
+        "scale": "100k"
+    },
+    "brocklehurst": {
+        "full_name": "8633-4S+BROCKLEHURST",
+        "scale": "25k"
+    },
+    "brocklesby": {
+        "full_name": "8226-3N+BROCKLESBY",
+        "scale": "25k"
+    },
+    "brogo": {
+        "full_name": "8824-1N+BROGO",
+        "scale": "25k"
+    },
+    "broken_back": {
+        "full_name": "9132-3N+BROKEN+BACK",
+        "scale": "25k"
+    },
+    "broken_bay": {
+        "full_name": "9130-1N+BROKEN+BAY",
+        "scale": "25k"
+    },
+    "broken_hill": {
+        "full_name": "7134+BROKEN+HILL",
+        "scale": "100k"
+    },
+    "brooklana": {
+        "full_name": "9437-2N+BROOKLANA",
+        "scale": "25k"
+    },
+    "brooman": {
+        "full_name": "8927-3S+BROOMAN",
+        "scale": "25k"
+    },
+    "broombee": {
+        "full_name": "8832-4S+BROOMBEE",
+        "scale": "25k"
+    },
+    "brooms_head": {
+        "full_name": "9538-1N+BROOMS+HEAD",
+        "scale": "25k"
+    },
+    "brungle": {
+        "full_name": "8527-4S+BRUNGLE",
+        "scale": "25k"
+    },
+    "brunswick_heads": {
+        "full_name": "9640-4N+BRUNSWICK+HEADS",
+        "scale": "25k"
+    },
+    "buccarumbi": {
+        "full_name": "9438-3N+BUCCARUMBI",
+        "scale": "25k"
+    },
+    "buckalow": {
+        "full_name": "7132+BUCKALOW",
+        "scale": "100k"
+    },
+    "buddabadah": {
+        "full_name": "8334-S+BUDDABADAH",
+        "scale": "50k"
+    },
+    "bugaldie": {
+        "full_name": "8735-N+BUGALDIE",
+        "scale": "50k"
+    },
+    "bukalong": {
+        "full_name": "8724-3N+BUKALONG",
+        "scale": "25k"
+    },
+    "bukkulla": {
+        "full_name": "9138-4N+BUKKULLA",
+        "scale": "25k"
+    },
+    "bulahdelah": {
+        "full_name": "9333-3S+BULAHDELAH",
+        "scale": "25k"
+    },
+    "bulga": {
+        "full_name": "9132-4S+BULGA",
+        "scale": "25k"
+    },
+    "bulldog_rock": {
+        "full_name": "9339-1N+BULLDOG+ROCK",
+        "scale": "25k"
+    },
+    "bulli": {
+        "full_name": "9029-2N+BULLI",
+        "scale": "25k"
+    },
+    "bunda": {
+        "full_name": "7434+BUNDA",
+        "scale": "100k"
+    },
+    "bundalong": {
+        "full_name": "8125-4N+BUNDALONG",
+        "scale": "25k"
+    },
+    "bundanoon": {
+        "full_name": "8928-1S+BUNDANOON",
+        "scale": "25k"
+    },
+    "bundarra": {
+        "full_name": "9137-4S+BUNDARRA",
+        "scale": "25k"
+    },
+    "bundemar": {
+        "full_name": "8534-S+BUNDEMAR",
+        "scale": "50k"
+    },
+    "bundidgerry": {
+        "full_name": "8228-3N+BUNDIDGERRY",
+        "scale": "25k"
+    },
+    "bundook": {
+        "full_name": "9334-3S+BUNDOOK",
+        "scale": "25k"
+    },
+    "bungendore": {
+        "full_name": "8727-2N+BUNGENDORE",
+        "scale": "25k"
+    },
+    "bungonia": {
+        "full_name": "8828-2N+BUNGONIA",
+        "scale": "25k"
+    },
+    "bunna_bunna": {
+        "full_name": "8738-S+BUNNA+BUNNA",
+        "scale": "50k"
+    },
+    "bunnan": {
+        "full_name": "9033-4N+BUNNAN",
+        "scale": "25k"
+    },
+    "bunnerungee": {
+        "full_name": "7230+BUNNERUNGEE",
+        "scale": "100k"
+    },
+    "burraga": {
+        "full_name": "8830-3S+BURRAGA",
+        "scale": "25k"
+    },
+    "burragate": {
+        "full_name": "8823-4N+BURRAGATE",
+        "scale": "25k"
+    },
+    "burragorang": {
+        "full_name": "8929-1N+BURRAGORANG",
+        "scale": "25k"
+    },
+    "burren_junction": {
+        "full_name": "8637-N+BURREN+JUNCTION",
+        "scale": "50k"
+    },
+    "burrendong": {
+        "full_name": "8732-N+BURRENDONG",
+        "scale": "50k"
+    },
+    "burrier": {
+        "full_name": "8928-2N+BURRIER",
+        "scale": "25k"
+    },
+    "burringbar": {
+        "full_name": "9541-2S+BURRINGBAR",
+        "scale": "25k"
+    },
+    "burrowye": {
+        "full_name": "8425-4N+BURROWYE",
+        "scale": "25k"
+    },
+    "burrumbela": {
+        "full_name": "8826-2N+BURRUMBELA",
+        "scale": "25k"
+    },
+    "byabarra": {
+        "full_name": "9434-4N+BYABARRA",
+        "scale": "25k"
+    },
+    "bylong": {
+        "full_name": "8933-3S+BYLONG",
+        "scale": "25k"
+    },
+    "byrock": {
+        "full_name": "8136+BYROCK",
+        "scale": "100k"
+    },
+    "byron_bay": {
+        "full_name": "9640-4S+BYRON+BAY",
+        "scale": "25k"
+    },
+    "cabramurra": {
+        "full_name": "8526-2S+CABRAMURRA",
+        "scale": "25k"
+    },
+    "cadgee": {
+        "full_name": "8825-1S+CADGEE",
+        "scale": "25k"
+    },
+    "caggigat_creek": {
+        "full_name": "8625-1N+CAGGIGAT+CREEK",
+        "scale": "25k"
+    },
+    "cal_lal": {
+        "full_name": "7129-N+CAL+LAL",
+        "scale": "50k"
+    },
+    "callindra": {
+        "full_name": "7635+CALLINDRA",
+        "scale": "100k"
+    },
+    "caloona": {
+        "full_name": "8740-S+CALOONA",
+        "scale": "50k"
+    },
+    "camberwell": {
+        "full_name": "9133-3S+CAMBERWELL",
+        "scale": "25k"
+    },
+    "camden": {
+        "full_name": "9029-4N+CAMDEN",
+        "scale": "25k"
+    },
+    "camelback": {
+        "full_name": "9439-3S+CAMELBACK",
+        "scale": "25k"
+    },
+    "campbelltown": {
+        "full_name": "9029-1N+CAMPBELLTOWN",
+        "scale": "25k"
+    },
+    "canbelego": {
+        "full_name": "8134+CANBELEGO",
+        "scale": "100k"
+    },
+    "canberra": {
+        "full_name": "8727-3N+CANBERRA",
+        "scale": "25k"
+    },
+    "candelo": {
+        "full_name": "8824-3N+CANDELO",
+        "scale": "25k"
+    },
+    "cangai": {
+        "full_name": "9338-1N+CANGAI",
+        "scale": "25k"
+    },
+    "canonba": {
+        "full_name": "8335-S+CANONBA",
+        "scale": "50k"
+    },
+    "canowindra": {
+        "full_name": "8630-N+CANOWINDRA",
+        "scale": "50k"
+    },
+    "canyon_leigh": {
+        "full_name": "8928-4N+CANYON+LEIGH",
+        "scale": "25k"
+    },
+    "caoura": {
+        "full_name": "8928-3N+CAOURA",
+        "scale": "25k"
+    },
+    "capeen": {
+        "full_name": "9440-4N+CAPEEN",
+        "scale": "25k"
+    },
+    "capertee": {
+        "full_name": "8831-1S+CAPERTEE",
+        "scale": "25k"
+    },
+    "captains_flat": {
+        "full_name": "8726-1N+CAPTAINS+FLAT",
+        "scale": "25k"
+    },
+    "carabost": {
+        "full_name": "8426-4N+CARABOST",
+        "scale": "25k"
+    },
+    "carcoar": {
+        "full_name": "8730-4N+CARCOAR",
+        "scale": "25k"
+    },
+    "carinda": {
+        "full_name": "8437-S+CARINDA",
+        "scale": "50k"
+    },
+    "carnham": {
+        "full_name": "9439-3N+CARNHAM",
+        "scale": "25k"
+    },
+    "caroona": {
+        "full_name": "8935-2S+CAROONA",
+        "scale": "25k"
+    },
+    "carrabolla": {
+        "full_name": "9133-1S+CARRABOLLA",
+        "scale": "25k"
+    },
+    "carrai": {
+        "full_name": "9336-3N+CARRAI",
+        "scale": "25k"
+    },
+    "carrathool": {
+        "full_name": "7929-S+CARRATHOOL",
+        "scale": "50k"
+    },
+    "carrow_brook": {
+        "full_name": "9133-2N+CARROW+BROOK",
+        "scale": "25k"
+    },
+    "casino": {
+        "full_name": "9540-3N+CASINO",
+        "scale": "25k"
+    },
+    "cassilis": {
+        "full_name": "8833-1N+CASSILIS",
+        "scale": "25k"
+    },
+    "cathcart": {
+        "full_name": "8724-2N+CATHCART",
+        "scale": "25k"
+    },
+    "catherine_hill_bay": {
+        "full_name": "9231-4S+CATHERINE+HILL+BAY",
+        "scale": "25k"
+    },
+    "central_tilba": {
+        "full_name": "8925-3N+CENTRAL+TILBA",
+        "scale": "25k"
+    },
+    "cessnock": {
+        "full_name": "9132-2N+CESSNOCK",
+        "scale": "25k"
+    },
+    "chaelundi": {
+        "full_name": "9337-1N+CHAELUNDI",
+        "scale": "25k"
+    },
+    "charcoal_range": {
+        "full_name": "8524-1S+CHARCOAL+RANGE",
+        "scale": "25k"
+    },
+    "chatsbury": {
+        "full_name": "8828-1N+CHATSBURY",
+        "scale": "25k"
+    },
+    "cherry_tree_hill": {
+        "full_name": "9038-1N+CHERRY+TREE+HILL",
+        "scale": "25k"
+    },
+    "chichester": {
+        "full_name": "9233-4S+CHICHESTER",
+        "scale": "25k"
+    },
+    "childowla": {
+        "full_name": "8628-3S+CHILDOWLA",
+        "scale": "25k"
+    },
+    "chimney_ridge": {
+        "full_name": "8524-1N+CHIMNEY+RIDGE",
+        "scale": "25k"
+    },
+    "clarence_town": {
+        "full_name": "9232-1N+CLARENCE+TOWN",
+        "scale": "25k"
+    },
+    "clearfield": {
+        "full_name": "9439-1S+CLEARFIELD",
+        "scale": "25k"
+    },
+    "clevedon": {
+        "full_name": "9237-2N+CLEVEDON",
+        "scale": "25k"
+    },
+    "clifton_bore": {
+        "full_name": "7438+CLIFTON+BORE",
+        "scale": "100k"
+    },
+    "clouds_creek": {
+        "full_name": "9437-4N+CLOUDS+CREEK",
+        "scale": "25k"
+    },
+    "clybucca": {
+        "full_name": "9436-2S+CLYBUCCA",
+        "scale": "25k"
+    },
+    "coaldale": {
+        "full_name": "9439-2S+COALDALE",
+        "scale": "25k"
+    },
+    "cobar": {
+        "full_name": "8035+COBAR",
+        "scale": "100k"
+    },
+    "cobargo": {
+        "full_name": "8825-2S+COBARGO",
+        "scale": "25k"
+    },
+    "cobark": {
+        "full_name": "9234-3S+COBARK",
+        "scale": "25k"
+    },
+    "cobbadah": {
+        "full_name": "9037-4S+COBBADAH",
+        "scale": "25k"
+    },
+    "cobham_lake": {
+        "full_name": "7337+COBHAM+LAKE",
+        "scale": "100k"
+    },
+    "cocoparra": {
+        "full_name": "8129-4N+COCOPARRA",
+        "scale": "25k"
+    },
+    "coffs_harbour": {
+        "full_name": "9537-3N+COFFS+HARBOUR",
+        "scale": "25k"
+    },
+    "coleambally": {
+        "full_name": "8028-S+COLEAMBALLY",
+        "scale": "50k"
+    },
+    "colignan": {
+        "full_name": "7328-N+COLIGNAN",
+        "scale": "50k"
+    },
+    "colinton": {
+        "full_name": "8726-3N+COLINTON",
+        "scale": "25k"
+    },
+    "colkmannan": {
+        "full_name": "8128-3S+COLKMANNAN",
+        "scale": "25k"
+    },
+    "collarenebri": {
+        "full_name": "8638-N+COLLARENEBRI",
+        "scale": "50k"
+    },
+    "collector": {
+        "full_name": "8728-2S+COLLECTOR",
+        "scale": "25k"
+    },
+    "collie": {
+        "full_name": "8534-N+COLLIE",
+        "scale": "50k"
+    },
+    "collingullie": {
+        "full_name": "8327-4N+COLLINGULLIE",
+        "scale": "25k"
+    },
+    "colly_blue": {
+        "full_name": "8935-3S+COLLY+BLUE",
+        "scale": "25k"
+    },
+    "colo_heights": {
+        "full_name": "9031-3N+COLO+HEIGHTS",
+        "scale": "25k"
+    },
+    "comara": {
+        "full_name": "9336-2N+COMARA",
+        "scale": "25k"
+    },
+    "combara": {
+        "full_name": "8535-N+COMBARA",
+        "scale": "50k"
+    },
+    "comboyne": {
+        "full_name": "9334-1N+COMBOYNE",
+        "scale": "25k"
+    },
+    "come_by_chance": {
+        "full_name": "8537-S+COME+BY+CHANCE",
+        "scale": "50k"
+    },
+    "conargo": {
+        "full_name": "7927-S+CONARGO",
+        "scale": "50k"
+    },
+    "condobolin": {
+        "full_name": "8331-N+CONDOBOLIN",
+        "scale": "50k"
+    },
+    "conoble": {
+        "full_name": "7832+CONOBLE",
+        "scale": "100k"
+    },
+    "coolabah": {
+        "full_name": "8235+COOLABAH",
+        "scale": "100k"
+    },
+    "coolac": {
+        "full_name": "8528-S+COOLAC",
+        "scale": "50k"
+    },
+    "coolah": {
+        "full_name": "8834-3N+COOLAH",
+        "scale": "25k"
+    },
+    "coolamon": {
+        "full_name": "8328-S+COOLAMON",
+        "scale": "50k"
+    },
+    "coolanbilla": {
+        "full_name": "8935-3N+COOLANBILLA",
+        "scale": "25k"
+    },
+    "coolongolook": {
+        "full_name": "9333-1S+COOLONGOLOOK",
+        "scale": "25k"
+    },
+    "coolumbooka": {
+        "full_name": "8724-2S+COOLUMBOOKA",
+        "scale": "25k"
+    },
+    "cooma": {
+        "full_name": "8725-4S+COOMA",
+        "scale": "25k"
+    },
+    "coombadjha": {
+        "full_name": "9339-2S+COOMBADJHA",
+        "scale": "25k"
+    },
+    "coombie": {
+        "full_name": "7932+COOMBIE",
+        "scale": "100k"
+    },
+    "coonabarabran": {
+        "full_name": "8735-S+COONABARABRAN",
+        "scale": "50k"
+    },
+    "coonamble": {
+        "full_name": "8536-S+COONAMBLE",
+        "scale": "50k"
+    },
+    "coonong": {
+        "full_name": "8127-N+COONONG",
+        "scale": "50k"
+    },
+    "coopernook": {
+        "full_name": "9434-3N+COOPERNOOK",
+        "scale": "25k"
+    },
+    "coopla_curripa": {
+        "full_name": "9234-1N+COOPLA+CURRIPA",
+        "scale": "25k"
+    },
+    "coorongooba": {
+        "full_name": "8932-2S+COORONGOOBA",
+        "scale": "25k"
+    },
+    "cootamundra": {
+        "full_name": "8528-N+COOTAMUNDRA",
+        "scale": "50k"
+    },
+    "cootralantra": {
+        "full_name": "8625-2N+COOTRALANTRA",
+        "scale": "25k"
+    },
+    "copeton_dam": {
+        "full_name": "9038-2S+COPETON+DAM",
+        "scale": "25k"
+    },
+    "copmanhurst": {
+        "full_name": "9438-1N+COPMANHURST",
+        "scale": "25k"
+    },
+    "corang": {
+        "full_name": "8927-3N+CORANG",
+        "scale": "25k"
+    },
+    "coreinbob": {
+        "full_name": "8427-4S+COREINBOB",
+        "scale": "25k"
+    },
+    "coricudgy": {
+        "full_name": "8932-2N+CORICUDGY",
+        "scale": "25k"
+    },
+    "corin_dam": {
+        "full_name": "8626-1N+CORIN+DAM",
+        "scale": "25k"
+    },
+    "corobimilla": {
+        "full_name": "8128-S+COROBIMILLA",
+        "scale": "50k"
+    },
+    "corona": {
+        "full_name": "7135+CORONA",
+        "scale": "100k"
+    },
+    "coryah": {
+        "full_name": "8937-4S+CORYAH",
+        "scale": "25k"
+    },
+    "cotter_dam": {
+        "full_name": "8627-2N+COTTER+DAM",
+        "scale": "25k"
+    },
+    "cougal": {
+        "full_name": "9441-2N+COUGAL",
+        "scale": "25k"
+    },
+    "courabyra": {
+        "full_name": "8526-4S+COURABYRA",
+        "scale": "25k"
+    },
+    "couragago": {
+        "full_name": "8627-4S+COURAGAGO",
+        "scale": "25k"
+    },
+    "coutts_crossing": {
+        "full_name": "9438-2N+COUTTS+CROSSING",
+        "scale": "25k"
+    },
+    "cowabbie": {
+        "full_name": "8228-1N+COWABBIE",
+        "scale": "25k"
+    },
+    "cowan": {
+        "full_name": "9130-4N+COWAN",
+        "scale": "25k"
+    },
+    "cowl_cowl": {
+        "full_name": "7930-N+COWL+COWL",
+        "scale": "50k"
+    },
+    "cowra": {
+        "full_name": "8630-S+COWRA",
+        "scale": "50k"
+    },
+    "cowra_creek": {
+        "full_name": "8725-1N+COWRA+CREEK",
+        "scale": "25k"
+    },
+    "craigie": {
+        "full_name": "8723-4N+CRAIGIE",
+        "scale": "25k"
+    },
+    "craven": {
+        "full_name": "9233-1S+CRAVEN",
+        "scale": "25k"
+    },
+    "crawney_pass": {
+        "full_name": "9134-4N+CRAWNEY+PASS",
+        "scale": "25k"
+    },
+    "crookhaven": {
+        "full_name": "9028-2S+CROOKHAVEN",
+        "scale": "25k"
+    },
+    "crookwell": {
+        "full_name": "8729-S+CROOKWELL",
+        "scale": "50k"
+    },
+    "croppa_creek": {
+        "full_name": "8939-N+CROPPA+CREEK",
+        "scale": "50k"
+    },
+    "cubbo": {
+        "full_name": "8736-N+CUBBO",
+        "scale": "50k"
+    },
+    "cudal": {
+        "full_name": "8631-S+CUDAL",
+        "scale": "50k"
+    },
+    "cuddell": {
+        "full_name": "8128-2N+CUDDELL",
+        "scale": "25k"
+    },
+    "cudgen": {
+        "full_name": "9641-3N+CUDGEN",
+        "scale": "25k"
+    },
+    "culcairn": {
+        "full_name": "8326-4S+CULCAIRN",
+        "scale": "25k"
+    },
+    "cullen_bullen": {
+        "full_name": "8931-3N+CULLEN+BULLEN",
+        "scale": "25k"
+    },
+    "culpataro": {
+        "full_name": "7730-N+CULPATARO",
+        "scale": "50k"
+    },
+    "cumborah": {
+        "full_name": "8438+CUMBORAH",
+        "scale": "100k"
+    },
+    "cumnock": {
+        "full_name": "8632-S+CUMNOCK",
+        "scale": "50k"
+    },
+    "cundletown": {
+        "full_name": "9434-3S+CUNDLETOWN",
+        "scale": "25k"
+    },
+    "cunjurong_point": {
+        "full_name": "9027-3N+CUNJURONG+POINT",
+        "scale": "25k"
+    },
+    "cunninyeuk": {
+        "full_name": "7627-N+CUNNINYEUK",
+        "scale": "50k"
+    },
+    "curlewis": {
+        "full_name": "8935-1N+CURLEWIS",
+        "scale": "25k"
+    },
+    "currarong": {
+        "full_name": "9027-1N+CURRARONG",
+        "scale": "25k"
+    },
+    "curricabark": {
+        "full_name": "9234-4S+CURRICABARK",
+        "scale": "25k"
+    },
+    "currowan": {
+        "full_name": "8926-4N+CURROWAN",
+        "scale": "25k"
+    },
+    "cuthero": {
+        "full_name": "7331+CUTHERO",
+        "scale": "100k"
+    },
+    "cuttabri": {
+        "full_name": "8737-S+CUTTABRI",
+        "scale": "50k"
+    },
+    "dalmorton": {
+        "full_name": "9338-2N+DALMORTON",
+        "scale": "25k"
+    },
+    "dalton": {
+        "full_name": "8728-4S+DALTON",
+        "scale": "25k"
+    },
+    "dandaloo": {
+        "full_name": "8433-S+DANDALOO",
+        "scale": "50k"
+    },
+    "darkwood": {
+        "full_name": "9437-3S+DARKWOOD",
+        "scale": "25k"
+    },
+    "darlington_point": {
+        "full_name": "8028-N+DARLINGTON+POINT",
+        "scale": "50k"
+    },
+    "darnick": {
+        "full_name": "7632+DARNICK",
+        "scale": "100k"
+    },
+    "davies_plain": {
+        "full_name": "8524-4S+DAVIES+PLAIN",
+        "scale": "25k"
+    },
+    "dawsons_hill": {
+        "full_name": "9133-3N+DAWSONS+HILL",
+        "scale": "25k"
+    },
+    "delegate": {
+        "full_name": "8623-N+DELEGATE",
+        "scale": "50k"
+    },
+    "delungra": {
+        "full_name": "9038-1S+DELUNGRA",
+        "scale": "25k"
+    },
+    "deniliquin": {
+        "full_name": "7826-N+DENILIQUIN",
+        "scale": "50k"
+    },
+    "denison": {
+        "full_name": "8626-3S+DENISON",
+        "scale": "25k"
+    },
+    "denman": {
+        "full_name": "9033-3S+DENMAN",
+        "scale": "25k"
+    },
+    "dinoga": {
+        "full_name": "9038-3S+DINOGA",
+        "scale": "25k"
+    },
+    "dobikin": {
+        "full_name": "8838-3S+DOBIKIN",
+        "scale": "25k"
+    },
+    "dolgelly": {
+        "full_name": "8840-S+DOLGELLY",
+        "scale": "50k"
+    },
+    "dooralong": {
+        "full_name": "9131-1S+DOORALONG",
+        "scale": "25k"
+    },
+    "dorrigo": {
+        "full_name": "9437-3N+DORRIGO",
+        "scale": "25k"
+    },
+    "doyles_creek": {
+        "full_name": "9032-1N+DOYLES+CREEK",
+        "scale": "25k"
+    },
+    "drake": {
+        "full_name": "9340-2S+DRAKE",
+        "scale": "25k"
+    },
+    "drummond": {
+        "full_name": "9037-1S+DRUMMOND",
+        "scale": "25k"
+    },
+    "dugays_bridge": {
+        "full_name": "8125-1N+DUGAYS+BRIDGE",
+        "scale": "25k"
+    },
+    "dumaresq": {
+        "full_name": "9237-3S+DUMARESQ",
+        "scale": "25k"
+    },
+    "dundee": {
+        "full_name": "9238-1N+DUNDEE",
+        "scale": "25k"
+    },
+    "dundurrabin": {
+        "full_name": "9437-4S+DUNDURRABIN",
+        "scale": "25k"
+    },
+    "dunedoo": {
+        "full_name": "8733-N+DUNEDOO",
+        "scale": "50k"
+    },
+    "dungalear": {
+        "full_name": "8538+DUNGALEAR",
+        "scale": "100k"
+    },
+    "dungog": {
+        "full_name": "9233-2S+DUNGOG",
+        "scale": "25k"
+    },
+    "dungowan": {
+        "full_name": "9135-4S+DUNGOWAN",
+        "scale": "25k"
+    },
+    "dunoon": {
+        "full_name": "9540-1S+DUNOON",
+        "scale": "25k"
+    },
+    "dunumbral": {
+        "full_name": "8539+DUNUMBRAL",
+        "scale": "100k"
+    },
+    "duri": {
+        "full_name": "9035-1S+DURI",
+        "scale": "25k"
+    },
+    "durran_durra": {
+        "full_name": "8827-2N+DURRAN+DURRA",
+        "scale": "25k"
+    },
+    "durras": {
+        "full_name": "8926-1S+DURRAS",
+        "scale": "25k"
+    },
+    "durridgere": {
+        "full_name": "8833-1S+DURRIDGERE",
+        "scale": "25k"
+    },
+    "ebor": {
+        "full_name": "9337-2S+EBOR",
+        "scale": "25k"
+    },
+    "eden": {
+        "full_name": "8823-1N+EDEN",
+        "scale": "25k"
+    },
+    "edgeroi": {
+        "full_name": "8837-N+EDGEROI",
+        "scale": "50k"
+    },
+    "edith": {
+        "full_name": "8830-2N+EDITH",
+        "scale": "25k"
+    },
+    "elbow_valley": {
+        "full_name": "9341-3S+ELBOW+VALLEY",
+        "scale": "25k"
+    },
+    "elderslie": {
+        "full_name": "9132-1N+ELDERSLIE",
+        "scale": "25k"
+    },
+    "ellangowan": {
+        "full_name": "9539-4N+ELLANGOWAN",
+        "scale": "25k"
+    },
+    "ellerston": {
+        "full_name": "9134-2N+ELLERSTON",
+        "scale": "25k"
+    },
+    "elsmore": {
+        "full_name": "9138-2N+ELSMORE",
+        "scale": "25k"
+    },
+    "emblem": {
+        "full_name": "9035-2S+EMBLEM",
+        "scale": "25k"
+    },
+    "emerald_hill": {
+        "full_name": "8936-3S+EMERALD+HILL",
+        "scale": "25k"
+    },
+    "emmaville": {
+        "full_name": "9239-S+EMMAVILLE",
+        "scale": "50k"
+    },
+    "empire_vale": {
+        "full_name": "9640-3S+EMPIRE+VALE",
+        "scale": "25k"
+    },
+    "endrick": {
+        "full_name": "8927-4S+ENDRICK",
+        "scale": "25k"
+    },
+    "enmore": {
+        "full_name": "9236-1S+ENMORE",
+        "scale": "25k"
+    },
+    "enngonia": {
+        "full_name": "8039+ENNGONIA",
+        "scale": "100k"
+    },
+    "epsom_downs": {
+        "full_name": "7928-S+EPSOM+DOWNS",
+        "scale": "50k"
+    },
+    "ettrick": {
+        "full_name": "9440-1S+ETTRICK",
+        "scale": "25k"
+    },
+    "euabalong": {
+        "full_name": "8131-N+EUABALONG",
+        "scale": "50k"
+    },
+    "euchareena": {
+        "full_name": "8732-S+EUCHAREENA",
+        "scale": "50k"
+    },
+    "eucumbene": {
+        "full_name": "8625-N+EUCUMBENE",
+        "scale": "50k"
+    },
+    "eulalie": {
+        "full_name": "8639-N+EULALIE",
+        "scale": "50k"
+    },
+    "eulomogo": {
+        "full_name": "8633-3N+EULOMOGO",
+        "scale": "25k"
+    },
+    "eulowrie": {
+        "full_name": "8937-1N+EULOWRIE",
+        "scale": "25k"
+    },
+    "eungai": {
+        "full_name": "9436-2N+EUNGAI",
+        "scale": "25k"
+    },
+    "euroley": {
+        "full_name": "8128-1S+EUROLEY",
+        "scale": "25k"
+    },
+    "euston": {
+        "full_name": "7428-N+EUSTON",
+        "scale": "50k"
+    },
+    "fairholme": {
+        "full_name": "8331-S+FAIRHOLME",
+        "scale": "50k"
+    },
+    "fifield": {
+        "full_name": "8332-S+FIFIELD",
+        "scale": "50k"
+    },
+    "five_day_creek": {
+        "full_name": "9336-1S+FIVE+DAY+CREEK",
+        "scale": "25k"
+    },
+    "forbes": {
+        "full_name": "8531-S+FORBES",
+        "scale": "50k"
+    },
+    "fords_bridge": {
+        "full_name": "7938+FORDS+BRIDGE",
+        "scale": "100k"
+    },
+    "forster": {
+        "full_name": "9433-4S+FORSTER",
+        "scale": "25k"
+    },
+    "fort_grey": {
+        "full_name": "7139+FORT+GREY",
+        "scale": "100k"
+    },
+    "fowlers_gap": {
+        "full_name": "7235+FOWLERS+GAP",
+        "scale": "100k"
+    },
+    "freemantle": {
+        "full_name": "8731-2N+FREEMANTLE",
+        "scale": "25k"
+    },
+    "fullerton": {
+        "full_name": "8829-4S+FULLERTON",
+        "scale": "25k"
+    },
+    "galathera": {
+        "full_name": "8837-4S+GALATHERA",
+        "scale": "25k"
+    },
+    "galla_gilla": {
+        "full_name": "8934-2S+GALLA+GILLA",
+        "scale": "25k"
+    },
+    "galong": {
+        "full_name": "8628-4N+GALONG",
+        "scale": "25k"
+    },
+    "gangat": {
+        "full_name": "9333-4N+GANGAT",
+        "scale": "25k"
+    },
+    "garah": {
+        "full_name": "8839-N+GARAH",
+        "scale": "50k"
+    },
+    "geehi_dam": {
+        "full_name": "8525-2N+GEEHI+DAM",
+        "scale": "25k"
+    },
+    "geera": {
+        "full_name": "8337-N+GEERA",
+        "scale": "50k"
+    },
+    "genoa": {
+        "full_name": "8823-3S+GENOA",
+        "scale": "25k"
+    },
+    "gerara": {
+        "full_name": "8139+GERARA",
+        "scale": "100k"
+    },
+    "gerogery": {
+        "full_name": "8226-2N+GEROGERY",
+        "scale": "25k"
+    },
+    "gerroa": {
+        "full_name": "9028-2N+GERROA",
+        "scale": "25k"
+    },
+    "geurie": {
+        "full_name": "8633-S+GEURIE",
+        "scale": "50k"
+    },
+    "gibberagee": {
+        "full_name": "9539-4S+GIBBERAGEE",
+        "scale": "25k"
+    },
+    "gidgell": {
+        "full_name": "8128-3N+GIDGELL",
+        "scale": "25k"
+    },
+    "gilgandra": {
+        "full_name": "8634-N+GILGANDRA",
+        "scale": "50k"
+    },
+    "gindoono": {
+        "full_name": "8232+GINDOONO",
+        "scale": "100k"
+    },
+    "giro": {
+        "full_name": "9234-1S+GIRO",
+        "scale": "25k"
+    },
+    "girragulang": {
+        "full_name": "8834-3S+GIRRAGULANG",
+        "scale": "25k"
+    },
+    "girralong": {
+        "full_name": "9436-4N+GIRRALONG",
+        "scale": "25k"
+    },
+    "glasston": {
+        "full_name": "8934-2N+GLASSTON",
+        "scale": "25k"
+    },
+    "glen_alice": {
+        "full_name": "8931-4N+GLEN+ALICE",
+        "scale": "25k"
+    },
+    "glen_allen": {
+        "full_name": "8724-1S+GLEN+ALLEN",
+        "scale": "25k"
+    },
+    "glen_elgin": {
+        "full_name": "9338-4N+GLEN+ELGIN",
+        "scale": "25k"
+    },
+    "glen_gallic": {
+        "full_name": "9032-4N+GLEN+GALLIC",
+        "scale": "25k"
+    },
+    "glen_innes": {
+        "full_name": "9238-4S+GLEN+INNES",
+        "scale": "25k"
+    },
+    "glenariff": {
+        "full_name": "8236+GLENARIFF",
+        "scale": "100k"
+    },
+    "glenirie": {
+        "full_name": "9037-1N+GLENIRIE",
+        "scale": "25k"
+    },
+    "glenreagh": {
+        "full_name": "9437-1N+GLENREAGH",
+        "scale": "25k"
+    },
+    "glenrock": {
+        "full_name": "9134-1S+GLENROCK",
+        "scale": "25k"
+    },
+    "gloucester": {
+        "full_name": "9233-1N+GLOUCESTER",
+        "scale": "25k"
+    },
+    "gloucester_tops": {
+        "full_name": "9233-4N+GLOUCESTER+TOPS",
+        "scale": "25k"
+    },
+    "gogeldrie_weir": {
+        "full_name": "8128-N+GOGELDRIE+WEIR",
+        "scale": "50k"
+    },
+    "golspie": {
+        "full_name": "8829-3N+GOLSPIE",
+        "scale": "25k"
+    },
+    "gongolgon": {
+        "full_name": "8237+GONGOLGON",
+        "scale": "100k"
+    },
+    "goodooga": {
+        "full_name": "8339+GOODOOGA",
+        "scale": "100k"
+    },
+    "goolgowi": {
+        "full_name": "8030-S+GOOLGOWI",
+        "scale": "50k"
+    },
+    "goolma": {
+        "full_name": "8733-S+GOOLMA",
+        "scale": "50k"
+    },
+    "gooloogong": {
+        "full_name": "8530-N+GOOLOOGONG",
+        "scale": "50k"
+    },
+    "goonal": {
+        "full_name": "8739-S+GOONAL",
+        "scale": "50k"
+    },
+    "goonoo_goonoo": {
+        "full_name": "9035-2N+GOONOO+GOONOO",
+        "scale": "25k"
+    },
+    "goran": {
+        "full_name": "8935-4S+GORAN",
+        "scale": "25k"
+    },
+    "gosford": {
+        "full_name": "9131-2S+GOSFORD",
+        "scale": "25k"
+    },
+    "gospers_mountain": {
+        "full_name": "8931-1N+GOSPERS+MOUNTAIN",
+        "scale": "25k"
+    },
+    "gostwyck": {
+        "full_name": "9236-4S+GOSTWYCK",
+        "scale": "25k"
+    },
+    "goulburn": {
+        "full_name": "8828-3N+GOULBURN",
+        "scale": "25k"
+    },
+    "gowan": {
+        "full_name": "8731-1S+GOWAN",
+        "scale": "25k"
+    },
+    "grabben_gullen": {
+        "full_name": "8728-1N+GRABBEN+GULLEN",
+        "scale": "25k"
+    },
+    "gradgery": {
+        "full_name": "8435-N+GRADGERY",
+        "scale": "50k"
+    },
+    "gradule": {
+        "full_name": "8740-N+GRADULE",
+        "scale": "50k"
+    },
+    "grafton": {
+        "full_name": "9438-1S+GRAFTON",
+        "scale": "25k"
+    },
+    "graman": {
+        "full_name": "9039-S+GRAMAN",
+        "scale": "50k"
+    },
+    "grants_head": {
+        "full_name": "9434-1N+GRANTS+HEAD",
+        "scale": "25k"
+    },
+    "grasmere": {
+        "full_name": "7435+GRASMERE",
+        "scale": "100k"
+    },
+    "grattai": {
+        "full_name": "8937-4N+GRATTAI",
+        "scale": "25k"
+    },
+    "gravesend": {
+        "full_name": "8938-N+GRAVESEND",
+        "scale": "50k"
+    },
+    "green_gully": {
+        "full_name": "9335-4N+GREEN+GULLY",
+        "scale": "25k"
+    },
+    "greg_greg": {
+        "full_name": "8525-4N+GREG+GREG",
+        "scale": "25k"
+    },
+    "grenfell": {
+        "full_name": "8530-S+GRENFELL",
+        "scale": "50k"
+    },
+    "gresford": {
+        "full_name": "9233-3S+GRESFORD",
+        "scale": "25k"
+    },
+    "greta": {
+        "full_name": "9132-1S+GRETA",
+        "scale": "25k"
+    },
+    "grevillia": {
+        "full_name": "9441-2S+GREVILLIA",
+        "scale": "25k"
+    },
+    "griffith": {
+        "full_name": "8129-3N+GRIFFITH",
+        "scale": "25k"
+    },
+    "grong_grong": {
+        "full_name": "8228-1S+GRONG+GRONG",
+        "scale": "25k"
+    },
+    "growee": {
+        "full_name": "8932-4S+GROWEE",
+        "scale": "25k"
+    },
+    "gulargambone": {
+        "full_name": "8535-S+GULARGAMBONE",
+        "scale": "50k"
+    },
+    "gulgong": {
+        "full_name": "8833-S+GULGONG",
+        "scale": "50k"
+    },
+    "gulligal": {
+        "full_name": "8936-3N+GULLIGAL",
+        "scale": "25k"
+    },
+    "gum_flat": {
+        "full_name": "9038-2N+GUM+FLAT",
+        "scale": "25k"
+    },
+    "gunbar": {
+        "full_name": "7929-N+GUNBAR",
+        "scale": "50k"
+    },
+    "gundagai": {
+        "full_name": "8527-4N+GUNDAGAI",
+        "scale": "25k"
+    },
+    "gundahl": {
+        "full_name": "9438-4S+GUNDAHL",
+        "scale": "25k"
+    },
+    "gunderbooka": {
+        "full_name": "8036+GUNDERBOOKA",
+        "scale": "100k"
+    },
+    "gunderman": {
+        "full_name": "9131-3S+GUNDERMAN",
+        "scale": "25k"
+    },
+    "gungal": {
+        "full_name": "8933-2N+GUNGAL",
+        "scale": "25k"
+    },
+    "gunnedah": {
+        "full_name": "8936-2S+GUNNEDAH",
+        "scale": "25k"
+    },
+    "gunning": {
+        "full_name": "8728-2N+GUNNING",
+        "scale": "25k"
+    },
+    "gurley": {
+        "full_name": "8838-N+GURLEY",
+        "scale": "50k"
+    },
+    "gurnang": {
+        "full_name": "8829-1N+GURNANG",
+        "scale": "25k"
+    },
+    "gurrundah": {
+        "full_name": "8728-1S+GURRUNDAH",
+        "scale": "25k"
+    },
+    "guy_fawkes_river": {
+        "full_name": "9338-2S+GUY+FAWKES+RIVER",
+        "scale": "25k"
+    },
+    "guyra": {
+        "full_name": "9237-4S+GUYRA",
+        "scale": "25k"
+    },
+    "gwabegar": {
+        "full_name": "8636-N+GWABEGAR",
+        "scale": "50k"
+    },
+    "hall": {
+        "full_name": "8727-4S+HALL",
+        "scale": "25k"
+    },
+    "hallidays_point": {
+        "full_name": "9433-4N+HALLIDAYS+POINT",
+        "scale": "25k"
+    },
+    "hampton": {
+        "full_name": "8930-4S+HAMPTON",
+        "scale": "25k"
+    },
+    "haning": {
+        "full_name": "9136-3N+HANING",
+        "scale": "25k"
+    },
+    "hanworth": {
+        "full_name": "8929-3S+HANWORTH",
+        "scale": "25k"
+    },
+    "hartley": {
+        "full_name": "8930-4N+HARTLEY",
+        "scale": "25k"
+    },
+    "hatfield": {
+        "full_name": "7630+HATFIELD",
+        "scale": "100k"
+    },
+    "hawker_gate": {
+        "full_name": "7138+HAWKER+GATE",
+        "scale": "100k"
+    },
+    "hay": {
+        "full_name": "7828-N+HAY",
+        "scale": "50k"
+    },
+    "henry_river": {
+        "full_name": "9338-3N+HENRY+RIVER",
+        "scale": "25k"
+    },
+    "henty": {
+        "full_name": "8326-4N+HENTY",
+        "scale": "25k"
+    },
+    "hermidale": {
+        "full_name": "8234+HERMIDALE",
+        "scale": "100k"
+    },
+    "hermidon": {
+        "full_name": "8336+HERMIDON",
+        "scale": "100k"
+    },
+    "hernani": {
+        "full_name": "9337-2N+HERNANI",
+        "scale": "25k"
+    },
+    "hill_end": {
+        "full_name": "8731-1N+HILL+END",
+        "scale": "25k"
+    },
+    "hillgrove": {
+        "full_name": "9236-1N+HILLGROVE",
+        "scale": "25k"
+    },
+    "hillston": {
+        "full_name": "8031-S+HILLSTON",
+        "scale": "50k"
+    },
+    "hilltop": {
+        "full_name": "8929-2N+HILLTOP",
+        "scale": "25k"
+    },
+    "hobbys_yards": {
+        "full_name": "8730-1S+HOBBYS+YARDS",
+        "scale": "25k"
+    },
+    "hogarth_range": {
+        "full_name": "9440-2S+HOGARTH+RANGE",
+        "scale": "25k"
+    },
+    "holbrook": {
+        "full_name": "8326-1S+HOLBROOK",
+        "scale": "25k"
+    },
+    "home_flat": {
+        "full_name": "8326-2S+HOME+FLAT",
+        "scale": "25k"
+    },
+    "home_rule": {
+        "full_name": "8833-3S+HOME+RULE",
+        "scale": "25k"
+    },
+    "hornsby": {
+        "full_name": "9130-4S+HORNSBY",
+        "scale": "25k"
+    },
+    "horton": {
+        "full_name": "8937-1S+HORTON",
+        "scale": "25k"
+    },
+    "hoskinstown": {
+        "full_name": "8727-2S+HOSKINSTOWN",
+        "scale": "25k"
+    },
+    "howes_valley": {
+        "full_name": "9032-2N+HOWES+VALLEY",
+        "scale": "25k"
+    },
+    "howlong": {
+        "full_name": "8226-S+HOWLONG",
+        "scale": "50k"
+    },
+    "huonbrook": {
+        "full_name": "9540-1N+HUONBROOK",
+        "scale": "25k"
+    },
+    "hurricane_hill": {
+        "full_name": "9138-1N+HURRICANE+HILL",
+        "scale": "25k"
+    },
+    "huskisson": {
+        "full_name": "9027-4N+HUSKISSON",
+        "scale": "25k"
+    },
+    "hyatts_flat": {
+        "full_name": "9336-1N+HYATTS+FLAT",
+        "scale": "25k"
+    },
+    "ilford": {
+        "full_name": "8832-2S+ILFORD",
+        "scale": "25k"
+    },
+    "illilawa": {
+        "full_name": "7829-S+ILLILAWA",
+        "scale": "50k"
+    },
+    "indiana": {
+        "full_name": "9138-2S+INDIANA",
+        "scale": "25k"
+    },
+    "ingar": {
+        "full_name": "9133-2S+INGAR",
+        "scale": "25k"
+    },
+    "innesowen": {
+        "full_name": "7835+INNESOWEN",
+        "scale": "100k"
+    },
+    "inveralochy": {
+        "full_name": "8828-3S+INVERALOCHY",
+        "scale": "25k"
+    },
+    "inverell": {
+        "full_name": "9138-3N+INVERELL",
+        "scale": "25k"
+    },
+    "ironbark": {
+        "full_name": "9037-2N+IRONBARK",
+        "scale": "25k"
+    },
+    "isis_river": {
+        "full_name": "9134-4S+ISIS+RIVER",
+        "scale": "25k"
+    },
+    "ivanhoe": {
+        "full_name": "7732+IVANHOE",
+        "scale": "100k"
+    },
+    "jackadgery": {
+        "full_name": "9438-4N+JACKADGERY",
+        "scale": "25k"
+    },
+    "jagungal": {
+        "full_name": "8525-1S+JAGUNGAL",
+        "scale": "25k"
+    },
+    "jamison": {
+        "full_name": "8930-2N+JAMISON",
+        "scale": "25k"
+    },
+    "jemalong": {
+        "full_name": "8431-S+JEMALONG",
+        "scale": "50k"
+    },
+    "jenolan": {
+        "full_name": "8930-3N+JENOLAN",
+        "scale": "25k"
+    },
+    "jeogla": {
+        "full_name": "9336-4N+JEOGLA",
+        "scale": "25k"
+    },
+    "jerangle": {
+        "full_name": "8726-2N+JERANGLE",
+        "scale": "25k"
+    },
+    "jerilderie": {
+        "full_name": "8027-S+JERILDERIE",
+        "scale": "50k"
+    },
+    "jerrawa": {
+        "full_name": "8728-3N+JERRAWA",
+        "scale": "25k"
+    },
+    "jerrys_plains": {
+        "full_name": "9033-2S+JERRYS+PLAINS",
+        "scale": "25k"
+    },
+    "jillett": {
+        "full_name": "8229-1N+JILLETT",
+        "scale": "25k"
+    },
+    "jillimatong": {
+        "full_name": "8725-3N+JILLIMATONG",
+        "scale": "25k"
+    },
+    "jindabyne": {
+        "full_name": "8625-3S+JINDABYNE",
+        "scale": "25k"
+    },
+    "jindera": {
+        "full_name": "8226-2S+JINDERA",
+        "scale": "25k"
+    },
+    "jingellic": {
+        "full_name": "8426-3S+JINGELLIC",
+        "scale": "25k"
+    },
+    "jugiong": {
+        "full_name": "8528-2N+JUGIONG",
+        "scale": "25k"
+    },
+    "junee": {
+        "full_name": "8428-S+JUNEE",
+        "scale": "50k"
+    },
+    "kain": {
+        "full_name": "8826-4S+KAIN",
+        "scale": "25k"
+    },
+    "kalkite_mountain": {
+        "full_name": "8625-3N+KALKITE+MOUNTAIN",
+        "scale": "25k"
+    },
+    "kanangra": {
+        "full_name": "8930-3S+KANANGRA",
+        "scale": "25k"
+    },
+    "kandos": {
+        "full_name": "8832-2N+KANDOS",
+        "scale": "25k"
+    },
+    "kangaroo_flat": {
+        "full_name": "9335-4S+KANGAROO+FLAT",
+        "scale": "25k"
+    },
+    "kangaroo_valley": {
+        "full_name": "9028-4S+KANGAROO+VALLEY",
+        "scale": "25k"
+    },
+    "kango": {
+        "full_name": "7737+KANGO",
+        "scale": "100k"
+    },
+    "kaputar": {
+        "full_name": "8937-3N+KAPUTAR",
+        "scale": "25k"
+    },
+    "kars_springs": {
+        "full_name": "9034-3S+KARS+SPRINGS",
+        "scale": "25k"
+    },
+    "karuah": {
+        "full_name": "9232-1S+KARUAH",
+        "scale": "25k"
+    },
+    "katoomba": {
+        "full_name": "8930-1S+KATOOMBA",
+        "scale": "25k"
+    },
+    "kayrunnera": {
+        "full_name": "7436+KAYRUNNERA",
+        "scale": "100k"
+    },
+    "keely": {
+        "full_name": "7726-S+KEELY",
+        "scale": "50k"
+    },
+    "keewong": {
+        "full_name": "7933+KEEWONG",
+        "scale": "100k"
+    },
+    "kelvin": {
+        "full_name": "8936-2N+KELVIN",
+        "scale": "25k"
+    },
+    "kemps_pinnacle": {
+        "full_name": "9335-1N+KEMPS+PINNACLE",
+        "scale": "25k"
+    },
+    "kempsey": {
+        "full_name": "9435-1N+KEMPSEY",
+        "scale": "25k"
+    },
+    "kentucky": {
+        "full_name": "9136-2N+KENTUCKY",
+        "scale": "25k"
+    },
+    "kerang": {
+        "full_name": "7626-N+KERANG",
+        "scale": "50k"
+    },
+    "kerrabee": {
+        "full_name": "8933-2S+KERRABEE",
+        "scale": "25k"
+    },
+    "kerriki": {
+        "full_name": "9334-4S+KERRIKI",
+        "scale": "25k"
+    },
+    "kerriwah": {
+        "full_name": "8333-S+KERRIWAH",
+        "scale": "50k"
+    },
+    "kerrs_creek": {
+        "full_name": "8731-4N+KERRS+CREEK",
+        "scale": "25k"
+    },
+    "kiacatoo": {
+        "full_name": "8231-N+KIACATOO",
+        "scale": "50k"
+    },
+    "kiah": {
+        "full_name": "8823-1S+KIAH",
+        "scale": "25k"
+    },
+    "kiama": {
+        "full_name": "9028-1S+KIAMA",
+        "scale": "25k"
+    },
+    "kilfera": {
+        "full_name": "7731+KILFERA",
+        "scale": "100k"
+    },
+    "kilgowla": {
+        "full_name": "8838-2N+KILGOWLA",
+        "scale": "25k"
+    },
+    "killoe": {
+        "full_name": "8933-4S+KILLOE",
+        "scale": "25k"
+    },
+    "kilparney": {
+        "full_name": "8132+KILPARNEY",
+        "scale": "100k"
+    },
+    "kindarun": {
+        "full_name": "9032-3N+KINDARUN",
+        "scale": "25k"
+    },
+    "kings_gap": {
+        "full_name": "9137-4N+KINGS+GAP",
+        "scale": "25k"
+    },
+    "kingsdale": {
+        "full_name": "8828-4S+KINGSDALE",
+        "scale": "25k"
+    },
+    "kingstown": {
+        "full_name": "9136-4N+KINGSTOWN",
+        "scale": "25k"
+    },
+    "kioloa": {
+        "full_name": "8926-1N+KIOLOA",
+        "scale": "25k"
+    },
+    "klori": {
+        "full_name": "9036-2N+KLORI",
+        "scale": "25k"
+    },
+    "knorrit_flat": {
+        "full_name": "9334-3N+KNORRIT+FLAT",
+        "scale": "25k"
+    },
+    "kockibitoo": {
+        "full_name": "8228-2S+KOCKIBITOO",
+        "scale": "25k"
+    },
+    "kokomerican": {
+        "full_name": "9334-4N+KOKOMERICAN",
+        "scale": "25k"
+    },
+    "kookabookra": {
+        "full_name": "9337-4N+KOOKABOOKRA",
+        "scale": "25k"
+    },
+    "koorawatha": {
+        "full_name": "8629-N+KOORAWATHA",
+        "scale": "50k"
+    },
+    "kooringaroo": {
+        "full_name": "8828-2S+KOORINGAROO",
+        "scale": "25k"
+    },
+    "koreelah": {
+        "full_name": "9341-2S+KOREELAH",
+        "scale": "25k"
+    },
+    "korogoro_point": {
+        "full_name": "9535-4N+KOROGORO+POINT",
+        "scale": "25k"
+    },
+    "krawarree": {
+        "full_name": "8826-3N+KRAWARREE",
+        "scale": "25k"
+    },
+    "kulnura": {
+        "full_name": "9131-4S+KULNURA",
+        "scale": "25k"
+    },
+    "kundabung": {
+        "full_name": "9435-1S+KUNDABUNG",
+        "scale": "25k"
+    },
+    "kunderang": {
+        "full_name": "9336-3S+KUNDERANG",
+        "scale": "25k"
+    },
+    "kurrajong": {
+        "full_name": "9030-4N+KURRAJONG",
+        "scale": "25k"
+    },
+    "kyalite": {
+        "full_name": "7528-S+KYALITE",
+        "scale": "50k"
+    },
+    "kybeyan": {
+        "full_name": "8725-2N+KYBEYAN",
+        "scale": "25k"
+    },
+    "kydra": {
+        "full_name": "8725-2S+KYDRA",
+        "scale": "25k"
+    },
+    "kyeamba": {
+        "full_name": "8427-3S+KYEAMBA",
+        "scale": "25k"
+    },
+    "lachlan_downs": {
+        "full_name": "8033+LACHLAN+DOWNS",
+        "scale": "100k"
+    },
+    "lacmalac": {
+        "full_name": "8527-2N+LACMALAC",
+        "scale": "25k"
+    },
+    "laggan": {
+        "full_name": "8829-3S+LAGGAN",
+        "scale": "25k"
+    },
+    "lake_albert": {
+        "full_name": "8327-1S+LAKE+ALBERT",
+        "scale": "25k"
+    },
+    "lake_bathurst": {
+        "full_name": "8827-4N+LAKE+BATHURST",
+        "scale": "25k"
+    },
+    "lake_cargelligo": {
+        "full_name": "8131-S+LAKE+CARGELLIGO",
+        "scale": "50k"
+    },
+    "lake_george": {
+        "full_name": "8727-1N+LAKE+GEORGE",
+        "scale": "25k"
+    },
+    "lake_hume": {
+        "full_name": "8325-4N+LAKE+HUME",
+        "scale": "25k"
+    },
+    "lake_tandou": {
+        "full_name": "7332+LAKE+TANDOU",
+        "scale": "100k"
+    },
+    "lake_victoria": {
+        "full_name": "7130+LAKE+VICTORIA",
+        "scale": "100k"
+    },
+    "lake_wyangan": {
+        "full_name": "8129-N+LAKE+WYANGAN",
+        "scale": "50k"
+    },
+    "lankeys_creek": {
+        "full_name": "8426-3N+LANKEYS+CREEK",
+        "scale": "25k"
+    },
+    "larnook": {
+        "full_name": "9540-4S+LARNOOK",
+        "scale": "25k"
+    },
+    "laurieton": {
+        "full_name": "9434-1S+LAURIETON",
+        "scale": "25k"
+    },
+    "leadville": {
+        "full_name": "8833-4N+LEADVILLE",
+        "scale": "25k"
+    },
+    "leeton": {
+        "full_name": "8128-1N+LEETON",
+        "scale": "25k"
+    },
+    "lightning_ridge": {
+        "full_name": "8439+LIGHTNING+RIDGE",
+        "scale": "100k"
+    },
+    "limevale": {
+        "full_name": "9140-N+LIMEVALE",
+        "scale": "50k"
+    },
+    "linton": {
+        "full_name": "9037-2S+LINTON",
+        "scale": "25k"
+    },
+    "lismore": {
+        "full_name": "9540-2N+LISMORE",
+        "scale": "25k"
+    },
+    "liston": {
+        "full_name": "9340-4S+LISTON",
+        "scale": "25k"
+    },
+    "lithgow": {
+        "full_name": "8931-3S+LITHGOW",
+        "scale": "25k"
+    },
+    "liverpool": {
+        "full_name": "9030-2S+LIVERPOOL",
+        "scale": "25k"
+    },
+    "lockhart": {
+        "full_name": "8227-N+LOCKHART",
+        "scale": "50k"
+    },
+    "lord_howe_island": {
+        "full_name": "0735-4N+LORD+HOWE+ISLAND",
+        "scale": "25k"
+    },
+    "lorne": {
+        "full_name": "9434-4S+LORNE",
+        "scale": "25k"
+    },
+    "louth": {
+        "full_name": "7936+LOUTH",
+        "scale": "100k"
+    },
+    "lower_lila": {
+        "full_name": "8038+LOWER+LILA",
+        "scale": "100k"
+    },
+    "lower_portland": {
+        "full_name": "9031-2S+LOWER+PORTLAND",
+        "scale": "25k"
+    },
+    "lowesdale": {
+        "full_name": "8126-S+LOWESDALE",
+        "scale": "50k"
+    },
+    "lue": {
+        "full_name": "8832-1S+LUE",
+        "scale": "25k"
+    },
+    "lyndhurst": {
+        "full_name": "9337-3N+LYNDHURST",
+        "scale": "25k"
+    },
+    "macksville": {
+        "full_name": "9436-1S+MACKSVILLE",
+        "scale": "25k"
+    },
+    "maclean": {
+        "full_name": "9539-3S+MACLEAN",
+        "scale": "25k"
+    },
+    "maiden_creek": {
+        "full_name": "9337-3S+MAIDEN+CREEK",
+        "scale": "25k"
+    },
+    "maitland": {
+        "full_name": "9232-4S+MAITLAND",
+        "scale": "25k"
+    },
+    "malara_creek": {
+        "full_name": "9339-1S+MALARA+CREEK",
+        "scale": "25k"
+    },
+    "mallanganee": {
+        "full_name": "9440-3S+MALLANGANEE",
+        "scale": "25k"
+    },
+    "malleevale": {
+        "full_name": "8229-1S+MALLEEVALE",
+        "scale": "25k"
+    },
+    "manar": {
+        "full_name": "8827-3N+MANAR",
+        "scale": "25k"
+    },
+    "manara": {
+        "full_name": "7633+MANARA",
+        "scale": "100k"
+    },
+    "mandurama": {
+        "full_name": "8730-4S+MANDURAMA",
+        "scale": "25k"
+    },
+    "manfred": {
+        "full_name": "7631+MANFRED",
+        "scale": "100k"
+    },
+    "mangoplah": {
+        "full_name": "8327-2S+MANGOPLAH",
+        "scale": "25k"
+    },
+    "mangrove": {
+        "full_name": "9131-3N+MANGROVE",
+        "scale": "25k"
+    },
+    "manilla": {
+        "full_name": "9036-4S+MANILLA",
+        "scale": "25k"
+    },
+    "manobalai": {
+        "full_name": "9033-4S+MANOBALAI",
+        "scale": "25k"
+    },
+    "marengo": {
+        "full_name": "9337-1S+MARENGO",
+        "scale": "25k"
+    },
+    "markwell": {
+        "full_name": "9333-3N+MARKWELL",
+        "scale": "25k"
+    },
+    "marra": {
+        "full_name": "8336-S+MARRA",
+        "scale": "50k"
+    },
+    "marsden": {
+        "full_name": "8430-S+MARSDEN",
+        "scale": "50k"
+    },
+    "mathoura": {
+        "full_name": "7826-S+MATHOURA",
+        "scale": "50k"
+    },
+    "matong": {
+        "full_name": "8228-2N+MATONG",
+        "scale": "25k"
+    },
+    "maude": {
+        "full_name": "7729-S+MAUDE",
+        "scale": "50k"
+    },
+    "maybole": {
+        "full_name": "9238-3S+MAYBOLE",
+        "scale": "25k"
+    },
+    "meadow_flat": {
+        "full_name": "8831-2S+MEADOW+FLAT",
+        "scale": "25k"
+    },
+    "mena_murtee": {
+        "full_name": "7535+MENA+MURTEE",
+        "scale": "100k"
+    },
+    "mendooran": {
+        "full_name": "8734-S+MENDOORAN",
+        "scale": "50k"
+    },
+    "menindee": {
+        "full_name": "7333+MENINDEE",
+        "scale": "100k"
+    },
+    "merriwa": {
+        "full_name": "8933-1S+MERRIWA",
+        "scale": "25k"
+    },
+    "michelago": {
+        "full_name": "8726-4S+MICHELAGO",
+        "scale": "25k"
+    },
+    "middle_camp": {
+        "full_name": "7232+MIDDLE+CAMP",
+        "scale": "100k"
+    },
+    "mildura": {
+        "full_name": "7329-N+MILDURA",
+        "scale": "50k"
+    },
+    "millie": {
+        "full_name": "8838-3N+MILLIE",
+        "scale": "25k"
+    },
+    "millthorpe": {
+        "full_name": "8731-3S+MILLTHORPE",
+        "scale": "25k"
+    },
+    "milparinka": {
+        "full_name": "7238+MILPARINKA",
+        "scale": "100k"
+    },
+    "milton": {
+        "full_name": "8927-2N+MILTON",
+        "scale": "25k"
+    },
+    "mimosa": {
+        "full_name": "8328-N+MIMOSA",
+        "scale": "50k"
+    },
+    "missabotti": {
+        "full_name": "9436-1N+MISSABOTTI",
+        "scale": "25k"
+    },
+    "mittagong": {
+        "full_name": "8929-2S+MITTAGONG",
+        "scale": "25k"
+    },
+    "moama": {
+        "full_name": "7825-N+MOAMA",
+        "scale": "50k"
+    },
+    "mogil_mogil": {
+        "full_name": "8639-S+MOGIL+MOGIL",
+        "scale": "50k"
+    },
+    "mogo": {
+        "full_name": "8926-3N+MOGO",
+        "scale": "25k"
+    },
+    "mogriguy": {
+        "full_name": "8633-N+MOGRIGUY",
+        "scale": "50k"
+    },
+    "mole_river": {
+        "full_name": "9239-N+MOLE+RIVER",
+        "scale": "50k"
+    },
+    "moleton": {
+        "full_name": "9437-1S+MOLETON",
+        "scale": "25k"
+    },
+    "molong": {
+        "full_name": "8631-N+MOLONG",
+        "scale": "50k"
+    },
+    "mona_vale": {
+        "full_name": "9130-1S+MONA+VALE",
+        "scale": "25k"
+    },
+    "monak": {
+        "full_name": "7329-S+MONAK",
+        "scale": "50k"
+    },
+    "monga": {
+        "full_name": "8826-1N+MONGA",
+        "scale": "25k"
+    },
+    "monia_gap": {
+        "full_name": "8030-N+MONIA+GAP",
+        "scale": "50k"
+    },
+    "monolon": {
+        "full_name": "7537+MONOLON",
+        "scale": "100k"
+    },
+    "monundilla": {
+        "full_name": "9032-4S+MONUNDILLA",
+        "scale": "25k"
+    },
+    "moonan_brook": {
+        "full_name": "9134-2S+MOONAN+BROOK",
+        "scale": "25k"
+    },
+    "moonbi": {
+        "full_name": "9135-4N+MOONBI",
+        "scale": "25k"
+    },
+    "moonee_beach": {
+        "full_name": "9537-4S+MOONEE+BEACH",
+        "scale": "25k"
+    },
+    "morago": {
+        "full_name": "7827-S+MORAGO",
+        "scale": "50k"
+    },
+    "morangarell": {
+        "full_name": "8429-N+MORANGARELL",
+        "scale": "50k"
+    },
+    "moree": {
+        "full_name": "8839-S+MOREE",
+        "scale": "50k"
+    },
+    "morisset": {
+        "full_name": "9131-1N+MORISSET",
+        "scale": "25k"
+    },
+    "morna_point": {
+        "full_name": "9332-3N+MORNA+POINT",
+        "scale": "25k"
+    },
+    "moruben": {
+        "full_name": "9031-1N+MORUBEN",
+        "scale": "25k"
+    },
+    "morundah": {
+        "full_name": "8128-2S+MORUNDAH",
+        "scale": "25k"
+    },
+    "moruya": {
+        "full_name": "8926-3S+MORUYA",
+        "scale": "25k"
+    },
+    "moss_vale": {
+        "full_name": "8928-1N+MOSS+VALE",
+        "scale": "25k"
+    },
+    "mossgiel": {
+        "full_name": "7831+MOSSGIEL",
+        "scale": "100k"
+    },
+    "moulamein": {
+        "full_name": "7727-N+MOULAMEIN",
+        "scale": "50k"
+    },
+    "mount_adrah": {
+        "full_name": "8427-1S+MOUNT+ADRAH",
+        "scale": "25k"
+    },
+    "mount_allen": {
+        "full_name": "8032+MOUNT+ALLEN",
+        "scale": "100k"
+    },
+    "mount_armstrong": {
+        "full_name": "8829-1S+MOUNT+ARMSTRONG",
+        "scale": "25k"
+    },
+    "mount_arrowsmith": {
+        "full_name": "7237+MOUNT+ARROWSMITH",
+        "scale": "100k"
+    },
+    "mount_carrington": {
+        "full_name": "9235-2S+MOUNT+CARRINGTON",
+        "scale": "25k"
+    },
+    "mount_cemon": {
+        "full_name": "7930-S+MOUNT+CEMON",
+        "scale": "50k"
+    },
+    "mount_david": {
+        "full_name": "8830-3N+MOUNT+DAVID",
+        "scale": "25k"
+    },
+    "mount_harris": {
+        "full_name": "8435-S+MOUNT+HARRIS",
+        "scale": "50k"
+    },
+    "mount_imlay": {
+        "full_name": "8823-4S+MOUNT+IMLAY",
+        "scale": "25k"
+    },
+    "mount_lindesay": {
+        "full_name": "9441-3N+MOUNT+LINDESAY",
+        "scale": "25k"
+    },
+    "mount_misery": {
+        "full_name": "8933-3N+MOUNT+MISERY",
+        "scale": "25k"
+    },
+    "mount_morgan": {
+        "full_name": "8931-1S+MOUNT+MORGAN",
+        "scale": "25k"
+    },
+    "mount_oxley": {
+        "full_name": "8137+MOUNT+OXLEY",
+        "scale": "100k"
+    },
+    "mount_pomany": {
+        "full_name": "8932-1S+MOUNT+POMANY",
+        "scale": "25k"
+    },
+    "mount_rodd": {
+        "full_name": "9038-4S+MOUNT+RODD",
+        "scale": "25k"
+    },
+    "mount_slow": {
+        "full_name": "9238-2S+MOUNT+SLOW",
+        "scale": "25k"
+    },
+    "mount_tennyson": {
+        "full_name": "8723-4S+MOUNT+TENNYSON",
+        "scale": "25k"
+    },
+    "mount_wellington": {
+        "full_name": "9338-1S+MOUNT+WELLINGTON",
+        "scale": "25k"
+    },
+    "mount_wilson": {
+        "full_name": "8930-1N+MOUNT+WILSON",
+        "scale": "25k"
+    },
+    "mount_yengo": {
+        "full_name": "9032-2S+MOUNT+YENGO",
+        "scale": "25k"
+    },
+    "mountain_creek": {
+        "full_name": "8326-3N+MOUNTAIN+CREEK",
+        "scale": "25k"
+    },
+    "mountain_lagoon": {
+        "full_name": "9031-3S+MOUNTAIN+LAGOON",
+        "scale": "25k"
+    },
+    "moura": {
+        "full_name": "8129-2N+MOURA",
+        "scale": "25k"
+    },
+    "mudgee": {
+        "full_name": "8832-4N+MUDGEE",
+        "scale": "25k"
+    },
+    "mullaley": {
+        "full_name": "8835-N+MULLALEY",
+        "scale": "50k"
+    },
+    "mullengandra": {
+        "full_name": "8326-3S+MULLENGANDRA",
+        "scale": "25k"
+    },
+    "mulurulu": {
+        "full_name": "7531+MULURULU",
+        "scale": "100k"
+    },
+    "mummulgum": {
+        "full_name": "9440-2N+MUMMULGUM",
+        "scale": "25k"
+    },
+    "munderoo": {
+        "full_name": "8426-2N+MUNDEROO",
+        "scale": "25k"
+    },
+    "mundowey": {
+        "full_name": "9036-1S+MUNDOWEY",
+        "scale": "25k"
+    },
+    "munghorn": {
+        "full_name": "8833-2S+MUNGHORN",
+        "scale": "25k"
+    },
+    "murrah": {
+        "full_name": "8924-4N+MURRAH",
+        "scale": "25k"
+    },
+    "murrami": {
+        "full_name": "8129-2S+MURRAMI",
+        "scale": "25k"
+    },
+    "murrawombie": {
+        "full_name": "8335-N+MURRAWOMBIE",
+        "scale": "50k"
+    },
+    "murrays_run": {
+        "full_name": "9131-4N+MURRAYS+RUN",
+        "scale": "25k"
+    },
+    "murrumbateman": {
+        "full_name": "8728-3S+MURRUMBATEMAN",
+        "scale": "25k"
+    },
+    "murrumbucca": {
+        "full_name": "8725-4N+MURRUMBUCCA",
+        "scale": "25k"
+    },
+    "murrurundi": {
+        "full_name": "9034-2N+MURRURUNDI",
+        "scale": "25k"
+    },
+    "murtee": {
+        "full_name": "7634+MURTEE",
+        "scale": "100k"
+    },
+    "murwillumbah": {
+        "full_name": "9541-2N+MURWILLUMBAH",
+        "scale": "25k"
+    },
+    "muswellbrook": {
+        "full_name": "9033-2N+MUSWELLBROOK",
+        "scale": "25k"
+    },
+    "muttama": {
+        "full_name": "8528-3N+MUTTAMA",
+        "scale": "25k"
+    },
+    "myall_lake": {
+        "full_name": "9333-2S+MYALL+LAKE",
+        "scale": "25k"
+    },
+    "myalla": {
+        "full_name": "8725-3S+MYALLA",
+        "scale": "25k"
+    },
+    "nabiac": {
+        "full_name": "9333-1N+NABIAC",
+        "scale": "25k"
+    },
+    "nadgee": {
+        "full_name": "8823-2S+NADGEE",
+        "scale": "25k"
+    },
+    "nalbaugh": {
+        "full_name": "8723-1N+NALBAUGH",
+        "scale": "25k"
+    },
+    "nanangroe": {
+        "full_name": "8528-2S+NANANGROE",
+        "scale": "25k"
+    },
+    "nangus": {
+        "full_name": "8427-1N+NANGUS",
+        "scale": "25k"
+    },
+    "naradhan": {
+        "full_name": "8130-N+NARADHAN",
+        "scale": "50k"
+    },
+    "narooma": {
+        "full_name": "8925-4S+NAROOMA",
+        "scale": "25k"
+    },
+    "narra_narra": {
+        "full_name": "8326-2N+NARRA+NARRA",
+        "scale": "25k"
+    },
+    "narrabarba": {
+        "full_name": "8823-2N+NARRABARBA",
+        "scale": "25k"
+    },
+    "narrabri": {
+        "full_name": "8837-S+NARRABRI",
+        "scale": "50k"
+    },
+    "narragamba": {
+        "full_name": "8833-4S+NARRAGAMBA",
+        "scale": "25k"
+    },
+    "narran": {
+        "full_name": "8338+NARRAN",
+        "scale": "100k"
+    },
+    "narrandera_range": {
+        "full_name": "8228-4N+NARRANDERA+RANGE",
+        "scale": "25k"
+    },
+    "narromine": {
+        "full_name": "8533-N+NARROMINE",
+        "scale": "50k"
+    },
+    "nartooka": {
+        "full_name": "7433+NARTOOKA",
+        "scale": "100k"
+    },
+    "nattai": {
+        "full_name": "8929-1S+NATTAI",
+        "scale": "25k"
+    },
+    "neckarboo": {
+        "full_name": "7833+NECKARBOO",
+        "scale": "100k"
+    },
+    "nelligen": {
+        "full_name": "8926-4S+NELLIGEN",
+        "scale": "25k"
+    },
+    "nelyambo": {
+        "full_name": "7735+NELYAMBO",
+        "scale": "100k"
+    },
+    "nericon": {
+        "full_name": "8129-4S+NERICON",
+        "scale": "25k"
+    },
+    "nerriga": {
+        "full_name": "8927-4N+NERRIGA",
+        "scale": "25k"
+    },
+    "nerrigundah": {
+        "full_name": "8825-1N+NERRIGUNDAH",
+        "scale": "25k"
+    },
+    "nest_hill": {
+        "full_name": "8326-1N+NEST+HILL",
+        "scale": "25k"
+    },
+    "nevertire": {
+        "full_name": "8434-S+NEVERTIRE",
+        "scale": "50k"
+    },
+    "new_valley": {
+        "full_name": "9137-1N+NEW+VALLEY",
+        "scale": "25k"
+    },
+    "newbridge": {
+        "full_name": "8730-1N+NEWBRIDGE",
+        "scale": "25k"
+    },
+    "newcastle": {
+        "full_name": "9232-2S+NEWCASTLE",
+        "scale": "25k"
+    },
+    "niangala": {
+        "full_name": "9135-2N+NIANGALA",
+        "scale": "25k"
+    },
+    "nimbin": {
+        "full_name": "9540-4N+NIMBIN",
+        "scale": "25k"
+    },
+    "nimmitabel": {
+        "full_name": "8724-1N+NIMMITABEL",
+        "scale": "25k"
+    },
+    "nimo_plain": {
+        "full_name": "8625-4S+NIMO+PLAIN",
+        "scale": "25k"
+    },
+    "north_solitary_is": {
+        "full_name": "9538-2S+NORTH+SOLITARY+IS",
+        "scale": "25k"
+    },
+    "north_star": {
+        "full_name": "8940-S+NORTH+STAR",
+        "scale": "50k"
+    },
+    "nowendoc": {
+        "full_name": "9234-4N+NOWENDOC",
+        "scale": "25k"
+    },
+    "nowra": {
+        "full_name": "9028-3S+NOWRA",
+        "scale": "25k"
+    },
+    "nuchea": {
+        "full_name": "7335+NUCHEA",
+        "scale": "100k"
+    },
+    "nullamanna": {
+        "full_name": "9138-4S+NULLAMANNA",
+        "scale": "25k"
+    },
+    "numbla_vale": {
+        "full_name": "8624-N+NUMBLA+VALE",
+        "scale": "50k"
+    },
+    "numeralla": {
+        "full_name": "8725-1S+NUMERALLA",
+        "scale": "25k"
+    },
+    "nundle": {
+        "full_name": "9135-3S+NUNDLE",
+        "scale": "25k"
+    },
+    "nungatta": {
+        "full_name": "8723-1S+NUNGATTA",
+        "scale": "25k"
+    },
+    "nymagee": {
+        "full_name": "8133+NYMAGEE",
+        "scale": "100k"
+    },
+    "nymboida": {
+        "full_name": "9438-3S+NYMBOIDA",
+        "scale": "25k"
+    },
+    "nyngan": {
+        "full_name": "8334-N+NYNGAN",
+        "scale": "50k"
+    },
+    "oaklands": {
+        "full_name": "8126-N+OAKLANDS",
+        "scale": "50k"
+    },
+    "oallen": {
+        "full_name": "8827-1S+OALLEN",
+        "scale": "25k"
+    },
+    "oberne": {
+        "full_name": "8427-2S+OBERNE",
+        "scale": "25k"
+    },
+    "oberon": {
+        "full_name": "8830-1S+OBERON",
+        "scale": "25k"
+    },
+    "old_adaminaby": {
+        "full_name": "8625-4n+OLD+ADAMINABY",
+        "scale": "25k"
+    },
+    "olinda": {
+        "full_name": "8932-3N+OLINDA",
+        "scale": "25k"
+    },
+    "olive_downs": {
+        "full_name": "7239+OLIVE+DOWNS",
+        "scale": "100k"
+    },
+    "omaleah": {
+        "full_name": "8934-3N+OMALEAH",
+        "scale": "25k"
+    },
+    "one_eye_tank": {
+        "full_name": "8031-N+ONE+EYE+TANK",
+        "scale": "50k"
+    },
+    "one_tree": {
+        "full_name": "7829-N+ONE+TREE",
+        "scale": "50k"
+    },
+    "oolambeyan": {
+        "full_name": "7928-N+OOLAMBEYAN",
+        "scale": "50k"
+    },
+    "ophir": {
+        "full_name": "8731-4S+OPHIR",
+        "scale": "25k"
+    },
+    "orange": {
+        "full_name": "8731-3N+ORANGE",
+        "scale": "25k"
+    },
+    "otford": {
+        "full_name": "9129-4S+OTFORD",
+        "scale": "25k"
+    },
+    "ournie": {
+        "full_name": "8426-2S+OURNIE",
+        "scale": "25k"
+    },
+    "oxley": {
+        "full_name": "7729-N+OXLEY",
+        "scale": "50k"
+    },
+    "pacific_palms": {
+        "full_name": "9433-3N+PACIFIC+PALMS",
+        "scale": "25k"
+    },
+    "paddys_flat": {
+        "full_name": "9340-1S+PADDYS+FLAT",
+        "scale": "25k"
+    },
+    "paika": {
+        "full_name": "7629+PAIKA",
+        "scale": "100k"
+    },
+    "pallamallawa": {
+        "full_name": "8939-S+PALLAMALLAWA",
+        "scale": "50k"
+    },
+    "pambula": {
+        "full_name": "8824-2S+PAMBULA",
+        "scale": "25k"
+    },
+    "para": {
+        "full_name": "7330+PARA",
+        "scale": "100k"
+    },
+    "parkes": {
+        "full_name": "8531-N+PARKES",
+        "scale": "50k"
+    },
+    "parkville": {
+        "full_name": "9034-2S+PARKVILLE",
+        "scale": "25k"
+    },
+    "parnell": {
+        "full_name": "9032-1S+PARNELL",
+        "scale": "25k"
+    },
+    "parramatta_river": {
+        "full_name": "9130-3N+PARRAMATTA+RIVER",
+        "scale": "25k"
+    },
+    "parry": {
+        "full_name": "8934-1S+PARRY",
+        "scale": "25k"
+    },
+    "paterson": {
+        "full_name": "9232-4N+PATERSON",
+        "scale": "25k"
+    },
+    "peak_hill": {
+        "full_name": "8532-N+PEAK+HILL",
+        "scale": "50k"
+    },
+    "peel": {
+        "full_name": "8831-3N+PEEL",
+        "scale": "25k"
+    },
+    "penrith": {
+        "full_name": "9030-3N+PENRITH",
+        "scale": "25k"
+    },
+    "peppercorn": {
+        "full_name": "8626-4N+PEPPERCORN",
+        "scale": "25k"
+    },
+    "perekerten": {
+        "full_name": "7628-S+PEREKERTEN",
+        "scale": "50k"
+    },
+    "perisher_valley": {
+        "full_name": "8525-2S+PERISHER+VALLEY",
+        "scale": "25k"
+    },
+    "piallaway": {
+        "full_name": "9035-4S+PIALLAWAY",
+        "scale": "25k"
+    },
+    "picton": {
+        "full_name": "9029-4S+PICTON",
+        "scale": "25k"
+    },
+    "piedmont": {
+        "full_name": "9037-3N+PIEDMONT",
+        "scale": "25k"
+    },
+    "pigna_barney": {
+        "full_name": "9234-3N+PIGNA+BARNEY",
+        "scale": "25k"
+    },
+    "pillar_valley": {
+        "full_name": "9538-3N+PILLAR+VALLEY",
+        "scale": "25k"
+    },
+    "pilliga": {
+        "full_name": "8637-S+PILLIGA",
+        "scale": "50k"
+    },
+    "plagyan": {
+        "full_name": "8937-2S+PLAGYAN",
+        "scale": "25k"
+    },
+    "pleasant_hills": {
+        "full_name": "8227-S+PLEASANT+HILLS",
+        "scale": "50k"
+    },
+    "pooncarie": {
+        "full_name": "7431+POONCARIE",
+        "scale": "100k"
+    },
+    "popiltah": {
+        "full_name": "7231+POPILTAH",
+        "scale": "100k"
+    },
+    "port_hacking": {
+        "full_name": "9129-4N+PORT+HACKING",
+        "scale": "25k"
+    },
+    "port_macquarie": {
+        "full_name": "9435-2S+PORT+MACQUARIE",
+        "scale": "25k"
+    },
+    "port_stephens": {
+        "full_name": "9332-4S+PORT+STEPHENS",
+        "scale": "25k"
+    },
+    "portland": {
+        "full_name": "8831-2N+PORTLAND",
+        "scale": "25k"
+    },
+    "pottsville": {
+        "full_name": "9641-3S+POTTSVILLE",
+        "scale": "25k"
+    },
+    "pretty_gully": {
+        "full_name": "9340-2N+PRETTY+GULLY",
+        "scale": "25k"
+    },
+    "prospect": {
+        "full_name": "9030-2N+PROSPECT",
+        "scale": "25k"
+    },
+    "puen_buen": {
+        "full_name": "8825-3S+PUEN+BUEN",
+        "scale": "25k"
+    },
+    "putty": {
+        "full_name": "9032-3S+PUTTY",
+        "scale": "25k"
+    },
+    "quabothoo": {
+        "full_name": "8436-N+QUABOTHOO",
+        "scale": "50k"
+    },
+    "quambone": {
+        "full_name": "8436-S+QUAMBONE",
+        "scale": "50k"
+    },
+    "quipolly": {
+        "full_name": "9035-3S+QUIPOLLY",
+        "scale": "25k"
+    },
+    "quirindi": {
+        "full_name": "9034-4N+QUIRINDI",
+        "scale": "25k"
+    },
+    "quorrobolong": {
+        "full_name": "9132-2S+QUORROBOLONG",
+        "scale": "25k"
+    },
+    "raleigh": {
+        "full_name": "9537-3S+RALEIGH",
+        "scale": "25k"
+    },
+    "ralfes_peak": {
+        "full_name": "9335-3S+RALFES+PEAK",
+        "scale": "25k"
+    },
+    "rangers_valley": {
+        "full_name": "9238-4N+RANGERS+VALLEY",
+        "scale": "25k"
+    },
+    "rankins_springs": {
+        "full_name": "8130-S+RANKINS+SPRINGS",
+        "scale": "50k"
+    },
+    "rappville": {
+        "full_name": "9439-1N+RAPPVILLE",
+        "scale": "25k"
+    },
+    "ravine": {
+        "full_name": "8526-2N+RAVINE",
+        "scale": "25k"
+    },
+    "red_range": {
+        "full_name": "9238-2N+RED+RANGE",
+        "scale": "25k"
+    },
+    "red_rock": {
+        "full_name": "9538-3S+RED+ROCK",
+        "scale": "25k"
+    },
+    "redan": {
+        "full_name": "7233+REDAN",
+        "scale": "100k"
+    },
+    "rendezvous_creek": {
+        "full_name": "8626-1S+RENDEZVOUS+CREEK",
+        "scale": "25k"
+    },
+    "riamukka": {
+        "full_name": "9235-3S+RIAMUKKA",
+        "scale": "25k"
+    },
+    "richlands": {
+        "full_name": "8829-2N+RICHLANDS",
+        "scale": "25k"
+    },
+    "riverstone": {
+        "full_name": "9030-1S+RIVERSTONE",
+        "scale": "25k"
+    },
+    "robertson": {
+        "full_name": "9028-4N+ROBERTSON",
+        "scale": "25k"
+    },
+    "rock_hill": {
+        "full_name": "8931-2N+ROCK+HILL",
+        "scale": "25k"
+    },
+    "rockadooie": {
+        "full_name": "9339-3S+ROCKADOOIE",
+        "scale": "25k"
+    },
+    "rockley": {
+        "full_name": "8830-4S+ROCKLEY",
+        "scale": "25k"
+    },
+    "rocky_dam": {
+        "full_name": "9039-N+ROCKY+DAM",
+        "scale": "50k"
+    },
+    "rosewood": {
+        "full_name": "8426-1S+ROSEWOOD",
+        "scale": "25k"
+    },
+    "rouchel_brook": {
+        "full_name": "9133-4S+ROUCHEL+BROOK",
+        "scale": "25k"
+    },
+    "rowena": {
+        "full_name": "8638-S+ROWENA",
+        "scale": "50k"
+    },
+    "rowleys_creek": {
+        "full_name": "9236-2S+ROWLEYS+CREEK",
+        "scale": "25k"
+    },
+    "rules_point": {
+        "full_name": "8626-4S+RULES+POINT",
+        "scale": "25k"
+    },
+    "rye_park": {
+        "full_name": "8628-1N+RYE+PARK",
+        "scale": "25k"
+    },
+    "salisbury_plains": {
+        "full_name": "9236-3N+SALISBURY+PLAINS",
+        "scale": "25k"
+    },
+    "sandigo": {
+        "full_name": "8228-3S+SANDIGO",
+        "scale": "25k"
+    },
+    "sandon": {
+        "full_name": "9538-1S+SANDON",
+        "scale": "25k"
+    },
+    "sandy_flat": {
+        "full_name": "9339-4S+SANDY+FLAT",
+        "scale": "25k"
+    },
+    "sandy_hollow": {
+        "full_name": "9033-3N+SANDY+HOLLOW",
+        "scale": "25k"
+    },
+    "sappa_bulga": {
+        "full_name": "8533-S+SAPPA+BULGA",
+        "scale": "50k"
+    },
+    "sapphire": {
+        "full_name": "9138-1S+SAPPHIRE",
+        "scale": "25k"
+    },
+    "sara_river": {
+        "full_name": "9338-3S+SARA+RIVER",
+        "scale": "25k"
+    },
+    "sassafras": {
+        "full_name": "8927-1N+SASSAFRAS",
+        "scale": "25k"
+    },
+    "scammels_lookout": {
+        "full_name": "8525-3N+SCAMMELS+LOOKOUT",
+        "scale": "25k"
+    },
+    "scone": {
+        "full_name": "9033-1N+SCONE",
+        "scale": "25k"
+    },
+    "scotia": {
+        "full_name": "7131+SCOTIA",
+        "scale": "100k"
+    },
+    "scott": {
+        "full_name": "9135-2S+SCOTT",
+        "scale": "25k"
+    },
+    "seal_rocks": {
+        "full_name": "9433-3S+SEAL+ROCKS",
+        "scale": "25k"
+    },
+    "seaview": {
+        "full_name": "9335-3N+SEAVIEW",
+        "scale": "25k"
+    },
+    "sebastopol": {
+        "full_name": "8428-N+SEBASTOPOL",
+        "scale": "50k"
+    },
+    "shannon_vale": {
+        "full_name": "9238-1S+SHANNON+VALE",
+        "scale": "25k"
+    },
+    "shannons_flat": {
+        "full_name": "8626-2S+SHANNONS+FLAT",
+        "scale": "25k"
+    },
+    "sherwood": {
+        "full_name": "9435-4N+SHERWOOD",
+        "scale": "25k"
+    },
+    "shooters_hill": {
+        "full_name": "8830-2S+SHOOTERS+HILL",
+        "scale": "25k"
+    },
+    "singleton": {
+        "full_name": "9132-4N+SINGLETON",
+        "scale": "25k"
+    },
+    "six_brothers": {
+        "full_name": "9031-4S+SIX+BROTHERS",
+        "scale": "25k"
+    },
+    "smithville": {
+        "full_name": "7137+SMITHVILLE",
+        "scale": "100k"
+    },
+    "snowball": {
+        "full_name": "8826-3S+SNOWBALL",
+        "scale": "25k"
+    },
+    "sofala": {
+        "full_name": "8831-4N+SOFALA",
+        "scale": "25k"
+    },
+    "somerton": {
+        "full_name": "9036-3S+SOMERTON",
+        "scale": "25k"
+    },
+    "south_west_rocks": {
+        "full_name": "9536-3S+SOUTH+WEST+ROCKS",
+        "scale": "25k"
+    },
+    "spirabo": {
+        "full_name": "9339-3N+SPIRABO",
+        "scale": "25k"
+    },
+    "springwood": {
+        "full_name": "9030-4S+SPRINGWOOD",
+        "scale": "25k"
+    },
+    "st_albans": {
+        "full_name": "9031-2N+ST+ALBANS",
+        "scale": "25k"
+    },
+    "steam_plains": {
+        "full_name": "7927-N+STEAM+PLAINS",
+        "scale": "50k"
+    },
+    "stonehenge": {
+        "full_name": "9238-3N+STONEHENGE",
+        "scale": "25k"
+    },
+    "strathmerton": {
+        "full_name": "7926-S+STRATHMERTON",
+        "scale": "50k"
+    },
+    "stroud_road": {
+        "full_name": "9233-2N+STROUD+ROAD",
+        "scale": "25k"
+    },
+    "suggan_buggan": {
+        "full_name": "8524-S+SUGGAN+BUGGAN",
+        "scale": "50k"
+    },
+    "sussex": {
+        "full_name": "8135+SUSSEX",
+        "scale": "100k"
+    },
+    "sussex_inlet": {
+        "full_name": "9027-4S+SUSSEX+INLET",
+        "scale": "25k"
+    },
+    "sutton": {
+        "full_name": "8727-1S+SUTTON",
+        "scale": "25k"
+    },
+    "swampy_plain": {
+        "full_name": "8525-4S+SWAMPY+PLAIN",
+        "scale": "25k"
+    },
+    "swan_hill": {
+        "full_name": "7627-S+SWAN+HILL",
+        "scale": "50k"
+    },
+    "swansea": {
+        "full_name": "9231-4N+SWANSEA",
+        "scale": "25k"
+    },
+    "sydney_heads": {
+        "full_name": "9130-2N+SYDNEY+HEADS",
+        "scale": "25k"
+    },
+    "tabbimoble": {
+        "full_name": "9539-1S+TABBIMOBLE",
+        "scale": "25k"
+    },
+    "tabbita": {
+        "full_name": "8029-N+TABBITA",
+        "scale": "50k"
+    },
+    "tabourie": {
+        "full_name": "8927-2S+TABOURIE",
+        "scale": "25k"
+    },
+    "taemas_bridge": {
+        "full_name": "8627-1N+TAEMAS+BRIDGE",
+        "scale": "25k"
+    },
+    "tahrone": {
+        "full_name": "8536-N+TAHRONE",
+        "scale": "50k"
+    },
+    "talbingo": {
+        "full_name": "8526-1N+TALBINGO",
+        "scale": "25k"
+    },
+    "talooby": {
+        "full_name": "8932-4N+TALOOBY",
+        "scale": "25k"
+    },
+    "taltingan": {
+        "full_name": "7234+TALTINGAN",
+        "scale": "100k"
+    },
+    "talyealye": {
+        "full_name": "7739+TALYEALYE",
+        "scale": "100k"
+    },
+    "tambar_springs": {
+        "full_name": "8835-S+TAMBAR+SPRINGS",
+        "scale": "50k"
+    },
+    "tamworth": {
+        "full_name": "9035-1N+TAMWORTH",
+        "scale": "25k"
+    },
+    "tangmangaroo": {
+        "full_name": "8628-1S+TANGMANGAROO",
+        "scale": "25k"
+    },
+    "tantangara": {
+        "full_name": "8626-3N+TANTANGARA",
+        "scale": "25k"
+    },
+    "taralga": {
+        "full_name": "8829-2S+TARALGA",
+        "scale": "25k"
+    },
+    "tarana": {
+        "full_name": "8830-1N+TARANA",
+        "scale": "25k"
+    },
+    "tarcutta": {
+        "full_name": "8427-3N+TARCUTTA",
+        "scale": "25k"
+    },
+    "taree": {
+        "full_name": "9334-2S+TAREE",
+        "scale": "25k"
+    },
+    "tareela": {
+        "full_name": "8937-2N+TAREELA",
+        "scale": "25k"
+    },
+    "tarpoly": {
+        "full_name": "9036-4N+TARPOLY",
+        "scale": "25k"
+    },
+    "tarwong": {
+        "full_name": "7730-S+TARWONG",
+        "scale": "50k"
+    },
+    "tatham": {
+        "full_name": "9540-3S+TATHAM",
+        "scale": "25k"
+    },
+    "tchelery": {
+        "full_name": "7728-S+TCHELERY",
+        "scale": "50k"
+    },
+    "teapot": {
+        "full_name": "8724-4N+TEAPOT",
+        "scale": "25k"
+    },
+    "teilta": {
+        "full_name": "7136+TEILTA",
+        "scale": "100k"
+    },
+    "telegraph_point": {
+        "full_name": "9435-2N+TELEGRAPH+POINT",
+        "scale": "25k"
+    },
+    "telford": {
+        "full_name": "8025-N+TELFORD",
+        "scale": "50k"
+    },
+    "telleraga": {
+        "full_name": "8738-N+TELLERAGA",
+        "scale": "50k"
+    },
+    "temi": {
+        "full_name": "9034-1S+TEMI",
+        "scale": "25k"
+    },
+    "temora": {
+        "full_name": "8429-S+TEMORA",
+        "scale": "50k"
+    },
+    "tenandra": {
+        "full_name": "8635-N+TENANDRA",
+        "scale": "50k"
+    },
+    "tenterden": {
+        "full_name": "9137-1S+TENTERDEN",
+        "scale": "25k"
+    },
+    "tenterfield": {
+        "full_name": "9339-4N+TENTERFIELD",
+        "scale": "25k"
+    },
+    "teridgerie": {
+        "full_name": "8636-S+TERIDGERIE",
+        "scale": "50k"
+    },
+    "terragong": {
+        "full_name": "8933-1N+TERRAGONG",
+        "scale": "25k"
+    },
+    "terry_hie_hie": {
+        "full_name": "8938-S+TERRY+HIE+HIE",
+        "scale": "50k"
+    },
+    "teryawynia": {
+        "full_name": "7533+TERYAWYNIA",
+        "scale": "100k"
+    },
+    "texas": {
+        "full_name": "9140-S+TEXAS",
+        "scale": "50k"
+    },
+    "thackaringa": {
+        "full_name": "7133+THACKARINGA",
+        "scale": "100k"
+    },
+    "thalgarrah": {
+        "full_name": "9237-2S+THALGARRAH",
+        "scale": "25k"
+    },
+    "thallon": {
+        "full_name": "8640-S+THALLON",
+        "scale": "50k"
+    },
+    "the_branch": {
+        "full_name": "9332-4N+THE+BRANCH",
+        "scale": "25k"
+    },
+    "the_lagoon": {
+        "full_name": "8830-4N+THE+LAGOON",
+        "scale": "25k"
+    },
+    "the_meadows": {
+        "full_name": "7934+THE+MEADOWS",
+        "scale": "100k"
+    },
+    "the_peak": {
+        "full_name": "8129-1N+THE+PEAK",
+        "scale": "25k"
+    },
+    "the_rock": {
+        "full_name": "8327-3N+THE+ROCK",
+        "scale": "25k"
+    },
+    "therribri": {
+        "full_name": "8936-4N+THERRIBRI",
+        "scale": "25k"
+    },
+    "thoolabool": {
+        "full_name": "7736+THOOLABOOL",
+        "scale": "100k"
+    },
+    "thumb_creek": {
+        "full_name": "9436-4S+THUMB+CREEK",
+        "scale": "25k"
+    },
+    "thurloo_downs": {
+        "full_name": "7539+THURLOO+DOWNS",
+        "scale": "100k"
+    },
+    "tia": {
+        "full_name": "9235-1S+TIA",
+        "scale": "25k"
+    },
+    "tianjara": {
+        "full_name": "8927-1S+TIANJARA",
+        "scale": "25k"
+    },
+    "tibbuc": {
+        "full_name": "9234-2N+TIBBUC",
+        "scale": "25k"
+    },
+    "tibooburra": {
+        "full_name": "7339+TIBOOBURRA",
+        "scale": "100k"
+    },
+    "tidbinbilla": {
+        "full_name": "8627-2S+TIDBINBILLA",
+        "scale": "25k"
+    },
+    "timbillica": {
+        "full_name": "8823-3N+TIMBILLICA",
+        "scale": "25k"
+    },
+    "timor": {
+        "full_name": "9134-3N+TIMOR",
+        "scale": "25k"
+    },
+    "tinchelooka": {
+        "full_name": "7838+TINCHELOOKA",
+        "scale": "100k"
+    },
+    "tinderry": {
+        "full_name": "8726-1S+TINDERRY",
+        "scale": "25k"
+    },
+    "tinebank": {
+        "full_name": "9435-4S+TINEBANK",
+        "scale": "25k"
+    },
+    "tingha": {
+        "full_name": "9138-3S+TINGHA",
+        "scale": "25k"
+    },
+    "tintaldra": {
+        "full_name": "8425-1N+TINTALDRA",
+        "scale": "25k"
+    },
+    "tocumwal": {
+        "full_name": "8026-S+TOCUMWAL",
+        "scale": "50k"
+    },
+    "tom_groggin": {
+        "full_name": "8524-4N+TOM+GROGGIN",
+        "scale": "25k"
+    },
+    "tombong": {
+        "full_name": "8624-S+TOMBONG",
+        "scale": "50k"
+    },
+    "toms_lake": {
+        "full_name": "7830-N+TOMS+LAKE",
+        "scale": "50k"
+    },
+    "tongo": {
+        "full_name": "7637+TONGO",
+        "scale": "100k"
+    },
+    "tongowoko": {
+        "full_name": "7439+TONGOWOKO",
+        "scale": "100k"
+    },
+    "toogimbie": {
+        "full_name": "7728-N+TOOGIMBIE",
+        "scale": "50k"
+    },
+    "tooleybuc": {
+        "full_name": "7527-N+TOOLEYBUC",
+        "scale": "50k"
+    },
+    "toolong_range": {
+        "full_name": "8525-1N+TOOLONG+RANGE",
+        "scale": "25k"
+    },
+    "tooloom": {
+        "full_name": "9340-1N+TOOLOOM",
+        "scale": "25k"
+    },
+    "tooma": {
+        "full_name": "8526-3S+TOOMA",
+        "scale": "25k"
+    },
+    "toorale": {
+        "full_name": "7937+TOORALE",
+        "scale": "100k"
+    },
+    "tooraweenah": {
+        "full_name": "8635-S+TOORAWEENAH",
+        "scale": "50k"
+    },
+    "topar": {
+        "full_name": "7334+TOPAR",
+        "scale": "100k"
+    },
+    "torryburn": {
+        "full_name": "9137-3S+TORRYBURN",
+        "scale": "25k"
+    },
+    "tottenham": {
+        "full_name": "8333-N+TOTTENHAM",
+        "scale": "50k"
+    },
+    "touga": {
+        "full_name": "8928-3S+TOUGA",
+        "scale": "25k"
+    },
+    "toukley": {
+        "full_name": "9231-3N+TOUKLEY",
+        "scale": "25k"
+    },
+    "towarri": {
+        "full_name": "9034-3N+TOWARRI",
+        "scale": "25k"
+    },
+    "towrang": {
+        "full_name": "8828-1S+TOWRANG",
+        "scale": "25k"
+    },
+    "trangie": {
+        "full_name": "8433-N+TRANGIE",
+        "scale": "50k"
+    },
+    "trundle": {
+        "full_name": "8432-S+TRUNDLE",
+        "scale": "50k"
+    },
+    "tubbo": {
+        "full_name": "8128-4S+TUBBO",
+        "scale": "25k"
+    },
+    "tucabia": {
+        "full_name": "9538-4S+TUCABIA",
+        "scale": "25k"
+    },
+    "tuggeranong": {
+        "full_name": "8727-3S+TUGGERANONG",
+        "scale": "25k"
+    },
+    "tullamore": {
+        "full_name": "8432-N+TULLAMORE",
+        "scale": "50k"
+    },
+    "tullibigeal": {
+        "full_name": "8231-S+TULLIBIGEAL",
+        "scale": "50k"
+    },
+    "tumbarumba": {
+        "full_name": "8526-3N+TUMBARUMBA",
+        "scale": "25k"
+    },
+    "tumorrama": {
+        "full_name": "8527-1S+TUMORRAMA",
+        "scale": "25k"
+    },
+    "tumut": {
+        "full_name": "8527-3N+TUMUT",
+        "scale": "25k"
+    },
+    "tunglebung": {
+        "full_name": "9440-3N+TUNGLEBUNG",
+        "scale": "25k"
+    },
+    "tunnabidgee": {
+        "full_name": "8832-3S+TUNNABIDGEE",
+        "scale": "25k"
+    },
+    "turee": {
+        "full_name": "8834-2S+TUREE",
+        "scale": "25k"
+    },
+    "turlee": {
+        "full_name": "7530+TURLEE",
+        "scale": "100k"
+    },
+    "tweed_heads": {
+        "full_name": "9641-4S+TWEED+HEADS",
+        "scale": "25k"
+    },
+    "tyalgum": {
+        "full_name": "9541-3N+TYALGUM",
+        "scale": "25k"
+    },
+    "tyndale": {
+        "full_name": "9538-4N+TYNDALE",
+        "scale": "25k"
+    },
+    "uarbry": {
+        "full_name": "8833-N+UARBRY",
+        "scale": "50k"
+    },
+    "uley": {
+        "full_name": "8229-2S+ULEY",
+        "scale": "25k"
+    },
+    "umburra": {
+        "full_name": "8627-1S+UMBURRA",
+        "scale": "25k"
+    },
+    "ungarie": {
+        "full_name": "8230-N+UNGARIE",
+        "scale": "50k"
+    },
+    "upper_bingara": {
+        "full_name": "9037-4N+UPPER+BINGARA",
+        "scale": "25k"
+    },
+    "upper_turon": {
+        "full_name": "8831-1N+UPPER+TURON",
+        "scale": "25k"
+    },
+    "uralla": {
+        "full_name": "9136-1S+URALLA",
+        "scale": "25k"
+    },
+    "urana": {
+        "full_name": "8127-S+URANA",
+        "scale": "50k"
+    },
+    "uranquinty": {
+        "full_name": "8327-4S+URANQUINTY",
+        "scale": "25k"
+    },
+    "urella": {
+        "full_name": "7538+URELLA",
+        "scale": "100k"
+    },
+    "urisino": {
+        "full_name": "7638+URISINO",
+        "scale": "100k"
+    },
+    "utah_lake": {
+        "full_name": "7837+UTAH+LAKE",
+        "scale": "100k"
+    },
+    "vittoria": {
+        "full_name": "8731-2S+VITTORIA",
+        "scale": "25k"
+    },
+    "wagga_wagga": {
+        "full_name": "8327-1N+WAGGA+WAGGA",
+        "scale": "25k"
+    },
+    "wakool": {
+        "full_name": "7727-S+WAKOOL",
+        "scale": "50k"
+    },
+    "walbundrie": {
+        "full_name": "8226-N+WALBUNDRIE",
+        "scale": "50k"
+    },
+    "walcha": {
+        "full_name": "9236-3S+WALCHA",
+        "scale": "25k"
+    },
+    "walcha_road": {
+        "full_name": "9136-2S+WALCHA+ROAD",
+        "scale": "25k"
+    },
+    "walgett": {
+        "full_name": "8537-N+WALGETT",
+        "scale": "50k"
+    },
+    "wallabadah": {
+        "full_name": "9034-1N+WALLABADAH",
+        "scale": "25k"
+    },
+    "wallangarra": {
+        "full_name": "9240-S+WALLANGARRA",
+        "scale": "50k"
+    },
+    "walleroobie_range": {
+        "full_name": "8229-S+WALLEROOBIE+RANGE",
+        "scale": "50k"
+    },
+    "wallsend": {
+        "full_name": "9232-3S+WALLSEND",
+        "scale": "25k"
+    },
+    "wamboyne": {
+        "full_name": "8330-N+WAMBOYNE",
+        "scale": "50k"
+    },
+    "wambrook": {
+        "full_name": "8625-1S+WAMBROOK",
+        "scale": "25k"
+    },
+    "wanaaring": {
+        "full_name": "7738+WANAARING",
+        "scale": "100k"
+    },
+    "wandella": {
+        "full_name": "8825-2N+WANDELLA",
+        "scale": "25k"
+    },
+    "wanganella": {
+        "full_name": "7827-N+WANGANELLA",
+        "scale": "50k"
+    },
+    "wangellic": {
+        "full_name": "8724-4S+WANGELLIC",
+        "scale": "25k"
+    },
+    "wanourie": {
+        "full_name": "8437-N+WANOURIE",
+        "scale": "50k"
+    },
+    "wantabadgery": {
+        "full_name": "8427-4N+WANTABADGERY",
+        "scale": "25k"
+    },
+    "wardell": {
+        "full_name": "9540-2S+WARDELL",
+        "scale": "25k"
+    },
+    "wards_mistake": {
+        "full_name": "9337-4S+WARDS+MISTAKE",
+        "scale": "25k"
+    },
+    "warialda": {
+        "full_name": "9038-4N+WARIALDA",
+        "scale": "25k"
+    },
+    "warragamba": {
+        "full_name": "9030-3S+WARRAGAMBA",
+        "scale": "25k"
+    },
+    "warrah": {
+        "full_name": "9034-4S+WARRAH",
+        "scale": "25k"
+    },
+    "warranulla": {
+        "full_name": "9333-4S+WARRANULLA",
+        "scale": "25k"
+    },
+    "warraweena": {
+        "full_name": "8138+WARRAWEENA",
+        "scale": "100k"
+    },
+    "warren": {
+        "full_name": "8434-N+WARREN",
+        "scale": "50k"
+    },
+    "warroo": {
+        "full_name": "8628-2S+WARROO",
+        "scale": "25k"
+    },
+    "washpool": {
+        "full_name": "9339-2N+WASHPOOL",
+        "scale": "25k"
+    },
+    "waterloo": {
+        "full_name": "9235-4N+WATERLOO",
+        "scale": "25k"
+    },
+    "watermark": {
+        "full_name": "8935-1S+WATERMARK",
+        "scale": "25k"
+    },
+    "watsons_creek": {
+        "full_name": "9136-4S+WATSONS+CREEK",
+        "scale": "25k"
+    },
+    "wattle_flat": {
+        "full_name": "8831-4S+WATTLE+FLAT",
+        "scale": "25k"
+    },
+    "wauchope": {
+        "full_name": "9435-3S+WAUCHOPE",
+        "scale": "25k"
+    },
+    "waugan": {
+        "full_name": "8837-4N+WAUGAN",
+        "scale": "25k"
+    },
+    "waverly": {
+        "full_name": "9134-3S+WAVERLY",
+        "scale": "25k"
+    },
+    "weabonga": {
+        "full_name": "9135-1S+WEABONGA",
+        "scale": "25k"
+    },
+    "wee_jasper": {
+        "full_name": "8627-4N+WEE+JASPER",
+        "scale": "25k"
+    },
+    "wee_waa": {
+        "full_name": "8737-N+WEE+WAA",
+        "scale": "50k"
+    },
+    "weemelah": {
+        "full_name": "8739-N+WEEMELAH",
+        "scale": "50k"
+    },
+    "weetaliba": {
+        "full_name": "8834-N+WEETALIBA",
+        "scale": "50k"
+    },
+    "weethalle": {
+        "full_name": "8230-S+WEETHALLE",
+        "scale": "50k"
+    },
+    "weilmoringle": {
+        "full_name": "8239+WEILMORINGLE",
+        "scale": "100k"
+    },
+    "weimby": {
+        "full_name": "7528-N+WEIMBY",
+        "scale": "50k"
+    },
+    "welcome": {
+        "full_name": "8229-4S+WELCOME",
+        "scale": "25k"
+    },
+    "wellington": {
+        "full_name": "8632-N+WELLINGTON",
+        "scale": "50k"
+    },
+    "welsh": {
+        "full_name": "9036-1N+WELSH",
+        "scale": "25k"
+    },
+    "wenonah_head": {
+        "full_name": "9536-4N+WENONAH+HEAD",
+        "scale": "25k"
+    },
+    "wentworth": {
+        "full_name": "7229-N+WENTWORTH",
+        "scale": "50k"
+    },
+    "werris_creek": {
+        "full_name": "9035-3N+WERRIS+CREEK",
+        "scale": "25k"
+    },
+    "westbrook": {
+        "full_name": "8426-1N+WESTBROOK",
+        "scale": "25k"
+    },
+    "whinstone": {
+        "full_name": "8726-2S+WHINSTONE",
+        "scale": "25k"
+    },
+    "whiporie": {
+        "full_name": "9439-2N+WHIPORIE",
+        "scale": "25k"
+    },
+    "white_cliffs": {
+        "full_name": "7536+WHITE+CLIFFS",
+        "scale": "100k"
+    },
+    "whitton": {
+        "full_name": "8128-4N+WHITTON",
+        "scale": "25k"
+    },
+    "widden": {
+        "full_name": "8932-1N+WIDDEN",
+        "scale": "25k"
+    },
+    "wilberforce": {
+        "full_name": "9030-1N+WILBERFORCE",
+        "scale": "25k"
+    },
+    "wilcannia": {
+        "full_name": "7534+WILCANNIA",
+        "scale": "100k"
+    },
+    "wild_dog": {
+        "full_name": "7429+WILD+DOG",
+        "scale": "100k"
+    },
+    "willandra": {
+        "full_name": "7931+WILLANDRA",
+        "scale": "100k"
+    },
+    "willawarrin": {
+        "full_name": "9436-3S+WILLAWARRIN",
+        "scale": "25k"
+    },
+    "willbriggie": {
+        "full_name": "8129-3S+WILLBRIGGIE",
+        "scale": "25k"
+    },
+    "willi_willi": {
+        "full_name": "9336-2S+WILLI+WILLI",
+        "scale": "25k"
+    },
+    "williamsdale": {
+        "full_name": "8726-4N+WILLIAMSDALE",
+        "scale": "25k"
+    },
+    "williamtown": {
+        "full_name": "9232-2N+WILLIAMTOWN",
+        "scale": "25k"
+    },
+    "willuri": {
+        "full_name": "8936-1S+WILLURI",
+        "scale": "25k"
+    },
+    "wilson": {
+        "full_name": "8027-N+WILSON",
+        "scale": "50k"
+    },
+    "winbar": {
+        "full_name": "7836+WINBAR",
+        "scale": "100k"
+    },
+    "windellama": {
+        "full_name": "8827-1N+WINDELLAMA",
+        "scale": "25k"
+    },
+    "windeyer": {
+        "full_name": "8832-3N+WINDEYER",
+        "scale": "25k"
+    },
+    "windy": {
+        "full_name": "8934-1N+WINDY",
+        "scale": "25k"
+    },
+    "wingello": {
+        "full_name": "8928-4S+WINGELLO",
+        "scale": "25k"
+    },
+    "wingham": {
+        "full_name": "9334-2N+WINGHAM",
+        "scale": "25k"
+    },
+    "winterbourne": {
+        "full_name": "9236-2N+WINTERBOURNE",
+        "scale": "25k"
+    },
+    "winton": {
+        "full_name": "9035-4N+WINTON",
+        "scale": "25k"
+    },
+    "wirraba": {
+        "full_name": "9031-4N+WIRRABA",
+        "scale": "25k"
+    },
+    "wirrinya": {
+        "full_name": "8430-N+WIRRINYA",
+        "scale": "50k"
+    },
+    "wollangambe": {
+        "full_name": "8931-2S+WOLLANGAMBE",
+        "scale": "25k"
+    },
+    "wollar": {
+        "full_name": "8833-2N+WOLLAR",
+        "scale": "25k"
+    },
+    "wollombi": {
+        "full_name": "9132-3S+WOLLOMBI",
+        "scale": "25k"
+    },
+    "wollongong": {
+        "full_name": "9029-2S+WOLLONGONG",
+        "scale": "25k"
+    },
+    "wolumla": {
+        "full_name": "8824-2N+WOLUMLA",
+        "scale": "25k"
+    },
+    "womboin": {
+        "full_name": "8336-N+WOMBOIN",
+        "scale": "50k"
+    },
+    "wondalga": {
+        "full_name": "8527-3S+WONDALGA",
+        "scale": "25k"
+    },
+    "wondoba": {
+        "full_name": "8935-4N+WONDOBA",
+        "scale": "25k"
+    },
+    "wonnaminta": {
+        "full_name": "7336+WONNAMINTA",
+        "scale": "100k"
+    },
+    "woodburn": {
+        "full_name": "9539-1N+WOODBURN",
+        "scale": "25k"
+    },
+    "woodenbong": {
+        "full_name": "9441-3S+WOODENBONG",
+        "scale": "25k"
+    },
+    "woodhouselee": {
+        "full_name": "8828-4N+WOODHOUSELEE",
+        "scale": "25k"
+    },
+    "woolakulkra": {
+        "full_name": "7734+WOOLAKULKRA",
+        "scale": "100k"
+    },
+    "woolgoolga": {
+        "full_name": "9537-4N+WOOLGOOLGA",
+        "scale": "25k"
+    },
+    "woolomin": {
+        "full_name": "9135-3N+WOOLOMIN",
+        "scale": "25k"
+    },
+    "woolooma": {
+        "full_name": "9133-4N+WOOLOOMA",
+        "scale": "25k"
+    },
+    "woombah": {
+        "full_name": "9539-2N+WOOMBAH",
+        "scale": "25k"
+    },
+    "wootton": {
+        "full_name": "9333-2N+WOOTTON",
+        "scale": "25k"
+    },
+    "wrightville": {
+        "full_name": "8034+WRIGHTVILLE",
+        "scale": "100k"
+    },
+    "wullwye_hill": {
+        "full_name": "8625-2S+WULLWYE+HILL",
+        "scale": "25k"
+    },
+    "wyalong": {
+        "full_name": "8330-S+WYALONG",
+        "scale": "50k"
+    },
+    "wylie_creek": {
+        "full_name": "9340-4N+WYLIE+CREEK",
+        "scale": "25k"
+    },
+    "wymah": {
+        "full_name": "8325-1N+WYMAH",
+        "scale": "25k"
+    },
+    "wyndham": {
+        "full_name": "8824-3S+WYNDHAM",
+        "scale": "25k"
+    },
+    "wyong": {
+        "full_name": "9131-2N+WYONG",
+        "scale": "25k"
+    },
+    "yalgogrin_range": {
+        "full_name": "8229-N+YALGOGRIN+RANGE",
+        "scale": "50k"
+    },
+    "yalwal": {
+        "full_name": "8928-2S+YALWAL",
+        "scale": "25k"
+    },
+    "yamba": {
+        "full_name": "9539-2S+YAMBA",
+        "scale": "25k"
+    },
+    "yambulla": {
+        "full_name": "8723-2N+YAMBULLA",
+        "scale": "25k"
+    },
+    "yancannia": {
+        "full_name": "7437+YANCANNIA",
+        "scale": "100k"
+    },
+    "yankees_gap": {
+        "full_name": "8824-4N+YANKEES+GAP",
+        "scale": "25k"
+    },
+    "yantabangee": {
+        "full_name": "7636+YANTABANGEE",
+        "scale": "100k"
+    },
+    "yantabulla": {
+        "full_name": "7939+YANTABULLA",
+        "scale": "100k"
+    },
+    "yantara": {
+        "full_name": "7338+YANTARA",
+        "scale": "100k"
+    },
+    "yaouk": {
+        "full_name": "8626-2N+YAOUK",
+        "scale": "25k"
+    },
+    "yarara": {
+        "full_name": "8426-4S+YARARA",
+        "scale": "25k"
+    },
+    "yarraman": {
+        "full_name": "8934-4N+YARRAMAN",
+        "scale": "25k"
+    },
+    "yarrangobilly": {
+        "full_name": "8526-1S+YARRANGOBILLY",
+        "scale": "25k"
+    },
+    "yarras": {
+        "full_name": "9335-2S+YARRAS",
+        "scale": "25k"
+    },
+    "yarrowitch": {
+        "full_name": "9235-2N+YARROWITCH",
+        "scale": "25k"
+    },
+    "yarrowyck": {
+        "full_name": "9137-2S+YARROWYCK",
+        "scale": "25k"
+    },
+    "yass": {
+        "full_name": "8628-2N+YASS",
+        "scale": "25k"
+    },
+    "yates_flat": {
+        "full_name": "9439-4N+YATES+FLAT",
+        "scale": "25k"
+    },
+    "yaven_creek": {
+        "full_name": "8427-2N+YAVEN+CREEK",
+        "scale": "25k"
+    },
+    "yelarbon": {
+        "full_name": "9040-N+YELARBON",
+        "scale": "50k"
+    },
+    "yellow_jacket": {
+        "full_name": "9338-4S+YELLOW+JACKET",
+        "scale": "25k"
+    },
+    "yerong_creek": {
+        "full_name": "8327-3S+YERONG+CREEK",
+        "scale": "25k"
+    },
+    "yerranderie": {
+        "full_name": "8929-4N+YERRANDERIE",
+        "scale": "25k"
+    },
+    "yetman": {
+        "full_name": "9040-S+YETMAN",
+        "scale": "50k"
+    },
+    "yoogali": {
+        "full_name": "8129-S+YOOGALI",
+        "scale": "50k"
+    },
+    "young": {
+        "full_name": "8529-S+YOUNG",
+        "scale": "50k"
+    },
+    "younggal": {
+        "full_name": "8525-3S+YOUNGGAL",
+        "scale": "25k"
+    },
+    "yowrie": {
+        "full_name": "8825-3N+YOWRIE",
+        "scale": "25k"
+    }
+}
