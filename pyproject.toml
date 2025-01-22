@@ -5,6 +5,14 @@ dependencies = [
     "pypdf",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "black",
+    "pylint",
+    "mypy",
+    "pip-tools",
+]
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -18,3 +26,6 @@ multi_line_output = 3
 [tool.mypy]
 strict = true
 exclude = ['^build/.*']
+
+[tool.pylint]
+max-line-length = 88

@@ -18,13 +18,6 @@ Maps shown above are © *State of New South Wales (Spatial Services, a business
 unit of the Department of Customer Service NSW)*,  reproduced under the terms of
 the Creative Commons Attribution 4.0 license.
 
-## Dependencies
-- `pypdf`
-
-## Installation
-1. Clone the repository
-2. Navigate to the repository directory and install using `pip install .`
-
 ## Usage
 ```
 usage: python -m nsw_topo_split [-h] [-o OUT] [-s SIZE] [-p]
@@ -69,3 +62,11 @@ in `./2022/katoomba`:
   with 20mm overlaps.
 
 When printing double-sided, make sure to choose "flip on long edge".
+
+# Development installation
+Clone the repository and navigate to its root directory. Then, in a clean
+virtual environment, run
+```bash
+pip install -r requirements/dev.txt  # for reproducibility
+pip install -e .
+```
