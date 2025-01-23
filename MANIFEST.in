@@ -1,1 +1,2 @@
 include nsw_topo_split/nsw_topo_map_names_scales.json
+include nsw_topo_split/py.typed
