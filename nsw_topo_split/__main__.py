@@ -60,7 +60,8 @@ def main() -> None:
         nargs=2,
         help=(
             "horizontal and vertical number of pages "
-            "(default: [4, 3] for A4, [3, 2] otherwise)"
+            "(default: [4, 3] for A4 map, [1, 2] for A4 cover, "
+            "[3, 2] for A3 map, [1, 1] for A3 cover, otherwise undefined)"
         ),
     )
     parser.add_argument(
@@ -95,20 +96,18 @@ def main() -> None:
     if not args.portrait:
         page_size = (page_size[1], page_size[0])
     if args.n_pages is None:
-        match args.size, args.mode:
-            case "A4", "cover":
-                args.n_pages = [1, 2]
-            case "A4", "map":
-                args.n_pages = [4, 3]
-            case "A3", "cover":
-                args.n_pages = [1, 1]
-            case "A3", "map":
-                args.n_pages = [3, 2]
-            case _:
-                raise RuntimeError(
-                    "-n/--n-pages must be specified for paper sizes "
-                    "other than A4 and A3"
-                )
+        if (args.size, args.mode) == ("A4", "cover"):
+            args.n_pages = [1, 2]
+        elif (args.size, args.mode) == ("A4", "map"):
+            args.n_pages = [4, 3]
+        elif (args.size, args.mode) == ("A3", "cover"):
+            args.n_pages = [1, 1]
+        elif (args.size, args.mode) == ("A3", "map"):
+            args.n_pages = [3, 2]
+        else:
+            raise RuntimeError(
+                "-n/--n-pages must be specified for paper sizes other than A4 and A3"
+            )
 
     out_dir = args.out / args.year / args.name
     out_dir.mkdir(parents=True, exist_ok=True)

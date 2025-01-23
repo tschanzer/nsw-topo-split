@@ -15,8 +15,11 @@ URL_PREFIX = (
 MM_PER_PT = 25.4 / 72
 COVER_WIDTH_PT = 326
 
+_names_scales_file = (
+    importlib.resources.files("nsw_topo_split") / "nsw_topo_map_names_scales.json"
+)
 map_names_scales: dict[str, dict[str, str]] = json.load(
-    importlib.resources.open_text("nsw_topo_split", "nsw_topo_map_names_scales.json")
+    _names_scales_file.open("r", encoding="utf-8")
 )
 
 
@@ -186,7 +189,7 @@ def make_cover_pages(
     no_white_space: bool,
 ) -> Iterator[pypdf.PageObject]:
     """
-    Make a multi-page cover.
+    Make the cover and split it across several pages.
 
     Args:
         original: The original map page.
@@ -212,7 +215,7 @@ def make_map_pages(
     no_white_space: bool,
 ) -> Iterator[pypdf.PageObject]:
     """
-    Make a multi-page cover.
+    Make the map and split it across several pages.
 
     Args:
         original: The original map page.
