@@ -11,6 +11,7 @@ dev = [
     "pylint",
     "mypy",
     "pip-tools",
+    "pre-commit",
 ]
 
 [build-system]

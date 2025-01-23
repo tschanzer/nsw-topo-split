@@ -1,5 +1,10 @@
 # nsw-topo-split
 
+[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+[![type checking: mypy](https://img.shields.io/badge/type%20checking-mypy-blue?style=flat-square)](https://mypy-lang.org/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
 `nsw-topo-split` is a simple Python package that provides a command-line
 interface for downloading and evenly splitting NSW Spatial Services topographic
 maps across smaller pages. This is useful if you can't get an official hard copy
@@ -63,10 +68,11 @@ in `./2022/katoomba`:
 
 When printing double-sided, make sure to choose "flip on long edge".
 
-# Development installation
+## Development installation
 Clone the repository and navigate to its root directory. Then, in a clean
 virtual environment, run
 ```bash
 pip install -r requirements/dev.txt  # for reproducibility
+pre-commit install
 pip install -e .
 ```
