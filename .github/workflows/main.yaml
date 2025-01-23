@@ -25,8 +25,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements/dev.txt
     - name: black
-      run: black
+      run: black --check nsw_topo_split
     - name: mypy
       run: mypy
     - name: pylint
-      run: pylint
+      run: pylint nsw_topo_split
