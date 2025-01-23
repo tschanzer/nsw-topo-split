@@ -1,15 +1,15 @@
 repos:
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.10.0
+    hooks:
+      - id: black
+        language_version: python3.11
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.14.1
     hooks:
     - id: mypy
       args: []
       additional_dependencies: [pypdf==5.1.0]
-  - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.10.0
-    hooks:
-      - id: black
-        language_version: python3.11
   - repo: local
     hooks:
       - id: pylint
