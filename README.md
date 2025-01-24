@@ -1,9 +1,10 @@
 # nsw-topo-split
 
-[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+[![CI](https://img.shields.io/github/actions/workflow/status/tschanzer/nsw-topo-split/ci.yaml?label=CI&logo=github&style=flat-square)](https://github.com/tschanzer/nsw-topo-split/actions/workflows/ci.yaml)
+[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-blue?style=flat-square)](https://github.com/pylint-dev/pylint)
 [![type checking: mypy](https://img.shields.io/badge/type%20checking-mypy-blue?style=flat-square)](https://mypy-lang.org/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-blue?logo=pre-commit&style=flat-square)](https://github.com/pre-commit/pre-commit)
 
 `nsw-topo-split` is a simple Python package that provides a command-line
 interface for downloading and evenly splitting NSW Spatial Services topographic
