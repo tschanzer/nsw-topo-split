@@ -133,6 +133,7 @@ def main() -> None:
     )
     for page in pages:
         writer.add_page(page)
+    writer.compress_identical_objects()
     with open(out_file, "wb") as f:
         writer.write(f)
     reader.close()
