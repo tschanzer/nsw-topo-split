@@ -118,10 +118,10 @@ def main() -> None:
     reader = pypdf.PdfReader(master_file)
     if args.mode == "cover":
         make_pages = make_cover_pages
-        out_file = (out_dir / (full_name + "_cover")).with_suffix(".pdf")
+        out_file = (out_dir / (full_name + "_cover_" + args.size)).with_suffix(".pdf")
     else:
         make_pages = make_map_pages
-        out_file = (out_dir / (full_name + "_split")).with_suffix(".pdf")
+        out_file = (out_dir / (full_name + "_split_" + args.size)).with_suffix(".pdf")
 
     writer = pypdf.PdfWriter()
     pages = make_pages(
