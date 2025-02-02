@@ -3,14 +3,15 @@
 import argparse
 import pathlib
 
-import pypdf
+import pymupdf
 
 from nsw_topo_split import (
+    COVER_WIDTH_PT,
     download_map,
-    make_cover_pages,
-    make_map_pages,
+    make_cover,
     map_names_scales,
     mm_to_pt,
+    posterize,
 )
 
 
@@ -45,7 +46,18 @@ def main() -> None:
         ),
     )
     parser.add_argument(
-        "-s", "--size", default="A3", help="page size (e.g., A4; default A3)"
+        "-s",
+        "--size",
+        default="A3",
+        type=str.lower,
+        choices=list(pymupdf.paper_sizes().keys()),
+        metavar="SIZE",
+        help=(
+            "page size (case-insensitive); options are  'A0' through 'A10', "
+            "'B0' through 'B10', 'C0' through 'C10', 'Card-4x6', 'Card-5x7', "
+            "'Commercial', 'Executive', 'Invoice', 'Ledger', 'Legal', 'Legal-13', "
+            "'Letter', 'Monarch' and 'Tabloid-Extra'."
+        ),
     )
     parser.add_argument(
         "-p",
@@ -58,6 +70,7 @@ def main() -> None:
         "--n-pages",
         type=int,
         nargs=2,
+        metavar=("NX", "NY"),
         help=(
             "horizontal and vertical number of pages "
             "(default: [4, 3] for A4 map, [1, 2] for A4 cover, "
@@ -69,9 +82,10 @@ def main() -> None:
         "--overlap",
         type=float,
         nargs=2,
+        metavar=("LX", "LY"),
         default=[20.0, 20.0],
         help=(
-            "horizontal and vertical overlap between pages in mm " "(default: [20, 20])"
+            "horizontal and vertical overlap between pages in mm (default: [20, 20])"
         ),
     )
     parser.add_argument(
@@ -91,51 +105,59 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    full_name = map_names_scales[args.name]["full_name"]
-    page_size = getattr(pypdf.PaperSize, args.size)
+    # Get page size in points
+    page_size = pymupdf.paper_sizes()[args.size]
     if not args.portrait:
         page_size = (page_size[1], page_size[0])
+
+    # Determine number of pages along each axis
     if args.n_pages is None:
-        if (args.size, args.mode) == ("A4", "cover"):
+        if (args.size, args.mode) == ("a4", "cover"):
             args.n_pages = [1, 2]
-        elif (args.size, args.mode) == ("A4", "map"):
+        elif (args.size, args.mode) == ("a4", "map"):
             args.n_pages = [4, 3]
-        elif (args.size, args.mode) == ("A3", "cover"):
+        elif (args.size, args.mode) == ("a3", "cover"):
             args.n_pages = [1, 1]
-        elif (args.size, args.mode) == ("A3", "map"):
+        elif (args.size, args.mode) == ("a3", "map"):
             args.n_pages = [3, 2]
         else:
             raise RuntimeError(
                 "-n/--n-pages must be specified for paper sizes other than A4 and A3"
             )
 
+    # Prepare directories and download map if needed
     out_dir = args.out / args.year / args.name
     out_dir.mkdir(parents=True, exist_ok=True)
+    full_name = map_names_scales[args.name]["full_name"]
     master_file = (out_dir / full_name).with_suffix(".pdf")
     if args.force_download or not master_file.exists():
         download_map(args.name, args.year, master_file)
 
-    reader = pypdf.PdfReader(master_file)
+    docsrc = pymupdf.Document(master_file)
+    overlap_mm = (mm_to_pt(args.overlap[0]), mm_to_pt(args.overlap[1]))
     if args.mode == "cover":
-        make_pages = make_cover_pages
+        cover = make_cover(docsrc)
+        docout = posterize(
+            cover,
+            args.n_pages,
+            page_size,
+            overlap=overlap_mm,
+            no_white_space=(not args.allow_white_space),
+        )
         out_file = (out_dir / (full_name + "_cover_" + args.size)).with_suffix(".pdf")
+        docout.save(out_file)
     else:
-        make_pages = make_map_pages
+        docout = posterize(
+            docsrc,
+            args.n_pages,
+            page_size,
+            overlap=overlap_mm,
+            clip={"right": COVER_WIDTH_PT},
+            no_white_space=(not args.allow_white_space),
+        )
         out_file = (out_dir / (full_name + "_split_" + args.size)).with_suffix(".pdf")
-
-    writer = pypdf.PdfWriter()
-    pages = make_pages(
-        reader.pages[0],
-        page_size,
-        args.n_pages,
-        (mm_to_pt(args.overlap[0]), mm_to_pt(args.overlap[1])),
-        not args.allow_white_space,
-    )
-    for page in pages:
-        writer.add_page(page)
-    with open(out_file, "wb") as f:
-        writer.write(f)
-    reader.close()
+        docout.save(out_file)
+    docsrc.close()
 
 
 main()

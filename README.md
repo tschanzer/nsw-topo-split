@@ -26,9 +26,8 @@ the Creative Commons Attribution 4.0 license.
 
 ## Usage
 ```
-usage: python -m nsw_topo_split [-h] [-o OUT] [-s SIZE] [-p]
-                                [-n N_PAGES N_PAGES]
-                                [-l OVERLAP OVERLAP] [-w] [-f]
+usage: python -m nsw_topo_split [-h] [-o OUT] [-s SIZE] [-p] [-n NX NY]
+                                [-l LX LY] [-w] [-f]
                                 {map,cover} name year
 
 split a NSW topographic map across smaller pages
@@ -36,27 +35,33 @@ split a NSW topographic map across smaller pages
 positional arguments:
   {map,cover}           'map' to make the map pages, 'cover' to make the cover
                         pages
-  name                  lowercase map name with spaces replaced by underscores,
-                        e.g., mount_wilson
+  name                  lowercase map name with spaces replaced by
+                        underscores, e.g., mount_wilson
   year                  year of publication
 
 options:
   -h, --help            show this help message and exit
-  -o, --out OUT         output directory (default: working directory). Files are
-                        output in a subdirectory corresponding to the
+  -o OUT, --out OUT     output directory (default: working directory). Files
+                        are output in a subdirectory corresponding to the
                         publication year and map name, e.g., 2022/katoomba.
-  -s, --size SIZE       page size (e.g., A4; default A3)
+  -s SIZE, --size SIZE  page size (case-insensitive); options are 'A0' through
+                        'A10', 'B0' through 'B10', 'C0' through 'C10',
+                        'Card-4x6', 'Card-5x7', 'Commercial', 'Executive',
+                        'Invoice', 'Ledger', 'Legal', 'Legal-13', 'Letter',
+                        'Monarch' and 'Tabloid-Extra'.
   -p, --portrait        use portrait layout rather than landscape
-  -n, --n-pages N_PAGES N_PAGES
-                        horizontal and vertical number of pages (default: [4, 3]
-                        for A4, [3, 2] otherwise)
-  -l, --overlap OVERLAP OVERLAP
+  -n NX NY, --n-pages NX NY
+                        horizontal and vertical number of pages (default: [4,
+                        3] for A4 map, [1, 2] for A4 cover, [3, 2] for A3 map,
+                        [1, 1] for A3 cover, otherwise undefined)
+  -l LX LY, --overlap LX LY
                         horizontal and vertical overlap between pages in mm
                         (default: [20, 20])
   -w, --allow-white-space
                         do not expand overlaps to eliminate white space
-  -f, --force-download  download the original map, even if it already exists in
-                        the output directory
+  -f, --force-download  download the original map, even if it already exists
+                        in the output directory
+
 ```
 
 For example, the [quick example](#quick-example) above will produce three PDFs
