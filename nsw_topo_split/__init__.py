@@ -1,12 +1,10 @@
 """A package for splitting NSW topographic maps across smaller pages"""
 
-import copy
 import importlib.resources
 import json
 import urllib.request
-from typing import Iterator
 
-import pypdf
+import pymupdf
 
 URL_PREFIX = (
     "https://portal.spatial.nsw.gov.au/download/NSWTopographicMaps/"
@@ -46,188 +44,159 @@ def mm_to_pt(x_mm: float) -> float:
     return x_mm / MM_PER_PT
 
 
-def crop_hide_translate(
-    page: pypdf.PageObject,
+def posterize(  # pylint: disable=too-many-locals,too-many-arguments
+    docsrc: pymupdf.Document,
+    n_pages: tuple[int, int],
+    page_size: tuple[float, float],
     *,
-    left: float = 0.0,
-    right: float = 0.0,
-    bottom: float = 0.0,
-    top: float = 0.0,
-) -> pypdf.PageObject:
+    overlap: float | tuple[float, float] = 0.0,
+    clip: dict[str, float] | None = None,
+    no_white_space: bool = True,
+) -> pymupdf.Document:
     """
-    Crop a page, white out the cropped content and translate to (0,0).
+    Posterize a PDF.
 
     Args:
-        page: Page to be cropped.
-        left, right, bottom, top: Amount to remove from each side, in
-            points (default 0).
+        docsrc: Document to posterize (the first page will be used).
+        n_pages: Number of poster pages along the (horizontal, vertical) axes.
+        page_size: (width, height) of the output pages, in points.
+        overlap: (horizontal, vertical) overlap between output pages, in points.
+            If only one value is given, the overlaps are assumed to be equal.
+        clip: Mapping from "left", "right", "top", "bottom" to the respective
+            amounts, in points, to clip from `docsrc` before posterizing. Default
+            is 0 on all sides.
+        no_white_space: If True, increase overlaps to eliminate any white space
+            on the output pages.
 
     Returns:
-        A new page, with the content cropped by the specified amounts,
-        and translated so the bottom left corner of the visible content
-        at (0,0).
+        Document containing the poster pages in column-major order.
     """
 
-    page = copy.deepcopy(page)
-    page.mediabox.left += left
-    page.mediabox.right -= right
-    page.mediabox.bottom += bottom
-    page.mediabox.top -= top
+    if isinstance(overlap, float):
+        overlap = (overlap,) * 2
+    if clip is None:
+        clip = {}
+    for side in ["left", "right", "top", "bottom"]:
+        clip.setdefault(side, 0.0)
 
-    # Put the bottom left corner of the content at (0,0)
-    transformation = pypdf.Transformation().translate(
-        tx=-page.mediabox.left, ty=-page.mediabox.bottom
+    # Express the clip rectangle relative to the source page
+    pagesrc = docsrc[0]
+    clip_rect = pagesrc.bound() + (
+        clip["left"],
+        clip["top"],
+        -clip["right"],
+        -clip["bottom"],
     )
-    page.add_transformation(transformation, expand=True)
 
-    # Merge onto a new blank page to white out cropped content
-    new_page = pypdf.PageObject.create_blank_page(
-        width=page.mediabox.width, height=page.mediabox.height
+    # Express the layout origin relative to the source page
+    layout_size = (
+        n_pages[0] * page_size[0] - (n_pages[0] - 1) * overlap[0],
+        n_pages[1] * page_size[1] - (n_pages[1] - 1) * overlap[1],
     )
-    new_page.merge_page(page)
-    return new_page
+    if no_white_space:
+        if layout_size[0] > clip_rect.width and n_pages[0] > 1:
+            layout_size = (clip_rect.width, layout_size[1])
+            overlap = (
+                (n_pages[0] * page_size[0] - layout_size[0]) / (n_pages[0] - 1),
+                overlap[1],
+            )
+        if layout_size[1] > clip_rect.height and n_pages[1] > 1:
+            layout_size = (layout_size[0], clip_rect.height)
+            overlap = (
+                overlap[0],
+                (n_pages[1] * page_size[1] - layout_size[1]) / (n_pages[1] - 1),
+            )
+    pad = (
+        (layout_size[0] - clip_rect.width) / 2,
+        (layout_size[1] - clip_rect.height) / 2,
+    )
+    layout_origin = (clip["left"] - pad[0], clip["top"] - pad[1])
+
+    docout = pymupdf.Document()
+    for j in range(n_pages[0]):
+        for i in range(n_pages[1]):
+            # Express the poster page origin relative to the source page
+            page_origin = (
+                layout_origin[0] + j * (page_size[0] - overlap[0]),
+                layout_origin[1] + i * (page_size[1] - overlap[1]),
+            )
+            # Express the clip rectangle relative to the poster page
+            clip_rect_rel_page = clip_rect - (
+                page_origin[0],
+                page_origin[1],
+                page_origin[0],
+                page_origin[1],
+            )
+            pageout: pymupdf.Page = docout.new_page(
+                width=page_size[0], height=page_size[1]
+            )
+            pageout.show_pdf_page(clip_rect_rel_page, docsrc, clip=clip_rect)
+
+    return docout
 
 
-def make_cover(original: pypdf.PageObject) -> pypdf.PageObject:
+def make_cover(docsrc: pymupdf.Document) -> pymupdf.Document:
     """
     Put the map title page and legend side-by-side.
 
     Args:
-        original: The original map page.
+        docsrc: The original map.
 
     Returns:
-        A new page with the map title page and legend side-by-side.
+        New document containing a single page with the map title page and legend
+        side-by-side.
     """
 
-    # Grab the title page (bottom right corner of the original map)
-    cover = crop_hide_translate(
-        original,
-        left=original.mediabox.width - COVER_WIDTH_PT,
-        top=original.mediabox.height / 2,
+    pagesrc = docsrc[0]
+    docout = pymupdf.Document()
+    pageout: pymupdf.Page = docout.new_page(
+        width=2 * COVER_WIDTH_PT, height=pagesrc.bound().height
     )
-
-    # Grab the legend (top right corner of the original map)
-    legend = crop_hide_translate(
-        original,
-        left=original.mediabox.width - COVER_WIDTH_PT,
-        bottom=original.mediabox.height / 2,
+    # Title page (bottom right corner of map sheet)
+    pageout.show_pdf_page(
+        pymupdf.Rect(0, 0, COVER_WIDTH_PT, pageout.bound().height),
+        docsrc,
+        clip=pymupdf.Rect(
+            pagesrc.bound().width - COVER_WIDTH_PT,
+            pagesrc.bound().height / 2,
+            pagesrc.bound().bottom_right,
+        ),
     )
-    # Move it to the right so it can sit beside the title page
-    transformation = pypdf.Transformation().translate(tx=COVER_WIDTH_PT)
-    legend.add_transformation(transformation, expand=True)
+    # Legend (top right corner of map sheet)
+    pageout.show_pdf_page(
+        pymupdf.Rect(COVER_WIDTH_PT, 0, 2 * COVER_WIDTH_PT, pageout.bound().height),
+        docsrc,
+        clip=pymupdf.Rect(
+            pagesrc.bound().width - COVER_WIDTH_PT,
+            0,
+            pagesrc.bound().width,
+            pagesrc.bound().height / 2,
+        ),
+    )
+    return docout
 
-    cover.merge_page(legend, expand=True)
-    return cover
 
-
-def split_page(
-    page: pypdf.PageObject,
-    page_size: tuple[float, float],
-    n_pages: tuple[int, int],
-    overlap: tuple[float, float],
-    no_white_space: bool,
-) -> Iterator[pypdf.PageObject]:
+def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
     """
-    Split a page across several smaller pages.
+    Rasterize a PDF by converting its pages to PNG.
 
     Args:
-        page: The page to be split.
-        page_size: (width, height) of the output pages in points.
-        n_pages: Number of pages (nx, ny) in each direction.
-        overlaps: (overlap_x, overlap_y) between pages in points.
-        no_white_space: If True, increase overlaps to eliminate any
-            white space on the output pages.
+        docsrc: Document to be rasterized.
+        dpi: Resolution.
 
-    Yields:
-        Output pages in column-major order.
+    Returns:
+        Rasterized document.
     """
 
-    # Work out the total dimensions of the multi-page layout (accounting
-    # for overlaps)
-    layout_dims = (
-        n_pages[0] * page_size[0] - (n_pages[0] - 1) * overlap[0],
-        n_pages[1] * page_size[1] - (n_pages[1] - 1) * overlap[1],
-    )
-    # If the layout would be larger than the map in either direction,
-    # increase the corresponding overlap so this is no longer the case
-    if no_white_space:
-        if layout_dims[0] > page.mediabox.width and n_pages[0] > 1:
-            layout_dims = (page.mediabox.width, layout_dims[1])
-            overlap = (
-                (n_pages[0] * page_size[0] - layout_dims[0]) / (n_pages[0] - 1),
-                overlap[1],
-            )
-        if layout_dims[1] > page.mediabox.height and n_pages[1] > 1:
-            layout_dims = (layout_dims[0], page.mediabox.height)
-            overlap = (
-                overlap[0],
-                (n_pages[1] * page_size[1] - layout_dims[1]) / (n_pages[1] - 1),
-            )
-
-    # Work out where to put the bottom left corner of the bottom left
-    # page so that the layout is centred on the map
-    layout_origin = (
-        (page.mediabox.width - layout_dims[0]) / 2,
-        (page.mediabox.height - layout_dims[1]) / 2,
-    )
-
-    # Produce the output pages in column-major order
-    for j in range(n_pages[0]):
-        page.mediabox.left = layout_origin[0] + j * (page_size[0] - overlap[0])
-        page.mediabox.right = page.mediabox.left + page_size[0]
-        for i in range(n_pages[1] - 1, -1, -1):
-            page.mediabox.bottom = layout_origin[1] + i * (page_size[1] - overlap[1])
-            page.mediabox.top = page.mediabox.bottom + page_size[1]
-            yield page
-
-
-def make_cover_pages(
-    original: pypdf.PageObject,
-    page_size: tuple[float, float],
-    n_pages: tuple[int, int],
-    overlap: tuple[float, float],
-    no_white_space: bool,
-) -> Iterator[pypdf.PageObject]:
-    """
-    Make the cover and split it across several pages.
-
-    Args:
-        original: The original map page.
-        page_size: (width, height) of the output pages in points.
-        n_pages: Number of pages (nx, ny) in each direction.
-        overlaps: (overlap_x, overlap_y) between pages in points.
-        no_white_space: If True, increase overlaps to eliminate any
-            white space on the output pages.
-
-    Yields:
-        Output pages in column-major order.
-    """
-
-    cover = make_cover(original)
-    yield from split_page(cover, page_size, n_pages, overlap, no_white_space)
-
-
-def make_map_pages(
-    original: pypdf.PageObject,
-    page_size: tuple[float, float],
-    n_pages: tuple[int, int],
-    overlap: tuple[float, float],
-    no_white_space: bool,
-) -> Iterator[pypdf.PageObject]:
-    """
-    Make the map and split it across several pages.
-
-    Args:
-        original: The original map page.
-        page_size: (width, height) of the output pages in points.
-        n_pages: Number of pages (nx, ny) in each direction.
-        overlaps: (overlap_x, overlap_y) between pages in points.
-        no_white_space: If True, increase overlaps to eliminate any
-            white space on the output pages.
-
-    Yields:
-        Output pages in column-major order.
-    """
-
-    map_ = crop_hide_translate(original, right=COVER_WIDTH_PT)
-    yield from split_page(map_, page_size, n_pages, overlap, no_white_space)
+    docout = pymupdf.Document()
+    for pagesrc in docsrc:
+        pix: pymupdf.Pixmap = pagesrc.get_pixmap(dpi=dpi)
+        pngbytes = pix.tobytes("png")
+        pngdoc = pymupdf.Document("png", pngbytes)
+        pdfbytes = pngdoc.convert_to_pdf()
+        pdfdoc = pymupdf.Document("pdf", pdfbytes)
+        pageout: pymupdf.Page = docout.new_page(
+            width=pagesrc.bound().width, height=pagesrc.bound().height
+        )
+        pageout.show_pdf_page(pageout.bound(), pdfdoc)
+    return docout
