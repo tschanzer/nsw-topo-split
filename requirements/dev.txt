@@ -53,7 +53,7 @@ pre-commit==4.1.0
     # via nsw-topo-split (pyproject.toml)
 pylint==3.3.3
     # via nsw-topo-split (pyproject.toml)
-pypdf==5.1.0
+pymupdf==1.25.2
     # via nsw-topo-split (pyproject.toml)
 pyproject-hooks==1.2.0
     # via

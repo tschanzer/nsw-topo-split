@@ -2,7 +2,7 @@
 name = "nsw-topo-split"
 version = "0.1"
 dependencies = [
-    "pypdf",
+    "pymupdf",
 ]
 
 [project.optional-dependencies]
@@ -27,6 +27,11 @@ multi_line_output = 3
 [tool.mypy]
 strict = true
 files = ["nsw_topo_split"]
+
+
+[[tool.mypy.overrides]]
+module = ["pymupdf"]
+ignore_missing_imports = true
 
 [tool.pylint]
 max-line-length = 88
