@@ -12,6 +12,7 @@ from nsw_topo_split import (
     map_names_scales,
     mm_to_pt,
     posterize,
+    rasterize,
 )
 
 
@@ -40,9 +41,9 @@ def main() -> None:
         type=pathlib.Path,
         default=pathlib.Path.cwd(),
         help=(
-            "output directory (default: working directory). "
-            "Files are output in a subdirectory corresponding to the "
-            "publication year and map name, e.g., 2022/katoomba."
+            "output directory (default: working directory); "
+            "files are output in a subdirectory corresponding to the "
+            "publication year and map name, e.g., 2022/katoomba"
         ),
     )
     parser.add_argument(
@@ -56,7 +57,7 @@ def main() -> None:
             "page size (case-insensitive); options are  'A0' through 'A10', "
             "'B0' through 'B10', 'C0' through 'C10', 'Card-4x6', 'Card-5x7', "
             "'Commercial', 'Executive', 'Invoice', 'Ledger', 'Legal', 'Legal-13', "
-            "'Letter', 'Monarch' and 'Tabloid-Extra'."
+            "'Letter', 'Monarch' and 'Tabloid-Extra'"
         ),
     )
     parser.add_argument(
@@ -103,6 +104,19 @@ def main() -> None:
             "in the output directory"
         ),
     )
+    parser.add_argument(
+        "-d",
+        "--dpi",
+        type=int,
+        nargs="?",
+        const=300,
+        help=(
+            "rasterize the output to the specified resolution (default: 300 DPI); "
+            "if this option is not given, then the output will not be rasterized. "
+            "WARNING: this may make gridlines hard to see on some map editions. "
+            "It will also increase processing time, and file size for mode=map."
+        ),
+    )
     args = parser.parse_args()
 
     # Get page size in points
@@ -145,7 +159,6 @@ def main() -> None:
             no_white_space=(not args.allow_white_space),
         )
         out_file = (out_dir / (full_name + "_cover_" + args.size)).with_suffix(".pdf")
-        docout.save(out_file)
     else:
         docout = posterize(
             docsrc,
@@ -156,7 +169,10 @@ def main() -> None:
             no_white_space=(not args.allow_white_space),
         )
         out_file = (out_dir / (full_name + "_split_" + args.size)).with_suffix(".pdf")
-        docout.save(out_file)
+
+    if args.dpi is not None:
+        docout = rasterize(docout, args.dpi)
+    docout.ez_save(out_file)
     docsrc.close()
 
 

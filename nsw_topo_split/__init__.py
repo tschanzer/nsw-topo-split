@@ -174,3 +174,29 @@ def make_cover(docsrc: pymupdf.Document) -> pymupdf.Document:
         ),
     )
     return docout
+
+
+def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
+    """
+    Rasterize a PDF by converting its pages to PNG.
+
+    Args:
+        docsrc: Document to be rasterized.
+        dpi: Resolution.
+
+    Returns:
+        Rasterized document.
+    """
+
+    docout = pymupdf.Document()
+    for pagesrc in docsrc:
+        pix: pymupdf.Pixmap = pagesrc.get_pixmap(dpi=dpi)
+        pngbytes = pix.tobytes("png")
+        pngdoc = pymupdf.Document("png", pngbytes)
+        pdfbytes = pngdoc.convert_to_pdf()
+        pdfdoc = pymupdf.Document("pdf", pdfbytes)
+        pageout: pymupdf.Page = docout.new_page(
+            width=pagesrc.bound().width, height=pagesrc.bound().height
+        )
+        pageout.show_pdf_page(pageout.bound(), pdfdoc)
+    return docout

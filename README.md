@@ -27,7 +27,7 @@ the Creative Commons Attribution 4.0 license.
 ## Usage
 ```
 usage: python -m nsw_topo_split [-h] [-o OUT] [-s SIZE] [-p] [-n NX NY]
-                                [-l LX LY] [-w] [-f]
+                                [-l LX LY] [-w] [-f] [-d [DPI]]
                                 {map,cover} name year
 
 split a NSW topographic map across smaller pages
@@ -41,14 +41,14 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-  -o OUT, --out OUT     output directory (default: working directory). Files
+  -o OUT, --out OUT     output directory (default: working directory); files
                         are output in a subdirectory corresponding to the
-                        publication year and map name, e.g., 2022/katoomba.
+                        publication year and map name, e.g., 2022/katoomba
   -s SIZE, --size SIZE  page size (case-insensitive); options are 'A0' through
                         'A10', 'B0' through 'B10', 'C0' through 'C10',
                         'Card-4x6', 'Card-5x7', 'Commercial', 'Executive',
                         'Invoice', 'Ledger', 'Legal', 'Legal-13', 'Letter',
-                        'Monarch' and 'Tabloid-Extra'.
+                        'Monarch' and 'Tabloid-Extra'
   -p, --portrait        use portrait layout rather than landscape
   -n NX NY, --n-pages NX NY
                         horizontal and vertical number of pages (default: [4,
@@ -61,7 +61,13 @@ options:
                         do not expand overlaps to eliminate white space
   -f, --force-download  download the original map, even if it already exists
                         in the output directory
-
+  -d [DPI], --dpi [DPI]
+                        rasterize the output to the specified resolution
+                        (default: 300 DPI); if this option is not given, then
+                        the output will not be rasterized. WARNING: this may
+                        make gridlines hard to see on some map editions. It
+                        will also increase processing time, and file size for
+                        mode=map.
 ```
 
 For example, the [quick example](#quick-example) above will produce three PDFs
