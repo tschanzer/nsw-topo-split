@@ -6,7 +6,7 @@
 #
 astroid==3.3.8
     # via pylint
-black==24.10.0
+black==25.1.0
     # via nsw-topo-split (pyproject.toml)
 build==1.2.2.post1
     # via pip-tools
@@ -24,8 +24,10 @@ filelock==3.17.0
     # via virtualenv
 identify==2.6.6
     # via pre-commit
-isort==5.13.2
-    # via pylint
+isort==6.0.0
+    # via
+    #   nsw-topo-split (pyproject.toml)
+    #   pylint
 mccabe==0.7.0
     # via pylint
 mypy==1.14.1
@@ -51,7 +53,7 @@ platformdirs==4.3.6
     #   virtualenv
 pre-commit==4.1.0
     # via nsw-topo-split (pyproject.toml)
-pylint==3.3.3
+pylint==3.3.4
     # via nsw-topo-split (pyproject.toml)
 pymupdf==1.25.2
     # via nsw-topo-split (pyproject.toml)

@@ -10,6 +10,7 @@ dev = [
     "black",
     "pylint",
     "mypy",
+    "isort",
     "pip-tools",
     "pre-commit",
 ]
@@ -23,11 +24,12 @@ packages = ["nsw_topo_split"]
 
 [tool.isort]
 multi_line_output = 3
+profile = "black"
 
 [tool.mypy]
 strict = true
 files = ["nsw_topo_split"]
-
+explicit_package_bases = true
 
 [[tool.mypy.overrides]]
 module = ["pymupdf"]

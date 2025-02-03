@@ -1,9 +1,13 @@
 {
     "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
     },
     "black-formatter.importStrategy": "fromEnvironment",
+    "isort.importStrategy": "fromEnvironment",
     "mypy.runUsingActiveInterpreter": true,
     "pylint.importStrategy": "fromEnvironment"
 }
