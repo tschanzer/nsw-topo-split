@@ -26,8 +26,8 @@ the Creative Commons Attribution 4.0 license.
 
 ## Usage
 ```
-usage: python -m nsw_topo_split [-h] [-o OUT] [-s SIZE] [-p] [-n NX NY]
-                                [-l LX LY] [-w] [-f] [-d [DPI]]
+usage: python -m nsw_topo_split [-h] [-o OUT] [-f] [-d [DPI]]
+                                [-q] [-s SIZE] [-p] [-n NX NY] [-l LX LY] [-w]
                                 {map,cover} name year
 
 split a NSW topographic map across smaller pages
@@ -44,6 +44,18 @@ options:
   -o OUT, --out OUT     output directory (default: working directory); files
                         are output in a subdirectory corresponding to the
                         publication year and map name, e.g., 2022/katoomba
+  -f, --force-download  download the original map, even if it already exists
+                        in the output directory
+  -d [DPI], --dpi [DPI]
+                        rasterize the output to the specified resolution
+                        (default: 300 DPI); if this option is not given, then
+                        the output will not be rasterized. WARNING: this may
+                        make gridlines hard to see on some map editions. It
+                        will also increase processing time, and file size for
+                        mode=map.
+  -q, --quiet           suppress log messages
+
+page format options:
   -s SIZE, --size SIZE  page size (case-insensitive); options are 'A0' through
                         'A10', 'B0' through 'B10', 'C0' through 'C10',
                         'Card-4x6', 'Card-5x7', 'Commercial', 'Executive',
@@ -59,23 +71,14 @@ options:
                         (default: [20, 20])
   -w, --allow-white-space
                         do not expand overlaps to eliminate white space
-  -f, --force-download  download the original map, even if it already exists
-                        in the output directory
-  -d [DPI], --dpi [DPI]
-                        rasterize the output to the specified resolution
-                        (default: 300 DPI); if this option is not given, then
-                        the output will not be rasterized. WARNING: this may
-                        make gridlines hard to see on some map editions. It
-                        will also increase processing time, and file size for
-                        mode=map.
 ```
 
 For example, the [quick example](#quick-example) above will produce three PDFs
 in `./2022/katoomba`:
 - `8930-1S+KATOOMBA.pdf`: The original map downloaded from Spatial Services
-- `8930-1S+KATOOMBA_cover_A3.pdf`: A landscape A3 page with the map cover page
+- `8930-1S+KATOOMBA_cover_a3.pdf`: A landscape A3 page with the map cover page
     and legend side-by-side
-- `8930-1S+KATOOMBA_split_A3.pdf`: The map, split across six landscape A3 pages
+- `8930-1S+KATOOMBA_split_a3.pdf`: The map, split across six landscape A3 pages
   with 20mm overlaps.
 
 When printing double-sided, make sure to choose "flip on long edge".
