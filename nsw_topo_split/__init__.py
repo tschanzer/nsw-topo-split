@@ -2,6 +2,7 @@
 
 import importlib.resources
 import json
+import logging
 import urllib.request
 
 import pymupdf
@@ -12,6 +13,8 @@ URL_PREFIX = (
 )
 MM_PER_PT = 25.4 / 72
 COVER_WIDTH_PT = 326
+
+logger = logging.getLogger(__name__)
 
 _names_scales_file = (
     importlib.resources.files("nsw_topo_split") / "nsw_topo_map_names_scales.json"
@@ -34,9 +37,10 @@ def download_map(name: str, year: str, out: str) -> None:
     full_name = map_names_scales[name]["full_name"]
     scale = map_names_scales[name]["scale"]
     url = "/".join([URL_PREFIX, year, scale, full_name]) + ".pdf"
-    with urllib.request.urlopen(url) as stream:
-        with open(out, "wb") as f:
-            f.write(stream.read())
+    logger.info("downloading map from %s", url)
+    with urllib.request.urlopen(url) as stream, open(out, "wb") as f:
+        logger.info("writing downloaded map to %s", out)
+        f.write(stream.read())
 
 
 def mm_to_pt(x_mm: float) -> float:
@@ -44,7 +48,7 @@ def mm_to_pt(x_mm: float) -> float:
     return x_mm / MM_PER_PT
 
 
-def posterize(  # pylint: disable=too-many-locals,too-many-arguments
+def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
     docsrc: pymupdf.Document,
     n_pages: tuple[int, int],
     page_size: tuple[float, float],
@@ -54,16 +58,16 @@ def posterize(  # pylint: disable=too-many-locals,too-many-arguments
     no_white_space: bool = True,
 ) -> pymupdf.Document:
     """
-    Posterize a PDF.
+    Split a single-page PDF across several smaller pages.
 
     Args:
-        docsrc: Document to posterize (the first page will be used).
+        docsrc: Document to split (only the first page will be used).
         n_pages: Number of poster pages along the (horizontal, vertical) axes.
         page_size: (width, height) of the output pages, in points.
         overlap: (horizontal, vertical) overlap between output pages, in points.
             If only one value is given, the overlaps are assumed to be equal.
         clip: Mapping from "left", "right", "top", "bottom" to the respective
-            amounts, in points, to clip from `docsrc` before posterizing. Default
+            amounts, in points, to clip from `docsrc` before splitting. Default
             is 0 on all sides.
         no_white_space: If True, increase overlaps to eliminate any white space
             on the output pages.
@@ -121,12 +125,7 @@ def posterize(  # pylint: disable=too-many-locals,too-many-arguments
                 layout_origin[1] + i * (page_size[1] - overlap[1]),
             )
             # Express the clip rectangle relative to the poster page
-            clip_rect_rel_page = clip_rect - (
-                page_origin[0],
-                page_origin[1],
-                page_origin[0],
-                page_origin[1],
-            )
+            clip_rect_rel_page = clip_rect - page_origin * 2
             pageout: pymupdf.Page = docout.new_page(
                 width=page_size[0], height=page_size[1]
             )
@@ -152,7 +151,7 @@ def make_cover(docsrc: pymupdf.Document) -> pymupdf.Document:
     pageout: pymupdf.Page = docout.new_page(
         width=2 * COVER_WIDTH_PT, height=pagesrc.bound().height
     )
-    # Title page (bottom right corner of map sheet)
+    # Put the title page (bottom right corner of map sheet) on the left
     pageout.show_pdf_page(
         pymupdf.Rect(0, 0, COVER_WIDTH_PT, pageout.bound().height),
         docsrc,
@@ -162,7 +161,7 @@ def make_cover(docsrc: pymupdf.Document) -> pymupdf.Document:
             pagesrc.bound().bottom_right,
         ),
     )
-    # Legend (top right corner of map sheet)
+    # Put the legend (top right corner of map sheet) on the right
     pageout.show_pdf_page(
         pymupdf.Rect(COVER_WIDTH_PT, 0, 2 * COVER_WIDTH_PT, pageout.bound().height),
         docsrc,
@@ -189,7 +188,8 @@ def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
     """
 
     docout = pymupdf.Document()
-    for pagesrc in docsrc:
+    for i, pagesrc in enumerate(docsrc):
+        logger.info("rasterizing page %d of %d", i + 1, len(docsrc))
         pix: pymupdf.Pixmap = pagesrc.get_pixmap(dpi=dpi)
         pngbytes = pix.tobytes("png")
         pngdoc = pymupdf.Document("png", pngbytes)
