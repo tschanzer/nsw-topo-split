@@ -1,6 +1,7 @@
+default_install_hook_types: [pre-commit, pre-push]
 repos:
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.10.0
+    rev: 25.1.0
     hooks:
       - id: black
         language_version: python3.11
@@ -9,7 +10,12 @@ repos:
     hooks:
     - id: mypy
       args: []
-      additional_dependencies: [pypdf==5.1.0]
+      additional_dependencies: [pymupdf==1.25.2]
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.0
+    hooks:
+      - id: isort
+        name: isort
   - repo: local
     hooks:
       - id: pylint
@@ -18,4 +24,4 @@ repos:
         language: system
         types: [python]
         require_serial: true
-        stages: [pre-push, manual]
+        stages: [pre-push]
