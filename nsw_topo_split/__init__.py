@@ -1,45 +1,91 @@
 """A package for splitting NSW topographic maps across smaller pages"""
 
-import importlib.resources
 import json
 import logging
+import pathlib
+import urllib.parse
 import urllib.request
 
 import pymupdf
 
-URL_PREFIX = (
-    "https://portal.spatial.nsw.gov.au/download/NSWTopographicMaps/"
-    "DTDB_GeoReferenced_Raster_CollarOn_161070"
+ENDPOINT = (
+    "https://portal.spatial.nsw.gov.au/server/rest/services/Hosted/TopoMapIndex/"
+    "FeatureServer/0/query"
+)
+MAP_VIEWER_URL = (
+    "https://portal.spatial.nsw.gov.au/portal/home/webmap/viewer.html"
+    "?useExisting=1&layers=585654eb02d449cfbc46ed801303b9cf"
 )
 MM_PER_PT = 25.4 / 72
 COVER_WIDTH_PT = 326
 
 logger = logging.getLogger(__name__)
 
-_names_scales_file = (
-    importlib.resources.files("nsw_topo_split") / "nsw_topo_map_names_scales.json"
-)
-map_names_scales: dict[str, dict[str, str]] = json.load(
-    _names_scales_file.open("r", encoding="utf-8")
-)
 
-
-def download_map(name: str, year: str, out: str) -> None:
+def get_map_url(name: str, year: str) -> str:
     """
-    Download a NSW topo map.
+    Query the ArcGIS API to get the URL of a NSW Spatial Services topo map.
+
+    The map index dataset and API docs can be found at the following URL:
+    https://portal.spatial.nsw.gov.au/server/rest/services/Hosted/TopoMapIndex/FeatureServer
 
     Args:
-        name: The lowercase name of the map, e.g. 'kanangra'.
-        year: The publication year, e.g. '2017' or '2022'.
-        out: Path for saving the downloaded file.
+        name: Name of the map (case-insensitive), e.g., 'katoomba' or
+            'mount wilson'.
+        year: Publication year of the map, e.g., '2017'.
+
+    Returns:
+        The URL from which the map can be downloaded.
     """
 
-    full_name = map_names_scales[name]["full_name"]
-    scale = map_names_scales[name]["scale"]
-    url = "/".join([URL_PREFIX, year, scale, full_name]) + ".pdf"
-    logger.info("downloading map from %s", url)
-    with urllib.request.urlopen(url) as stream, open(out, "wb") as f:
-        logger.info("writing downloaded map to %s", out)
+    params = urllib.parse.urlencode(
+        {
+            "where": f"tilename = '{name.upper()}'",
+            "outFields": "*",
+            "returnGeometry": "false",
+            "f": "json",
+        }
+    )
+    with urllib.request.urlopen(f"{ENDPOINT}?{params}") as response:
+        data = json.load(response)
+
+    # The map URLs are stored in a JSON object with undescriptive keys like
+    # 'collaron_7", so we have to inspect the list of fields to work out which
+    # one corresponds to the requested publication year.
+    found_year = False
+    for field in data["fields"]:
+        if field["alias"] == f"CollarOn_{year}":
+            url_key = field["name"]
+            found_year = True
+            break
+    if not found_year:
+        raise ValueError(
+            f"Publication year '{year}' not found in database. "
+            f"Please check the available years at {MAP_VIEWER_URL}."
+        )
+
+    if not data["features"]:
+        # If the feature list is empty, there is no map with that name
+        raise ValueError(
+            f"Map '{name}' not found in database. "
+            f"Please check the available maps at {MAP_VIEWER_URL}."
+        )
+    map_url: str = data["features"][0]["attributes"][url_key]
+    return map_url
+
+
+def download(url: str, outfile: str | pathlib.Path) -> None:
+    """
+    Download a file.
+
+    Args:
+        url: URL to download from.
+        outfile: Path for saving the file.
+    """
+
+    logger.info("downloading from %s", url)
+    with urllib.request.urlopen(url) as stream, open(outfile, "wb") as f:
+        logger.info("writing downloaded file to %s", outfile)
         f.write(stream.read())
 
 

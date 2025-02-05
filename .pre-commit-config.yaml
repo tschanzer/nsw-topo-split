@@ -10,7 +10,6 @@ repos:
     hooks:
     - id: mypy
       args: []
-      additional_dependencies: [pymupdf==1.25.2]
   - repo: https://github.com/pycqa/isort
     rev: 6.0.0
     hooks:
