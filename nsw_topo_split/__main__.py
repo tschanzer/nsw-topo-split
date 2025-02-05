@@ -10,10 +10,10 @@ import pymupdf
 
 from nsw_topo_split import (
     COVER_WIDTH_PT,
-    download_map,
+    download,
+    get_map_url,
     make_cover,
     make_poster,
-    map_names_scales,
     mm_to_pt,
     rasterize,
 )
@@ -42,9 +42,10 @@ def main() -> None:  # pylint: disable=too-many-statements
     )
     parser.add_argument(
         "name",
+        type=str.lower,
         help=(
-            "lowercase map name with spaces replaced by underscores, "
-            "e.g., mount_wilson"
+            "map name (case-insensitive), e.g., katoomba; "
+            "remember to quote names with spaces"
         ),
     )
     parser.add_argument("year", help="year of publication")
@@ -56,7 +57,7 @@ def main() -> None:  # pylint: disable=too-many-statements
         help=(
             "output directory (default: working directory); "
             "files are output in a subdirectory corresponding to the "
-            "publication year and map name, e.g., 2022/katoomba"
+            "publication year and map name, e.g., 2022/8930-1S+KATOOMBA"
         ),
     )
     parser.add_argument(
@@ -157,12 +158,13 @@ def main() -> None:  # pylint: disable=too-many-statements
             ) from e
 
     # Prepare directories and download map if needed
-    out_dir = args.out / args.year / args.name
+    url = get_map_url(args.name, args.year)
+    filename = url.split("/")[-1]
+    out_dir: pathlib.Path = args.out / args.year / filename.removesuffix(".pdf")
     out_dir.mkdir(parents=True, exist_ok=True)
-    full_name = map_names_scales[args.name]["full_name"]
-    master_file = (out_dir / full_name).with_suffix(".pdf")
+    master_file = out_dir / filename
     if args.force_download or not master_file.exists():
-        download_map(args.name, args.year, master_file)
+        download(url, master_file)
     else:
         logger.info("using existing map at %s", master_file)
 
@@ -178,7 +180,7 @@ def main() -> None:  # pylint: disable=too-many-statements
             overlap=overlap_mm,
             no_white_space=(not args.allow_white_space),
         )
-        out_file = (out_dir / (full_name + "_cover_" + args.size)).with_suffix(".pdf")
+        out_file = master_file.with_stem(master_file.stem + "_cover_" + args.size)
     else:
         logger.info("producing split map")
         docout = make_poster(
@@ -189,7 +191,7 @@ def main() -> None:  # pylint: disable=too-many-statements
             clip={"right": COVER_WIDTH_PT},
             no_white_space=(not args.allow_white_space),
         )
-        out_file = (out_dir / (full_name + "_split_" + args.size)).with_suffix(".pdf")
+        out_file = master_file.with_stem(master_file.stem + "_split_" + args.size)
 
     if args.dpi is not None:
         docout = rasterize(docout, args.dpi)

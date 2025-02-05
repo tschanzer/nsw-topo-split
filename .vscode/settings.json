@@ -9,5 +9,6 @@
     "black-formatter.importStrategy": "fromEnvironment",
     "isort.importStrategy": "fromEnvironment",
     "mypy.runUsingActiveInterpreter": true,
+    "mypy.targets": [],
     "pylint.importStrategy": "fromEnvironment"
 }

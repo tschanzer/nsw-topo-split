@@ -26,8 +26,8 @@ the Creative Commons Attribution 4.0 license.
 
 ## Usage
 ```
-usage: python -m nsw_topo_split [-h] [-o OUT] [-f] [-d [DPI]]
-                                [-q] [-s SIZE] [-p] [-n NX NY] [-l LX LY] [-w]
+usage: python -m nsw_topo_split [-h] [-o OUT] [-f] [-d [DPI]] [-q]
+                                [-s SIZE] [-p] [-n NX NY] [-l LX LY] [-w]
                                 {map,cover} name year
 
 split a NSW topographic map across smaller pages
@@ -35,15 +35,16 @@ split a NSW topographic map across smaller pages
 positional arguments:
   {map,cover}           'map' to make the map pages, 'cover' to make the cover
                         pages
-  name                  lowercase map name with spaces replaced by
-                        underscores, e.g., mount_wilson
+  name                  map name (case-insensitive), e.g., katoomba; remember
+                        to quote names with spaces
   year                  year of publication
 
 options:
   -h, --help            show this help message and exit
   -o OUT, --out OUT     output directory (default: working directory); files
                         are output in a subdirectory corresponding to the
-                        publication year and map name, e.g., 2022/katoomba
+                        publication year and map name, e.g.,
+                        2022/8930-1S+KATOOMBA
   -f, --force-download  download the original map, even if it already exists
                         in the output directory
   -d [DPI], --dpi [DPI]
@@ -74,7 +75,7 @@ page format options:
 ```
 
 For example, the [quick example](#quick-example) above will produce three PDFs
-in `./2022/katoomba`:
+in `./2022/8930-1S+KATOOMBA`:
 - `8930-1S+KATOOMBA.pdf`: The original map downloaded from Spatial Services
 - `8930-1S+KATOOMBA_cover_a3.pdf`: A landscape A3 page with the map cover page
     and legend side-by-side
