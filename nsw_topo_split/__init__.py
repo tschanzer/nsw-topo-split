@@ -3,6 +3,7 @@
 import json
 import logging
 import pathlib
+import re
 import urllib.parse
 import urllib.request
 
@@ -18,6 +19,13 @@ MAP_VIEWER_URL = (
 )
 MM_PER_PT = 25.4 / 72
 COVER_WIDTH_PT = 326
+
+COLLAR_REGEX = re.compile(
+    r"-?[0-9]+[º°]\s*[0-9]+'"  # match lat/lon coordinates
+    r"|m[NESW]"  # match grid coordinates
+    r"|000m"  # match grid coordinates
+    r"|\(MGA(?:\s[0-9]+)?\)"  # match the "(MGA XX)" that accompanies grid coordinates
+)
 
 logger = logging.getLogger(__name__)
 
@@ -246,3 +254,31 @@ def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
         )
         pageout.show_pdf_page(pageout.bound(), pdfdoc)
     return docout
+
+
+def get_map_bbox(page: pymupdf.Page, clip: pymupdf.Rect = None) -> pymupdf.Rect:
+    """
+    Return a rectangle that encloses the map and all its coordinate labels.
+
+    This is done in a rather hacky way by searching for text that matches the
+    usual coordinate label format, and returning the rectangle that encloses all
+    the matched text.
+
+    Args:
+        page: The page to be searched.
+        clip: Require the result to be a subset of this rectangle (useful for
+            excluding the cover page and legend; optional).
+    """
+
+    blocks = page.get_text("blocks", clip=clip)
+    xcoords = []
+    ycoords = []
+    for b in blocks:
+        # b[6] == 0 means the block is text (not an image)
+        # b[4] is the text in the block
+        if b[6] == 0 and COLLAR_REGEX.search(b[4]):
+            xcoords.append(b[0])
+            ycoords.append(b[1])
+            xcoords.append(b[2])
+            ycoords.append(b[3])
+    return pymupdf.Rect([min(xcoords), min(ycoords), max(xcoords), max(ycoords)])
