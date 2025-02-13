@@ -131,7 +131,7 @@ def main() -> None:  # pylint: disable=too-many-statements
     )
     format_options.add_argument(
         "-w",
-        "--allow-white-space",
+        "--allow-whitespace",
         action="store_true",
         help="do not expand overlaps to eliminate white space",
     )
@@ -142,6 +142,7 @@ def main() -> None:  # pylint: disable=too-many-statements
         level=(logging.WARNING if args.quiet else logging.INFO),
         stream=sys.stdout,
     )
+    logging.captureWarnings(True)
 
     # Get page size in points
     page_size = pymupdf.paper_sizes()[args.size]
@@ -172,24 +173,24 @@ def main() -> None:  # pylint: disable=too-many-statements
     overlap_mm = (mm_to_pt(args.overlap[0]), mm_to_pt(args.overlap[1]))
     if args.mode == "cover":
         logger.info("producing cover page")
-        cover = make_cover(docsrc)
+        cover = make_cover(docsrc[0])
         docout = make_poster(
-            cover,
-            args.n_pages,
+            cover[0],
             page_size,
-            overlap=overlap_mm,
-            no_white_space=(not args.allow_white_space),
+            n_pages=args.n_pages,
+            min_overlap=overlap_mm,
+            allow_whitespace=args.allow_whitespace,
         )
         out_file = master_file.with_stem(master_file.stem + "_cover_" + args.size)
     else:
         logger.info("producing split map")
         docout = make_poster(
-            docsrc,
-            args.n_pages,
+            docsrc[0],
             page_size,
-            overlap=overlap_mm,
-            clip={"right": COVER_WIDTH_PT},
-            no_white_space=(not args.allow_white_space),
+            n_pages=args.n_pages,
+            min_overlap=overlap_mm,
+            crop={"right": COVER_WIDTH_PT},
+            allow_whitespace=args.allow_whitespace,
         )
         out_file = master_file.with_stem(master_file.stem + "_split_" + args.size)
 
