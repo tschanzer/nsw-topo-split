@@ -6,16 +6,13 @@ import pathlib
 import sys
 import time
 from typing import cast
-from urllib.error import HTTPError
 
 import pymupdf
 
 from nsw_topo_split import (
-    COVER_WIDTH_PT,
-    download,
-    get_map_url,
-    make_cover,
-    make_poster,
+    download_map,
+    make_split_cover,
+    make_split_map,
     mm_to_pt,
     rasterize,
 )
@@ -152,29 +149,14 @@ def main() -> None:  # pylint: disable=too-many-statements
         page_size = (page_size[1], page_size[0])
 
     # Prepare directories and download map if needed
-    url = get_map_url(args.name, args.year)
-    filename = url.split("/")[-1]
-    out_dir: pathlib.Path = args.out / args.year / filename.removesuffix(".pdf")
-    out_dir.mkdir(parents=True, exist_ok=True)
-    master_file = out_dir / filename
-    if args.force_download or not master_file.exists():
-        try:
-            download(url, master_file)
-        except HTTPError as e:
-            raise RuntimeError(
-                f"The {args.year} edition does not seem to be available for "
-                f"{args.name}. Please try another edition."
-            ) from e
-    else:
-        logger.info("using existing map at %s", master_file)
+    master_file = download_map(args.name, args.year, args.out, args.force_download)
 
     docsrc = pymupdf.Document(master_file)
     overlap_pt = cast(tuple[float, float], tuple(map(mm_to_pt, args.overlap)))
     if args.mode == "cover":
         logger.info("producing cover page")
-        cover = make_cover(docsrc[0])
-        docout = make_poster(
-            cover[0],
+        docout = make_split_cover(
+            docsrc[0],
             page_size=page_size,
             n_pages=args.n_pages,
             min_overlap=overlap_pt,
@@ -183,12 +165,11 @@ def main() -> None:  # pylint: disable=too-many-statements
         out_file = master_file.with_stem(master_file.stem + "_cover_" + args.size)
     else:
         logger.info("producing split map")
-        docout = make_poster(
+        docout = make_split_map(
             docsrc[0],
             page_size=page_size,
             n_pages=args.n_pages,
             min_overlap=overlap_pt,
-            crop={"right": COVER_WIDTH_PT},
             allow_whitespace=args.allow_whitespace,
         )
         out_file = master_file.with_stem(master_file.stem + "_split_" + args.size)

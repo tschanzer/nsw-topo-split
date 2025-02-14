@@ -8,7 +8,8 @@ import re
 import urllib.parse
 import urllib.request
 import warnings
-from typing import cast
+from typing import Any, Callable, cast
+from urllib.error import HTTPError
 
 import pymupdf
 
@@ -29,6 +30,7 @@ COLLAR_REGEX = re.compile(
     r"|000m"  # match grid coordinates
     r"|\(MGA(?:\s[0-9]+)?\)"  # match the "(MGA XX)" that accompanies grid coordinates
 )
+_Block = tuple[float, float, float, float, str, int, int]
 
 logger = logging.getLogger(__name__)
 
@@ -99,6 +101,42 @@ def download(url: str, outfile: str | pathlib.Path) -> None:
         f.write(stream.read())
 
 
+def download_map(
+    name: str, year: str, base_dir: pathlib.Path, force_download: bool = False
+) -> pathlib.Path:
+    """
+    Download a map if required.
+
+    Args:
+        name: Name of the map (case-insensitive), e.g., 'katoomba' or
+            'mount wilson'.
+        year: Publication year of the map, e.g., '2017'.
+        base_dir: The base directory in which the map will be saved.
+        force_download: Download the map even if it already exists in base_dir
+            (default False).
+
+    Returns:
+        The path to the downloaded (or existing) map file.
+    """
+
+    url = get_map_url(name, year)
+    filename = url.split("/")[-1]
+    out_dir: pathlib.Path = base_dir / year / filename.removesuffix(".pdf")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    master_file = out_dir / filename
+    if force_download or not master_file.exists():
+        try:
+            download(url, master_file)
+        except HTTPError as e:
+            raise RuntimeError(
+                f"The {year} edition does not seem to be available for "
+                f"{name}. Please try another edition."
+            ) from e
+    else:
+        logger.info("using existing map at %s", master_file)
+    return master_file
+
+
 def mm_to_pt(x_mm: float) -> float:
     """Convert millimetres to points."""
     return x_mm / MM_PER_PT
@@ -146,7 +184,7 @@ def _calc_layout_params_1d(  # pylint: disable=too-many-arguments
     max_layout_size = _calc_layout_size(page_size, n_pages, min_overlap)
     cropbox_size = cropbox[1] - cropbox[0]
     if max_layout_size > cropbox_size:
-        if not allow_whitespace:
+        if not allow_whitespace and n_pages > 1:
             origin = cropbox[0]
             # Increase overlap so the layout size equals the cropbox size
             overlap = (n_pages * page_size - cropbox_size) / (n_pages - 1)
@@ -234,13 +272,13 @@ def _calc_layout_params(  # pylint: disable=too-many-arguments
     return (origin_x, origin_y), (overlap_x, overlap_y)
 
 
-def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
+def _make_poster(  # pylint: disable=too-many-locals,too-many-arguments
     pagesrc: pymupdf.Page,
     *,
     page_size: tuple[float, float],
     n_pages: tuple[int, int] | None = None,
     min_overlap: tuple[float, float] = (0.0, 0.0),
-    crop: dict[str, float] | None = None,
+    cropbox: pymupdf.Rect | None = None,
     allow_whitespace: bool = False,
     artbox: pymupdf.Rect | None = None,
 ) -> pymupdf.Document:
@@ -255,9 +293,8 @@ def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
         min_overlap: (horizontal, vertical) overlap between output pages, in
             points (default 0). If allow_whitespace is False, then the overlap
             may be increased to eliminate white space.
-        crop: Mapping from "left", "right", "top", "bottom" to the respective
-            amounts, in points, to clip from `docsrc` before splitting. Default
-            is 0 on all sides.
+        crop: Clip `pagesrc` to this rectangle before splitting (default: no
+            clip).
         allow_whitespace: If True, do not increase overlaps to eliminate white
             space on the output pages.
         artbox: The function will try to position the poster pages (and choose
@@ -270,24 +307,15 @@ def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
         Document containing the poster pages in column-major order.
     """
 
-    # Express the clip rectangle relative to the source page
-    if crop is None:
-        crop = {}
-    for side in ["left", "right", "top", "bottom"]:
-        crop.setdefault(side, 0.0)
-    cropbox = pagesrc.bound() + (
-        crop["left"],
-        crop["top"],
-        -crop["right"],
-        -crop["bottom"],
-    )
-
-    # Calculate the layout parameters
+    if cropbox is None:
+        cropbox = pagesrc.bound()
     if artbox is None:
         artbox = cropbox
+
+    # Calculate the layout parameters
     if n_pages is None:
         n_pages = _choose_n_pages((artbox.width, artbox.height), page_size, min_overlap)
-        logger.info("automatically determined n_pages = %s", n_pages)
+        logger.info("chosen page layout: %s", n_pages)
     layout_origin, overlap = _calc_layout_params(
         page_size=page_size,
         n_pages=n_pages,
@@ -326,7 +354,7 @@ def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
     return docout
 
 
-def make_cover(pagesrc: pymupdf.Page) -> pymupdf.Document:
+def _make_cover(pagesrc: pymupdf.Page) -> pymupdf.Document:
     """
     Put the map title page and legend side-by-side.
 
@@ -339,7 +367,9 @@ def make_cover(pagesrc: pymupdf.Page) -> pymupdf.Document:
     """
 
     docout = pymupdf.Document()
-    pageout = docout.new_page(width=2 * COVER_WIDTH_PT, height=pagesrc.bound().height)
+    pageout = docout.new_page(
+        width=2 * COVER_WIDTH_PT, height=pagesrc.bound().height / 2
+    )
     # Put the title page (bottom right corner of map sheet) on the left
     pageout.show_pdf_page(
         pymupdf.Rect(0, 0, COVER_WIDTH_PT, pageout.bound().height),
@@ -364,6 +394,136 @@ def make_cover(pagesrc: pymupdf.Page) -> pymupdf.Document:
         ),
     )
     return docout
+
+
+def _is_map_text(block: _Block) -> bool:
+    # b[6] == 0 means the block is text (not an image)
+    # b[4] is the text in the block
+    return block[6] == 0 and bool(COLLAR_REGEX.search(block[4]))
+
+
+def _is_cover_text(block: _Block) -> bool:
+    # b[6] == 0 means the block is text (not an image)
+    return block[6] == 0
+
+
+def _trivial_filter(_: _Block) -> bool:
+    return True
+
+
+def _get_bbox(
+    page: pymupdf.Page,
+    *,
+    clip: pymupdf.Rect = None,
+    filter_func: Callable[[_Block], bool] = _trivial_filter,
+) -> pymupdf.Rect:
+    """
+    Return the smallest rectangle that encloses a page's blocks.
+
+    Args:
+        page: The page to be searched.
+        clip: Consider only blocks that are inside this rectangle (useful for
+            excluding the cover page and legend; optional).
+        filter_func: Consider only blocks for which filter_func(block) is True
+            (optional).
+    """
+
+    blocks = page.get_text("blocks", clip=clip)
+    xcoords = []
+    ycoords = []
+    for b in filter(filter_func, blocks):
+        xcoords.append(b[0])
+        ycoords.append(b[1])
+        xcoords.append(b[2])
+        ycoords.append(b[3])
+    return pymupdf.Rect([min(xcoords), min(ycoords), max(xcoords), max(ycoords)])
+
+
+def _log_box_dims(box: pymupdf.Rect, text: str) -> None:
+    logger.info("%s: (%.2f, %.2f) mm", text, pt_to_mm(box.width), pt_to_mm(box.height))
+
+
+def make_split_map(  # pylint: disable=too-many-arguments
+    pagesrc: pymupdf.Page,
+    *,
+    page_size: tuple[float, float],
+    n_pages: tuple[int, int] | None = None,
+    min_overlap: tuple[float, float] = (0.0, 0.0),
+    allow_whitespace: bool = False,
+) -> pymupdf.Document:
+    """
+    Split a map across several smaller pages.
+
+    Args:
+        pagesrc: The page to be split.
+        page_size: (width, height) of the output pages, in points.
+        n_pages: Number of poster pages along the (horizontal, vertical) axes
+            (optional, determined automatically by default).
+        min_overlap: (horizontal, vertical) overlap between output pages, in
+            points (default 0). If allow_whitespace is False, then the overlap
+            may be increased to eliminate white space.
+        allow_whitespace: If True, do not increase overlaps to eliminate white
+            space on the output pages.
+
+    Returns:
+        Document containing the map pages in column-major order.
+    """
+
+    _log_box_dims(pagesrc.bound(), "original map dimensions")
+    cropbox = pagesrc.bound() + (0.0, 0.0, -COVER_WIDTH_PT, 0.0)
+    _log_box_dims(cropbox, "cropped map dimensions")
+    artbox = _get_bbox(pagesrc, clip=cropbox, filter_func=_is_map_text)
+    _log_box_dims(artbox, "inferred artbox dimensions")
+    return _make_poster(
+        pagesrc,
+        page_size=page_size,
+        n_pages=n_pages,
+        min_overlap=min_overlap,
+        cropbox=cropbox,
+        allow_whitespace=allow_whitespace,
+        artbox=artbox,
+    )
+
+
+def make_split_cover(  # pylint: disable=too-many-arguments
+    pagesrc: pymupdf.Page,
+    *,
+    page_size: tuple[float, float],
+    n_pages: tuple[int, int] | None = None,
+    min_overlap: tuple[float, float] = (0.0, 0.0),
+    allow_whitespace: bool = False,
+) -> pymupdf.Document:
+    """
+    Make the cover page and split it across several smaller pages.
+
+    Args:
+        pagesrc: The page to be split.
+        page_size: (width, height) of the output pages, in points.
+        n_pages: Number of poster pages along the (horizontal, vertical) axes
+            (optional, determined automatically by default).
+        min_overlap: (horizontal, vertical) overlap between output pages, in
+            points (default 0). If allow_whitespace is False, then the overlap
+            may be increased to eliminate white space.
+        allow_whitespace: If True, do not increase overlaps to eliminate white
+            space on the output pages.
+
+    Returns:
+        Document containing the cover pages in column-major order.
+    """
+
+    _log_box_dims(pagesrc.bound(), "original map dimensions")
+    cover = _make_cover(pagesrc)
+    _log_box_dims(cover[0].bound(), "cover page dimensions")
+    artbox = _get_bbox(cover[0], filter_func=_is_cover_text)
+    _log_box_dims(artbox, "inferred artbox dimensions")
+    return _make_poster(
+        cover[0],
+        page_size=page_size,
+        n_pages=n_pages,
+        min_overlap=min_overlap,
+        allow_whitespace=allow_whitespace,
+        artbox=artbox,
+    )
 
 
 def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
@@ -391,31 +551,3 @@ def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
         )
         pageout.show_pdf_page(pageout.bound(), pdfdoc)
     return docout
-
-
-def get_artbox(page: pymupdf.Page, clip: pymupdf.Rect = None) -> pymupdf.Rect:
-    """
-    Return a rectangle that encloses the map and all its coordinate labels.
-
-    This is done in a rather hacky way by searching for text that matches the
-    usual coordinate label format, and returning the rectangle that encloses all
-    the matched text.
-
-    Args:
-        page: The page to be searched.
-        clip: Require the result to be a subset of this rectangle (useful for
-            excluding the cover page and legend; optional).
-    """
-
-    blocks = page.get_text("blocks", clip=clip)
-    xcoords = []
-    ycoords = []
-    for b in blocks:
-        # b[6] == 0 means the block is text (not an image)
-        # b[4] is the text in the block
-        if b[6] == 0 and COLLAR_REGEX.search(b[4]):
-            xcoords.append(b[0])
-            ycoords.append(b[1])
-            xcoords.append(b[2])
-            ycoords.append(b[3])
-    return pymupdf.Rect([min(xcoords), min(ycoords), max(xcoords), max(ycoords)])
