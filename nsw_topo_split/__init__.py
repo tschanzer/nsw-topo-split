@@ -113,7 +113,7 @@ def _choose_n_pages_1d(from_size: float, to_size: float, overlap: float) -> int:
     return math.ceil((from_size - overlap) / (to_size - overlap))
 
 
-def choose_n_pages(
+def _choose_n_pages(
     from_size: tuple[float, float],
     to_size: tuple[float, float],
     overlap: tuple[float, float],
@@ -174,7 +174,7 @@ def _warn_n_pages(axis: str, amount_cut: float) -> None:
     )
 
 
-def calc_layout_params(  # pylint: disable=too-many-arguments
+def _calc_layout_params(  # pylint: disable=too-many-arguments
     *,
     page_size: tuple[float, float],
     n_pages: tuple[int, int],
@@ -236,8 +236,8 @@ def calc_layout_params(  # pylint: disable=too-many-arguments
 
 def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
     pagesrc: pymupdf.Page,
-    page_size: tuple[float, float],
     *,
+    page_size: tuple[float, float],
     n_pages: tuple[int, int] | None = None,
     min_overlap: tuple[float, float] = (0.0, 0.0),
     crop: dict[str, float] | None = None,
@@ -253,8 +253,8 @@ def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
         n_pages: Number of poster pages along the (horizontal, vertical) axes
             (optional, determined automatically by default).
         min_overlap: (horizontal, vertical) overlap between output pages, in
-            points. If allow_whitespace is False, then the overlap may be
-            increased to eliminate white space.
+            points (default 0). If allow_whitespace is False, then the overlap
+            may be increased to eliminate white space.
         crop: Mapping from "left", "right", "top", "bottom" to the respective
             amounts, in points, to clip from `docsrc` before splitting. Default
             is 0 on all sides.
@@ -282,11 +282,13 @@ def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
         -crop["bottom"],
     )
 
+    # Calculate the layout parameters
     if artbox is None:
         artbox = cropbox
     if n_pages is None:
-        n_pages = choose_n_pages((artbox.width, artbox.height), page_size, min_overlap)
-    layout_origin, overlap = calc_layout_params(
+        n_pages = _choose_n_pages((artbox.width, artbox.height), page_size, min_overlap)
+        logger.info("automatically determined n_pages = %s", n_pages)
+    layout_origin, overlap = _calc_layout_params(
         page_size=page_size,
         n_pages=n_pages,
         min_overlap=min_overlap,
@@ -294,6 +296,18 @@ def make_poster(  # pylint: disable=too-many-locals,too-many-arguments
         allow_whitespace=allow_whitespace,
         artbox=artbox,
     )
+    if overlap[0] != min_overlap[0]:
+        logger.info(
+            "increasing horizontal overlap from %.2f to %.2f mm",
+            pt_to_mm(min_overlap[0]),
+            pt_to_mm(overlap[0]),
+        )
+    if overlap[1] != min_overlap[1]:
+        logger.info(
+            "increasing vertical overlap from %.2f to %.2f mm",
+            pt_to_mm(min_overlap[1]),
+            pt_to_mm(overlap[1]),
+        )
 
     docout = pymupdf.Document()
     for j in range(n_pages[0]):
@@ -379,7 +393,7 @@ def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
     return docout
 
 
-def get_map_bbox(page: pymupdf.Page, clip: pymupdf.Rect = None) -> pymupdf.Rect:
+def get_artbox(page: pymupdf.Page, clip: pymupdf.Rect = None) -> pymupdf.Rect:
     """
     Return a rectangle that encloses the map and all its coordinate labels.
 

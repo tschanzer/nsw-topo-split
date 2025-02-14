@@ -5,6 +5,8 @@ import logging
 import pathlib
 import sys
 import time
+from typing import cast
+from urllib.error import HTTPError
 
 import pymupdf
 
@@ -18,14 +20,13 @@ from nsw_topo_split import (
     rasterize,
 )
 
-logger = logging.getLogger(__name__)
-
-N_PAGES_DEFAULTS = {
-    ("a4", "cover"): [1, 2],
-    ("a4", "map"): [4, 3],
-    ("a3", "cover"): [1, 1],
-    ("a3", "map"): [3, 2],
+DEFAULTS = {
+    "dpi": 300,
+    "size": "A3",
+    "overlap": [20.0, 20.0],
 }
+
+logger = logging.getLogger(__name__)
 
 
 def main() -> None:  # pylint: disable=too-many-statements
@@ -74,9 +75,10 @@ def main() -> None:  # pylint: disable=too-many-statements
         "--dpi",
         type=int,
         nargs="?",
-        const=300,
+        const=DEFAULTS["dpi"],
         help=(
-            "rasterize the output to the specified resolution (default: 300 DPI); "
+            "rasterize the output to the specified resolution (default: "
+            f"{DEFAULTS['dpi']:d} DPI); "
             "if this option is not given, then the output will not be rasterized. "
             "WARNING: this may make gridlines hard to see on some map editions. "
             "It will also increase processing time, and file size for mode=map."
@@ -89,13 +91,13 @@ def main() -> None:  # pylint: disable=too-many-statements
     format_options.add_argument(
         "-s",
         "--size",
-        default="A3",
+        default=DEFAULTS["size"],
         type=str.lower,
         choices=list(pymupdf.paper_sizes().keys()),
         metavar="SIZE",
         help=(
-            "page size (case-insensitive); options are  'A0' through 'A10', "
-            "'B0' through 'B10', 'C0' through 'C10', 'Card-4x6', 'Card-5x7', "
+            "page size (case-insensitive; default A3); options are  'A0' through "
+            "'A10', 'B0' through 'B10', 'C0' through 'C10', 'Card-4x6', 'Card-5x7', "
             "'Commercial', 'Executive', 'Invoice', 'Ledger', 'Legal', 'Legal-13', "
             "'Letter', 'Monarch' and 'Tabloid-Extra'"
         ),
@@ -114,8 +116,7 @@ def main() -> None:  # pylint: disable=too-many-statements
         metavar=("NX", "NY"),
         help=(
             "horizontal and vertical number of pages "
-            "(default: [4, 3] for A4 map, [1, 2] for A4 cover, "
-            "[3, 2] for A3 map, [1, 1] for A3 cover, otherwise undefined)"
+            "(determined automatically by default)"
         ),
     )
     format_options.add_argument(
@@ -124,9 +125,10 @@ def main() -> None:  # pylint: disable=too-many-statements
         type=float,
         nargs=2,
         metavar=("LX", "LY"),
-        default=[20.0, 20.0],
+        default=DEFAULTS["overlap"],
         help=(
-            "horizontal and vertical overlap between pages in mm (default: [20, 20])"
+            "horizontal and vertical overlap between pages in mm "
+            f"(default: {DEFAULTS['overlap']})"
         ),
     )
     format_options.add_argument(
@@ -149,15 +151,6 @@ def main() -> None:  # pylint: disable=too-many-statements
     if not args.portrait:
         page_size = (page_size[1], page_size[0])
 
-    # Determine number of pages along each axis
-    if args.n_pages is None:
-        try:
-            args.n_pages = N_PAGES_DEFAULTS[args.size, args.mode]
-        except KeyError as e:
-            raise RuntimeError(
-                "-n/--n-pages must be specified for paper sizes other than A4 and A3"
-            ) from e
-
     # Prepare directories and download map if needed
     url = get_map_url(args.name, args.year)
     filename = url.split("/")[-1]
@@ -165,20 +158,26 @@ def main() -> None:  # pylint: disable=too-many-statements
     out_dir.mkdir(parents=True, exist_ok=True)
     master_file = out_dir / filename
     if args.force_download or not master_file.exists():
-        download(url, master_file)
+        try:
+            download(url, master_file)
+        except HTTPError as e:
+            raise RuntimeError(
+                f"The {args.year} edition does not seem to be available for "
+                f"{args.name}. Please try another edition."
+            ) from e
     else:
         logger.info("using existing map at %s", master_file)
 
     docsrc = pymupdf.Document(master_file)
-    overlap_mm = (mm_to_pt(args.overlap[0]), mm_to_pt(args.overlap[1]))
+    overlap_pt = cast(tuple[float, float], tuple(map(mm_to_pt, args.overlap)))
     if args.mode == "cover":
         logger.info("producing cover page")
         cover = make_cover(docsrc[0])
         docout = make_poster(
             cover[0],
-            page_size,
+            page_size=page_size,
             n_pages=args.n_pages,
-            min_overlap=overlap_mm,
+            min_overlap=overlap_pt,
             allow_whitespace=args.allow_whitespace,
         )
         out_file = master_file.with_stem(master_file.stem + "_cover_" + args.size)
@@ -186,9 +185,9 @@ def main() -> None:  # pylint: disable=too-many-statements
         logger.info("producing split map")
         docout = make_poster(
             docsrc[0],
-            page_size,
+            page_size=page_size,
             n_pages=args.n_pages,
-            min_overlap=overlap_mm,
+            min_overlap=overlap_pt,
             crop={"right": COVER_WIDTH_PT},
             allow_whitespace=args.allow_whitespace,
         )
