@@ -22,7 +22,7 @@ MAP_VIEWER_URL = (
     "?useExisting=1&layers=585654eb02d449cfbc46ed801303b9cf"
 )
 MM_PER_PT = 25.4 / 72
-COVER_WIDTH_PT = 326
+NOMINAL_COVER_WIDTH_PT = 326
 MARGIN_MM = {
     "2022": 0.0,
     "2017": 5.0,
@@ -362,6 +362,10 @@ def _make_poster(  # pylint: disable=too-many-locals,too-many-arguments
     return docout
 
 
+def _guess_cover_width(page_width: float) -> float:
+    return page_width / round(page_width / NOMINAL_COVER_WIDTH_PT)
+
+
 def _make_cover(pagesrc: pymupdf.Page, *, margin: float = 0.0) -> pymupdf.Document:
     """
     Put the map title page and legend side-by-side.
@@ -377,25 +381,26 @@ def _make_cover(pagesrc: pymupdf.Page, *, margin: float = 0.0) -> pymupdf.Docume
 
     docout = pymupdf.Document()
     cropbox = pagesrc.bound() + (margin, margin, -margin, -margin)
-    pageout = docout.new_page(width=2 * COVER_WIDTH_PT, height=cropbox.height / 2)
+    cover_width = _guess_cover_width(cropbox.width)
+    pageout = docout.new_page(width=2 * cover_width, height=cropbox.height / 2)
     # Put the title page (bottom right corner of map sheet) on the left
     pageout.show_pdf_page(
-        pymupdf.Rect(0, 0, COVER_WIDTH_PT, cropbox.height / 2),
+        pymupdf.Rect(0, 0, cover_width, cropbox.height / 2),
         pagesrc.parent,
         pno=pagesrc.number,
         clip=pymupdf.Rect(
-            cropbox.x1 - COVER_WIDTH_PT,
+            cropbox.x1 - cover_width,
             (cropbox.y0 + cropbox.y1) / 2,
             cropbox.bottom_right,
         ),
     )
     # Put the legend (top right corner of map sheet) on the right
     pageout.show_pdf_page(
-        pymupdf.Rect(COVER_WIDTH_PT, 0, 2 * COVER_WIDTH_PT, cropbox.height / 2),
+        pymupdf.Rect(cover_width, 0, 2 * cover_width, cropbox.height / 2),
         pagesrc.parent,
         pno=pagesrc.number,
         clip=pymupdf.Rect(
-            cropbox.x1 - COVER_WIDTH_PT,
+            cropbox.x1 - cover_width,
             cropbox.y0,
             cropbox.x1,
             (cropbox.y0 + cropbox.y1) / 2,
@@ -481,7 +486,7 @@ def make_split_map(  # pylint: disable=too-many-arguments
 
     _log_box_dims(pagesrc.bound(), "original map dimensions")
     cropbox = pagesrc.bound() + (margin, margin, -margin, -margin)
-    cropbox += (0.0, 0.0, -COVER_WIDTH_PT, 0.0)
+    cropbox += (0.0, 0.0, -_guess_cover_width(cropbox.width), 0.0)
     _log_box_dims(cropbox, "cropped map dimensions")
     artbox = _get_bbox(pagesrc, clip=cropbox, filter_func=_is_map_text)
     _log_box_dims(artbox, "inferred artbox dimensions")
