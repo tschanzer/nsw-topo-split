@@ -13,11 +13,11 @@ jobs:
       with:
         python-version: "3.13"
         cache: pip
-        cache-dependency-path: requirements/dev.txt
+        cache-dependency-path: requirements-dev.txt
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements/dev.txt
+        pip install -r requirements-dev.txt
     - name: isort
       run: isort nsw_topo_split --check-only
     - name: black
