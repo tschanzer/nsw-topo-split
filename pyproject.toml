@@ -1,6 +1,6 @@
 [project]
 name = "nsw-topo-split"
-version = "0.1.0b2"
+version = "0.1.0b3"
 dependencies = [
     "pymupdf",
 ]
@@ -24,12 +24,12 @@ classifiers = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/tschanzer/nsw-topo-split/blob/v0.1.0b2/README.md"
+Documentation = "https://github.com/tschanzer/nsw-topo-split/blob/v0.1.0b3/README.md"
 Repository = "https://github.com/tschanzer/nsw-topo-split"
 Issues = "https://github.com/tschanzer/nsw-topo-split/issues"
 
 [project.scripts]
-nsw-topo-split = "nsw_topo_split.__main__:main"
+nsw-topo-split = "nsw_topo_split._main:main"
 
 [project.optional-dependencies]
 dev = [
