@@ -10,6 +10,7 @@ from typing import cast
 import pymupdf
 
 from nsw_topo_split import (
+    choose_margin,
     download_map,
     make_split_cover,
     make_split_map,
@@ -149,10 +150,13 @@ def main() -> None:  # pylint: disable=too-many-statements
         page_size = (page_size[1], page_size[0])
 
     # Prepare directories and download map if needed
-    master_file = download_map(args.name, args.year, args.out, args.force_download)
+    master_file = download_map(
+        args.name, args.year, base_dir=args.out, force_download=args.force_download
+    )
 
     docsrc = pymupdf.Document(master_file)
     overlap_pt = cast(tuple[float, float], tuple(map(mm_to_pt, args.overlap)))
+    margin = choose_margin(args.year)
     if args.mode == "cover":
         logger.info("producing cover page")
         docout = make_split_cover(
@@ -161,6 +165,7 @@ def main() -> None:  # pylint: disable=too-many-statements
             n_pages=args.n_pages,
             min_overlap=overlap_pt,
             allow_whitespace=args.allow_whitespace,
+            margin=margin,
         )
         out_file = master_file.with_stem(master_file.stem + "_cover_" + args.size)
     else:
@@ -171,6 +176,7 @@ def main() -> None:  # pylint: disable=too-many-statements
             n_pages=args.n_pages,
             min_overlap=overlap_pt,
             allow_whitespace=args.allow_whitespace,
+            margin=margin,
         )
         out_file = master_file.with_stem(master_file.stem + "_split_" + args.size)
 

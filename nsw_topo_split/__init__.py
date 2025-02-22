@@ -23,6 +23,14 @@ MAP_VIEWER_URL = (
 )
 MM_PER_PT = 25.4 / 72
 COVER_WIDTH_PT = 326
+MARGIN_MM = {
+    "2022": 0.0,
+    "2017": 5.0,
+    "2016": 5.0,
+    "2015": 5.0,
+    "2014": 5.0,
+    "2011": 5.0,
+}
 
 COLLAR_REGEX = re.compile(
     r"-?[0-9]+[º°]\s*[0-9]+'"  # match lat/lon coordinates
@@ -35,7 +43,7 @@ _Block = tuple[float, float, float, float, str, int, int]
 logger = logging.getLogger(__name__)
 
 
-def get_map_url(name: str, year: str) -> str:
+def _get_map_url(name: str, year: str) -> str:
     """
     Query the ArcGIS API to get the URL of a NSW Spatial Services topo map.
 
@@ -86,7 +94,7 @@ def get_map_url(name: str, year: str) -> str:
     return cast(str, data["features"][0]["attributes"][url_key])
 
 
-def download(url: str, outfile: str | pathlib.Path) -> None:
+def _download(url: str, outfile: str | pathlib.Path) -> None:
     """
     Download a file.
 
@@ -102,7 +110,7 @@ def download(url: str, outfile: str | pathlib.Path) -> None:
 
 
 def download_map(
-    name: str, year: str, base_dir: pathlib.Path, force_download: bool = False
+    name: str, year: str, *, base_dir: pathlib.Path, force_download: bool = False
 ) -> pathlib.Path:
     """
     Download a map if required.
@@ -119,14 +127,14 @@ def download_map(
         The path to the downloaded (or existing) map file.
     """
 
-    url = get_map_url(name, year)
+    url = _get_map_url(name, year)
     filename = url.split("/")[-1]
     out_dir: pathlib.Path = base_dir / year / filename.removesuffix(".pdf")
     out_dir.mkdir(parents=True, exist_ok=True)
     master_file = out_dir / filename
     if force_download or not master_file.exists():
         try:
-            download(url, master_file)
+            _download(url, master_file)
         except HTTPError as e:
             raise RuntimeError(
                 f"The {year} edition does not seem to be available for "
@@ -354,12 +362,13 @@ def _make_poster(  # pylint: disable=too-many-locals,too-many-arguments
     return docout
 
 
-def _make_cover(pagesrc: pymupdf.Page) -> pymupdf.Document:
+def _make_cover(pagesrc: pymupdf.Page, *, margin: float = 0.0) -> pymupdf.Document:
     """
     Put the map title page and legend side-by-side.
 
     Args:
         pagesrc: The original map.
+        margin: Size of margin to trim from the source page, in points (default 0).
 
     Returns:
         New document containing a single page with the map title page and legend
@@ -367,30 +376,29 @@ def _make_cover(pagesrc: pymupdf.Page) -> pymupdf.Document:
     """
 
     docout = pymupdf.Document()
-    pageout = docout.new_page(
-        width=2 * COVER_WIDTH_PT, height=pagesrc.bound().height / 2
-    )
+    cropbox = pagesrc.bound() + (margin, margin, -margin, -margin)
+    pageout = docout.new_page(width=2 * COVER_WIDTH_PT, height=cropbox.height / 2)
     # Put the title page (bottom right corner of map sheet) on the left
     pageout.show_pdf_page(
-        pymupdf.Rect(0, 0, COVER_WIDTH_PT, pageout.bound().height),
+        pymupdf.Rect(0, 0, COVER_WIDTH_PT, cropbox.height / 2),
         pagesrc.parent,
         pno=pagesrc.number,
         clip=pymupdf.Rect(
-            pagesrc.bound().width - COVER_WIDTH_PT,
-            pagesrc.bound().height / 2,
-            pagesrc.bound().bottom_right,
+            cropbox.x1 - COVER_WIDTH_PT,
+            (cropbox.y0 + cropbox.y1) / 2,
+            cropbox.bottom_right,
         ),
     )
     # Put the legend (top right corner of map sheet) on the right
     pageout.show_pdf_page(
-        pymupdf.Rect(COVER_WIDTH_PT, 0, 2 * COVER_WIDTH_PT, pageout.bound().height),
+        pymupdf.Rect(COVER_WIDTH_PT, 0, 2 * COVER_WIDTH_PT, cropbox.height / 2),
         pagesrc.parent,
         pno=pagesrc.number,
         clip=pymupdf.Rect(
-            pagesrc.bound().width - COVER_WIDTH_PT,
-            0,
-            pagesrc.bound().width,
-            pagesrc.bound().height / 2,
+            cropbox.x1 - COVER_WIDTH_PT,
+            cropbox.y0,
+            cropbox.x1,
+            (cropbox.y0 + cropbox.y1) / 2,
         ),
     )
     return docout
@@ -450,6 +458,7 @@ def make_split_map(  # pylint: disable=too-many-arguments
     n_pages: tuple[int, int] | None = None,
     min_overlap: tuple[float, float] = (0.0, 0.0),
     allow_whitespace: bool = False,
+    margin: float = 0.0,
 ) -> pymupdf.Document:
     """
     Split a map across several smaller pages.
@@ -464,13 +473,15 @@ def make_split_map(  # pylint: disable=too-many-arguments
             may be increased to eliminate white space.
         allow_whitespace: If True, do not increase overlaps to eliminate white
             space on the output pages.
+        margin: Size of margin to trim from the source page, in points (default 0).
 
     Returns:
         Document containing the map pages in column-major order.
     """
 
     _log_box_dims(pagesrc.bound(), "original map dimensions")
-    cropbox = pagesrc.bound() + (0.0, 0.0, -COVER_WIDTH_PT, 0.0)
+    cropbox = pagesrc.bound() + (margin, margin, -margin, -margin)
+    cropbox += (0.0, 0.0, -COVER_WIDTH_PT, 0.0)
     _log_box_dims(cropbox, "cropped map dimensions")
     artbox = _get_bbox(pagesrc, clip=cropbox, filter_func=_is_map_text)
     _log_box_dims(artbox, "inferred artbox dimensions")
@@ -492,6 +503,7 @@ def make_split_cover(  # pylint: disable=too-many-arguments
     n_pages: tuple[int, int] | None = None,
     min_overlap: tuple[float, float] = (0.0, 0.0),
     allow_whitespace: bool = False,
+    margin: float = 0.0,
 ) -> pymupdf.Document:
     """
     Make the cover page and split it across several smaller pages.
@@ -506,13 +518,14 @@ def make_split_cover(  # pylint: disable=too-many-arguments
             may be increased to eliminate white space.
         allow_whitespace: If True, do not increase overlaps to eliminate white
             space on the output pages.
+        margin: Size of margin to trim from the source page, in points (default 0).
 
     Returns:
         Document containing the cover pages in column-major order.
     """
 
     _log_box_dims(pagesrc.bound(), "original map dimensions")
-    cover = _make_cover(pagesrc)
+    cover = _make_cover(pagesrc, margin=margin)
     _log_box_dims(cover[0].bound(), "cover page dimensions")
     artbox = _get_bbox(cover[0], filter_func=_is_cover_text)
     _log_box_dims(artbox, "inferred artbox dimensions")
@@ -524,6 +537,26 @@ def make_split_cover(  # pylint: disable=too-many-arguments
         allow_whitespace=allow_whitespace,
         artbox=artbox,
     )
+
+
+def choose_margin(year: str) -> float:
+    """
+    Look up the margin size for a given edition.
+
+    Args:
+        year: The publication year.
+
+    Returns:
+        The margin size in points for that edition, defaulting to 0 for unknown
+        editions.
+    """
+
+    if year in MARGIN_MM:
+        margin = mm_to_pt(MARGIN_MM[year])
+    else:
+        logger.warning("Margin size is not known for year %s; defaulting to 0 pt", year)
+        margin = 0.0
+    return margin
 
 
 def rasterize(docsrc: pymupdf.Document, dpi: int) -> pymupdf.Document:
