@@ -29,7 +29,7 @@ Repository = "https://github.com/tschanzer/nsw-topo-split"
 Issues = "https://github.com/tschanzer/nsw-topo-split/issues"
 
 [project.scripts]
-nsw-topo-split = "nsw_topo_split.__main__:main"
+nsw-topo-split = "nsw_topo_split._main:main"
 
 [project.optional-dependencies]
 dev = [
