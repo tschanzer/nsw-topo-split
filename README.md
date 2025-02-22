@@ -70,7 +70,7 @@ page format options:
   -l LX LY, --overlap LX LY
                         horizontal and vertical overlap between pages in mm
                         (default: [20, 20])
-  -w, --allow-white-space
+  -w, --allow-whitespace
                         do not expand overlaps to eliminate white space
 ```
 
