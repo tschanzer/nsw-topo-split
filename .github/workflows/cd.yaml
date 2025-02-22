@@ -48,7 +48,7 @@ jobs:
           name: release-dists
           path: dist/
       - name: Publish release distributions to TestPyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@b223cbbc63a3e911c7e6093d72760c29bef664f4
         with:
           repository-url: https://test.pypi.org/legacy/
       - name: Test install from TestPyPI
@@ -56,4 +56,4 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --index-url https://test.pypi.org/simple/ --no-deps nsw-topo-split
       - name: Publish release distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@b223cbbc63a3e911c7e6093d72760c29bef664f4
