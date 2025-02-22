@@ -8,7 +8,7 @@ requires-python = ">=3.9"
 authors = [
     {name="Thomas Schanzer"},
 ]
-description = "A tool for downloading and nicely splitting NSW Spatial Services topographic maps across smaller pages "
+description = "A tool for downloading and nicely splitting NSW Spatial Services topographic maps across smaller pages"
 readme = "README.md"
 classifiers = [
     "Development Status :: 4 - Beta",
