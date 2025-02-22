@@ -30,17 +30,15 @@ This is the easiest option because it automatically installs `nsw-topo-split`
 into a standalone virtual environment and allows you to run `nsw-topo-split`
 anywhere.
 
-Clone the repository and navigate to its root directory.
 [Install pipx](https://pipx.pypa.io/stable/installation/), then run
 ```bash
-pipx install .
+pipx install nsw-topo-split
 ```
 
 ### Option 2: `pip`
-Clone the repository and navigate to its root directory. Create and activate a
-clean virtual environment, then run
+Create and activate a clean virtual environment, then run
 ```bash
-pip install .
+pip install nsw-topo-split
 ```
 
 ### Development installation
