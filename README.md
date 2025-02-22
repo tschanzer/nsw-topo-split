@@ -15,8 +15,8 @@ Portal](https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id
 
 ## Quick example
 ```
-python -m nsw_topo_split cover katoomba 2022
-python -m nsw_topo_split map katoomba 2022
+nsw-topo-split cover katoomba 2022
+nsw-topo-split map katoomba 2022
 ```
 ![example](example/example.png)
 
@@ -24,11 +24,39 @@ Maps shown above are © *State of New South Wales (Spatial Services, a business
 unit of the Department of Customer Service NSW)*,  reproduced under the terms of
 the Creative Commons Attribution 4.0 license.
 
+## Installation
+### Option 1: `pipx` (preferred)
+This is the easiest option because it automatically installs `nsw-topo-split`
+into a standalone virtual environment and allows you to run `nsw-topo-split`
+anywhere.
+
+Clone the repository and navigate to its root directory.
+[Install pipx](https://pipx.pypa.io/stable/installation/), then run
+```bash
+pipx install .
+```
+
+### Option 2: `pip`
+Clone the repository and navigate to its root directory. Create and activate a
+clean virtual environment, then run
+```bash
+pip install .
+```
+
+### Development installation
+Clone the repository and navigate to its root directory. Then, in a clean
+virtual environment, run
+```bash
+pip install -r requirements-dev.txt  # for reproducibility
+pre-commit install
+pip install -e .
+```
+
 ## Usage
 ```
-usage: python -m nsw_topo_split [-h] [-o OUT] [-f] [-d [DPI]] [-q]
-                                [-s SIZE] [-p] [-n NX NY] [-l LX LY] [-w]
-                                {map,cover} name year
+usage: nsw-topo-split [-h] [-o OUT] [-f] [-d [DPI]] [-q] [-s SIZE] [-p]
+                      [-n NX NY] [-l LX LY] [-w]
+                      {map,cover} name year
 
 split a NSW topographic map across smaller pages
 
@@ -57,19 +85,18 @@ options:
   -q, --quiet           suppress log messages
 
 page format options:
-  -s SIZE, --size SIZE  page size (case-insensitive); options are 'A0' through
-                        'A10', 'B0' through 'B10', 'C0' through 'C10',
-                        'Card-4x6', 'Card-5x7', 'Commercial', 'Executive',
-                        'Invoice', 'Ledger', 'Legal', 'Legal-13', 'Letter',
-                        'Monarch' and 'Tabloid-Extra'
+  -s SIZE, --size SIZE  page size (case-insensitive; default A3); options are
+                        'A0' through 'A10', 'B0' through 'B10', 'C0' through
+                        'C10', 'Card-4x6', 'Card-5x7', 'Commercial',
+                        'Executive', 'Invoice', 'Ledger', 'Legal', 'Legal-13',
+                        'Letter', 'Monarch' and 'Tabloid-Extra'
   -p, --portrait        use portrait layout rather than landscape
   -n NX NY, --n-pages NX NY
-                        horizontal and vertical number of pages (default: [4,
-                        3] for A4 map, [1, 2] for A4 cover, [3, 2] for A3 map,
-                        [1, 1] for A3 cover, otherwise undefined)
+                        horizontal and vertical number of pages (determined
+                        automatically by default)
   -l LX LY, --overlap LX LY
                         horizontal and vertical overlap between pages in mm
-                        (default: [20, 20])
+                        (default: [20.0, 20.0])
   -w, --allow-whitespace
                         do not expand overlaps to eliminate white space
 ```
@@ -83,12 +110,3 @@ in `./2022/8930-1S+KATOOMBA`:
   with 20mm overlaps.
 
 When printing double-sided, make sure to choose "flip on long edge".
-
-## Development installation
-Clone the repository and navigate to its root directory. Then, in a clean
-virtual environment, run
-```bash
-pip install -r requirements/dev.txt  # for reproducibility
-pre-commit install
-pip install -e .
-```

@@ -5,6 +5,9 @@ dependencies = [
     "pymupdf",
 ]
 
+[project.scripts]
+nsw-topo-split = "nsw_topo_split.__main__:main"
+
 [project.optional-dependencies]
 dev = [
     "black",
